@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Site Unblocker</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Site Unblocker</h1>
+    <input type="text" id="link" value="">
+    <button type="button"; onclick = "update()">Update Link</button>
+    <br>
+    <input type="checkbox" id="proxy">
+    <label for = "proxy"> Don't use proxy (Required for firewalls, may fix problems)</label><br>
+
+    <input type="checkbox" id="exploit">
+    <label for = "exploit"> Don't use exploit (If search is flagged)</label><br>
+    <br><br><br>
+    <a href="#" ID="go">Unblocked Link</a><br>
+    <br><br>
+    <h2>About</h2>
+    <p>Unblocks most sites. Static sites and articles work best. Some sites break with the proxy, but this is the most unblocked you can get.<br>Just paste a url into the box, and update the link. Click "Unblocked Link" to get an unblocked version.<br>This site uses Google Translate as a proxy to access blocked sites, as the first layer.<br>Then, as the second layer it exploits a feature of Securly, tricking it into thinking we're visiting a suicide prevention website. 
+     <br>There's a failsafe for this, and it allowes us through. <br>
+    If you get an error, try again later or use a different site. It may just be that the site has too much JS/CSS.<br> Tested on Securly so far. Not every site works with this. Also, if you get flagged for suicide, (Unlikely), check "No exploit".<br><br>Message me with questions on discord: Henry21#6630</p>
+    <br><br>
+    
+    <h2>Want a list of working unblocked sites?</h2>
+    <a href="wiki.html">The Unblocked Wiki</a>
+    <h2>Henry Bass, 2021</h2>
+    <p>Tips (Doge) DJk2DqRE2B5FT9N9U85n5Ud9WETPRJa1yj<br>Thanks!
+    </p>
+  </body>
+  <script>
+    function update() {
+      var link = document.getElementById("link").value;
+      var noproxy = document.getElementById("proxy").checked;
+      var noexploit = document.getElementById("exploit").checked;
+
+      if (noproxy == false) {
+        link = "http://translate.google.com/translate?sl=en&tl=en&u=" + link
+      } else if (link.indexOf("https://www.") <= 0) {
+        link = "https://www." + link
+      }
+
+      if (noexploit == false) {
+      link = link + "?suicidepreventionlifeline.org";
+      }
+
+      document.getElementById("go").href = link;
+    }
+  </script>
+</html>
