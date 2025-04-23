@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Tools Hub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 1200px;
+            height: 700px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        .open-button, .fullscreen-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px 10px 0 10px;
+            transition: background 0.3s;
+        }
+
+        .open-button:hover, .fullscreen-button:hover {
+            background-color: #2ecc71;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Game Tools Hub</h1>
+
+        <div class="tabs" id="tabs"></div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        const tools = [
+            { id: 'emulator', label: 'Emulator', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/emulator.html' },
+            { id: 'mask3r', label: 'Mask3r', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/mask3r-madebyBlobby-Boi.html' },
+            { id: 'dataTextMaker', label: 'Data Text Maker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/datatextmaker-madebyBlobby-Boi.html' },
+            { id: 'htmlRunner', label: 'HTML Runner', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/htmlrunner.html' },
+            { id: 'ruffle', label: 'Ruffle', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/ruffle.html' }
+            { id: 'pico8', label: 'Pico-8', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/pico-8.html' }
+            { id: 'calculator', label: 'Calculator', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/apps/calculator.html' }
+//            { id: 'TOOLID', label: 'TOOLLABEL', url: 'URL' }
+
+        ];
+
+        const tabsContainer = document.getElementById('tabs');
+        const contentContainer = document.getElementById('content');
+
+        tools.forEach((tool, index) => {
+            // Create tab button
+            const tabButton = document.createElement('button');
+            tabButton.textContent = tool.label;
+            tabButton.className = 'tab-button' + (index === 0 ? ' active' : '');
+            tabButton.dataset.tab = tool.id;
+            tabsContainer.appendChild(tabButton);
+
+            // Create tab content
+            const tabContent = document.createElement('div');
+            tabContent.id = tool.id;
+            tabContent.className = 'tab-content' + (index === 0 ? ' active' : '');
+            tabContent.innerHTML = `
+                <iframe id="${tool.id}Frame"></iframe>
+                <div class="button-container">
+                    <button class="open-button" data-tool="${tool.id}">Open in New Window</button>
+                    <button class="fullscreen-button" data-tool="${tool.id}">Fullscreen</button>
+                </div>
+            `;
+            contentContainer.appendChild(tabContent);
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab-button').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.tab;
+                document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // Load tool content into iframes
+        tools.forEach(tool => {
+            const frame = document.getElementById(`${tool.id}Frame`);
+            frame.onload = () => {
+                const doc = frame.contentWindow.document;
+                fetch(tool.url)
+                    .then(res => res.text())
+                    .then(html => {
+                        doc.open();
+                        doc.write(html);
+                        doc.close();
+                    });
+            };
+            frame.src = 'about:blank';
+        });
+
+        // Open in new window
+        document.addEventListener('click', e => {
+            if (e.target.matches('.open-button')) {
+                const tool = e.target.dataset.tool;
+                const toolData = tools.find(t => t.id === tool);
+                fetch(toolData.url)
+                    .then(res => res.text())
+                    .then(html => {
+                        const newWindow = window.open('about:blank', '_blank');
+                        setTimeout(() => {
+                            newWindow.document.open();
+                            newWindow.document.write(html);
+                            newWindow.document.close();
+                        }, 100);
+                    })
+                    .catch(err => alert('Failed to open tool: ' + err));
+            }
+
+            if (e.target.matches('.fullscreen-button')) {
+                const frame = document.getElementById(`${e.target.dataset.tool}Frame`);
+                if (frame.requestFullscreen) {
+                    frame.requestFullscreen();
+                } else if (frame.webkitRequestFullscreen) {
+                    frame.webkitRequestFullscreen();
+                } else if (frame.msRequestFullscreen) {
+                    frame.msRequestFullscreen();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
