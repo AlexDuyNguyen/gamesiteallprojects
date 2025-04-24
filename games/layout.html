@@ -32,12 +32,13 @@
             font-size: 2rem;
             margin-bottom: 10px;
             color: #2c3e50;
+            text-transform: capitalize;
         }
 
         .game-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px; /* Reduced gap to bunch games closer together */
+            gap: 15px;
             justify-items: center;
         }
 
@@ -49,7 +50,7 @@
             cursor: pointer;
             font-size: 1rem;
             transition: background 0.3s;
-            width: 100%; /* Ensures buttons are aligned and take full width of their grid cell */
+            width: 100%;
             box-sizing: border-box;
         }
 
@@ -68,7 +69,7 @@
 
         iframe {
             width: 100%;
-            height: 600px; /* Adjusted height */
+            height: 600px;
             border: none;
             border-radius: 10px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -111,50 +112,19 @@
     </div>
 
     <script>
-        // Tools array with sections and games
         const tools = [
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
-//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' }
+            { label: '1v1.lol', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' }
+//            { label: 'GAME_LABEL', url: 'GAME_URL' },
         ];
 
         const contentContainer = document.getElementById('content');
         const sectionMap = {};
 
-        // Create a map of sections for easy access
         tools.forEach(tool => {
+            const parts = tool.url.split('/');
+            tool.section = parts[parts.length - 2];
+            tool.id = parts[parts.length - 1].split('.')[0];
+
             if (!sectionMap[tool.section]) {
                 const sectionDiv = document.createElement('div');
                 sectionDiv.classList.add('section');
@@ -163,16 +133,12 @@
                 sectionMap[tool.section] = sectionDiv.querySelector('.game-grid');
             }
 
-            // Create tab button for each tool
             const tabButton = document.createElement('button');
             tabButton.textContent = tool.label;
             tabButton.className = 'tab-button';
             tabButton.dataset.tab = tool.id;
-
-            // Place tab button in the appropriate section
             sectionMap[tool.section].appendChild(tabButton);
 
-            // Create tab content for each tool
             const tabContent = document.createElement('div');
             tabContent.id = tool.id;
             tabContent.className = 'tab-content';
@@ -186,13 +152,10 @@
             contentContainer.appendChild(tabContent);
         });
 
-        // Tab switching (without scroll behavior)
         document.querySelectorAll('.tab-button').forEach(tab => {
             tab.addEventListener('click', (e) => {
                 const target = e.target.dataset.tab;
                 const tabContent = document.getElementById(target);
-                
-                // Highlight the active tab and display its content
                 document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
                 e.target.classList.add('active');
@@ -200,7 +163,6 @@
             });
         });
 
-        // Load tool content into iframes
         tools.forEach(tool => {
             const frame = document.getElementById(`${tool.id}Frame`);
             frame.onload = () => {
@@ -215,7 +177,6 @@
             frame.src = 'about:blank';
         });
 
-        // Open in new window
         document.addEventListener('click', e => {
             if (e.target.matches('.open-button')) {
                 const tool = e.target.dataset.tool;
@@ -235,13 +196,9 @@
 
             if (e.target.matches('.fullscreen-button')) {
                 const frame = document.getElementById(`${e.target.dataset.tool}Frame`);
-                if (frame.requestFullscreen) {
-                    frame.requestFullscreen();
-                } else if (frame.webkitRequestFullscreen) {
-                    frame.webkitRequestFullscreen();
-                } else if (frame.msRequestFullscreen) {
-                    frame.msRequestFullscreen();
-                }
+                if (frame.requestFullscreen) frame.requestFullscreen();
+                else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+                else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
             }
         });
     </script>
