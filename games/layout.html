@@ -6,95 +6,92 @@
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: #f0f2f5;
+            background: #f7f9fc;
             margin: 0;
             padding: 40px 20px;
-            color: #333;
+            color: #2c3e50;
             text-align: center;
         }
-
         h1 {
             font-size: 3rem;
             margin-bottom: 30px;
-            color: #2c3e50;
+            color: #1a365d;
         }
-
         .container {
             max-width: 1280px;
             margin: auto;
         }
-
         .section {
             margin-bottom: 40px;
         }
-
         .section h2 {
             font-size: 2rem;
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: #2d6187;
             text-transform: capitalize;
         }
-
         .game-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            column-gap: 35px; /* Horizontal spacing */
+            row-gap: 20px;    /* Vertical spacing */
             justify-items: center;
         }
-
         .tab-button {
-            padding: 12px 20px;
+            padding: 12px 40px;
             border: none;
-            border-radius: 8px;
-            background-color: #e0e0e0;
+            border-radius: 10px;
+            background-color: #e2e8f0;
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
             width: 100%;
             box-sizing: border-box;
+            min-width: 245px;  /* Added minimum width */
         }
-
+        .tab-button:hover {
+            background-color: #cbd5e0;
+            transform: translateY(-2px);
+        }
         .tab-button.active {
-            background-color: #3498db;
+            background-color: #4299e1;
             color: white;
+            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
         }
-
         .tab-content {
             display: none;
         }
-
         .tab-content.active {
             display: block;
         }
-
         iframe {
             width: 100%;
             height: 600px;
             border: none;
             border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
-
         .button-container {
             margin-top: 20px;
         }
-
         .open-button, .fullscreen-button {
-            background-color: #27ae60;
+            background-color: #38b2ac;
             color: white;
-            padding: 12px 20px;
+            padding: 12px 40px;  /* Increased horizontal padding */
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
             margin: 10px 10px 0 10px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-width: 200px;  /* Added minimum width */
         }
-
         .open-button:hover, .fullscreen-button:hover {
-            background-color: #2ecc71;
+            background-color: #319795;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-
         .tabs {
             display: flex;
             flex-wrap: wrap;
@@ -102,18 +99,35 @@
             margin-bottom: 20px;
             gap: 10px;
         }
+        .audio-status {
+            background-color: #edf2f7;
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-top: 10px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Game Tools Hub</h1>
-
+        <h1>Games</h1>
         <div id="content"></div>
     </div>
 
     <script>
         const tools = [
-            { label: '1v1.lol', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' }
+            { label: '1v1.lol', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' },
+            { label: 'Evil Glitch', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html' },
+            { label: 'Fortzone Battle Royale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/fortzone-battle-royale.html' },
+            { label: 'Funny Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/funny-shooter-2.html' },
+            { label: 'Matrix Rampage', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/matrix-rampage.html' },
+            { label: 'Pixel Shooter', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/pixel-shooter.html' },
+            { label: 'Red VS Blue', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue.html' },
+            { label: 'Red VS Blue 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue-2.html' },
+            { label: 'Time Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/time-shooter-2.html' },
+            { label: 'Time Shooter 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/time-shooter-3.html' }
 //            { label: 'GAME_LABEL', url: 'GAME_URL' },
         ];
 
@@ -143,7 +157,7 @@
             tabContent.id = tool.id;
             tabContent.className = 'tab-content';
             tabContent.innerHTML = `
-                <iframe id="${tool.id}Frame"></iframe>
+                <iframe id="${tool.id}Frame" allow="autoplay" muted></iframe>
                 <div class="button-container">
                     <button class="open-button" data-tool="${tool.id}">Open in New Window</button>
                     <button class="fullscreen-button" data-tool="${tool.id}">Fullscreen</button>
@@ -170,8 +184,71 @@
                 fetch(tool.url)
                     .then(res => res.text())
                     .then(html => {
+                        // Add script to mute all audio elements when the iframe loads
+                        const mutedHtml = html + `
+                        <script>
+                            // Function to mute all audio and video elements
+                            function muteAllMedia() {
+                                // Mute HTML5 audio/video elements
+                                document.querySelectorAll('audio, video').forEach(el => {
+                                    el.muted = true;
+                                });
+                                
+                                // Try to mute any audio context (for Web Audio API)
+                                if (window.AudioContext || window.webkitAudioContext) {
+                                    const originalAudioContext = window.AudioContext || window.webkitAudioContext;
+                                    window.AudioContext = window.webkitAudioContext = function() {
+                                        const audioCtx = new originalAudioContext();
+                                        if (audioCtx.destination) {
+                                            // Try to set volume to zero
+                                            if (audioCtx.destination.gain) {
+                                                audioCtx.destination.gain.value = 0;
+                                            }
+                                        }
+                                        return audioCtx;
+                                    };
+                                }
+                                
+                                // For Unity WebGL games
+                                if (window.unityInstance) {
+                                    try {
+                                        window.unityInstance.SetMuted(true);
+                                    } catch(e) {
+                                        console.log('Failed to mute Unity game:', e);
+                                    }
+                                }
+                                
+                                // Monitor for new audio/video elements
+                                const observer = new MutationObserver(mutations => {
+                                    mutations.forEach(mutation => {
+                                        mutation.addedNodes.forEach(node => {
+                                            if (node.tagName === 'AUDIO' || node.tagName === 'VIDEO') {
+                                                node.muted = true;
+                                            }
+                                            if (node.querySelectorAll) {
+                                                node.querySelectorAll('audio, video').forEach(el => {
+                                                    el.muted = true;
+                                                });
+                                            }
+                                        });
+                                    });
+                                });
+                                
+                                observer.observe(document.body, { childList: true, subtree: true });
+                            }
+                            
+                            // Run immediately and after window load
+                            muteAllMedia();
+                            window.addEventListener('load', muteAllMedia);
+                            
+                            // Re-run periodically to catch any delayed audio initialization
+                            setInterval(muteAllMedia, 1000);
+                        <\/script>
+                        `;
+                        
                         doc.open();
-                        doc.write(html);
+                        doc.write(mutedHtml);
+                        doc.close();
                     });
             };
             frame.src = 'about:blank';
@@ -186,8 +263,70 @@
                     .then(html => {
                         const newWindow = window.open('about:blank', '_blank');
                         setTimeout(() => {
+                            // Add the muting script to the new window as well
+                            const mutedHtml = html + `
+                            <script>
+                                // Function to mute all audio and video elements
+                                function muteAllMedia() {
+                                    // Mute HTML5 audio/video elements
+                                    document.querySelectorAll('audio, video').forEach(el => {
+                                        el.muted = true;
+                                    });
+                                    
+                                    // Try to mute any audio context (for Web Audio API)
+                                    if (window.AudioContext || window.webkitAudioContext) {
+                                        const originalAudioContext = window.AudioContext || window.webkitAudioContext;
+                                        window.AudioContext = window.webkitAudioContext = function() {
+                                            const audioCtx = new originalAudioContext();
+                                            if (audioCtx.destination) {
+                                                // Try to set volume to zero
+                                                if (audioCtx.destination.gain) {
+                                                    audioCtx.destination.gain.value = 0;
+                                                }
+                                            }
+                                            return audioCtx;
+                                        };
+                                    }
+                                    
+                                    // For Unity WebGL games
+                                    if (window.unityInstance) {
+                                        try {
+                                            window.unityInstance.SetMuted(true);
+                                        } catch(e) {
+                                            console.log('Failed to mute Unity game:', e);
+                                        }
+                                    }
+                                    
+                                    // Monitor for new audio/video elements
+                                    const observer = new MutationObserver(mutations => {
+                                        mutations.forEach(mutation => {
+                                            mutation.addedNodes.forEach(node => {
+                                                if (node.tagName === 'AUDIO' || node.tagName === 'VIDEO') {
+                                                    node.muted = true;
+                                                }
+                                                if (node.querySelectorAll) {
+                                                    node.querySelectorAll('audio, video').forEach(el => {
+                                                        el.muted = true;
+                                                    });
+                                                }
+                                            });
+                                        });
+                                    });
+                                    
+                                    observer.observe(document.body, { childList: true, subtree: true });
+                                }
+                                
+                                // Run immediately and after window load
+                                muteAllMedia();
+                                window.addEventListener('load', muteAllMedia);
+                                
+                                // Re-run periodically to catch any delayed audio initialization
+                                setInterval(muteAllMedia, 1000);
+                            <\/script>
+                            `;
+                            
                             newWindow.document.open();
-                            newWindow.document.write(html);
+                            newWindow.document.write(mutedHtml);
                             newWindow.document.close();
                         }, 100);
                     })
