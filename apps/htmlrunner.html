@@ -340,6 +340,10 @@
         <svg class="icon" viewBox="0 0 24 24"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
         Reset
       </button>
+      <button class="btn btn-outline" onclick="openInAboutBlank()" title="Open in New Window">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        Open in New Window
+      </button>
       <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
         <svg class="icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
@@ -444,6 +448,7 @@
     let isDarkMode = false;
     let isResizing = false;
     let activeTab = 'html';
+    let finalCode = ''; // Store the final combined code globally
     
     // Code data structure to handle multiple tabs
     const codeData = {
@@ -482,7 +487,7 @@
     
     function runHtml() {
       // Combine code from different tabs into a complete HTML document
-      let finalCode = '';
+      finalCode = '';
       
       // Extract the HTML structure
       const parser = new DOMParser();
@@ -519,6 +524,30 @@
       showNotification('Code executed successfully!');
     }
     
+    function openInAboutBlank() {
+      // Make sure we have the latest code
+      if (activeTab) {
+        codeData[activeTab] = document.getElementById('htmlInput').value;
+        runHtml(); // This updates finalCode
+      }
+      
+      // Open a new window with about:blank
+      const newWindow = window.open('about:blank', '_blank');
+      
+      if (newWindow) {
+        // Write the code to the new window
+        newWindow.document.open();
+        newWindow.document.write(finalCode);
+        newWindow.document.close();
+        
+        // Show a notification
+        showNotification('Opened in new window!');
+      } else {
+        // If popup was blocked
+        showNotification('Popup blocked! Please allow popups for this site.', 'error');
+      }
+    }
+    
     function resetHtml() {
       codeData.html = defaultCode;
       // Reset CSS and JS to their defaults too
@@ -548,9 +577,16 @@
       showNotification('Copied to clipboard!');
     }
     
-    function showNotification(message) {
+    function showNotification(message, type = 'success') {
       const notification = document.getElementById('notification');
       const notificationText = document.getElementById('notification-text');
+      
+      // Change color based on type
+      if (type === 'error') {
+        notification.style.backgroundColor = '#ef4444';
+      } else {
+        notification.style.backgroundColor = '#10b981';
+      }
       
       notificationText.textContent = message;
       notification.classList.add('show');
