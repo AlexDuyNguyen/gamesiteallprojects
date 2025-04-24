@@ -1,0 +1,104 @@
+<html lang="en-us"><head>
+  <base href="https://rawcdn.githack.com/gn-math/assets/main/120/">
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Fortzone Battle Royale</title>
+  <link rel="stylesheet" href="TemplateData/style.css">
+
+  <script>
+    const overlayBackgroundColor = "#555555";
+    const progressBarFillColor = "#f76426";
+    const progressBarBackgroundColor = "#000000";
+    const progressBarBorderColor = "#000000";
+  </script>
+
+<script src="https://gs.eponesh.com/sdk/gamepush.js?projectId=19252&amp;publicToken=BpD7GZjEbBTtQKB2IwTvVBygo3vhvgtp"></script><style>.gs-global-loader{position:fixed;z-index:99999;top:8px;right:8px;width:48px;height:48px}@media only screen and (min-width: 1024px){.gs-global-loader{top:inherit;right:16px;bottom:16px}}.gs-loader{position:relative;width:40px;height:40px;border-radius:50%;display:flex}.gs-loader__outter{box-sizing:border-box;position:absolute;border:4px solid #f50057;border-left-color:transparent;width:100%;height:100%;border-radius:50%;-webkit-animation:loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;animation:loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite}.gs-loader__inner{box-sizing:border-box;position:absolute;border:4px solid #f50057;border-radius:50%;width:20px;height:20px;left:calc(50% - 10px);top:calc(50% - 10px);border-top-color:transparent;-webkit-animation:loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;animation:loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite}@keyframes loader-outter{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loader-inner{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}}.gs-loader-hidden{display:none}</style></head>
+
+<body class="light">
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" width="2390" height="2374" style="background: rgb(85, 85, 85); cursor: default;"></canvas>
+  </div>
+  <div id="loading-cover" style="display: none;">
+    <div id="unity-loading-bar">
+      <div id="unity-logo"><img src="logo.png"></div>
+      <div id="unity-progress-bar-empty" style="background: rgb(0, 0, 0);">
+        <div id="unity-progress-bar-full" style="background: rgb(247, 100, 38); width: 100%;"></div>
+      </div>
+      <div class="spinner" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script>
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/Frenzy_WebGL.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/Frenzy_WebGL.data.unityweb",
+      frameworkUrl: buildUrl + "/Frenzy_WebGL.framework.js.unityweb",
+      codeUrl: buildUrl + "/Frenzy_WebGL.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Fahrenheit Dev",
+      productName: "Fortzone Battle Royale",
+      productVersion: "0.8.5",
+    };
+
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+    const progressBarFull = document.querySelector("#unity-progress-bar-full");
+    const spinner = document.querySelector('.spinner');
+
+    if (overlayBackgroundColor !== "-" && overlayBackgroundColor !== " " && overlayBackgroundColor !== "")
+      canvas.style.background = overlayBackgroundColor;
+
+    if (progressBarFillColor !== "-" && progressBarFillColor !== " " && progressBarFillColor !== "")
+      progressBarFull.style.background = progressBarFillColor;
+
+    if (progressBarBackgroundColor !== "-" && progressBarBackgroundColor !== " " && progressBarBackgroundColor !== "")
+      progressBarEmpty.style.background = progressBarBackgroundColor;
+
+    if (progressBarBorderColor !== "-" && progressBarBorderColor !== " " && progressBarBorderColor !== "")
+      progressBarEmpty.style.border.color = progressBarBorderColor;
+
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+    }
+
+    loadingCover.style.display = "";
+
+    const unityLoader = document.createElement("script");
+    unityLoader.src = loaderUrl;
+    unityLoader.onload = async () => {
+      //await _gpAwaiter.ready;
+      createUnityInstance(canvas, config, (progress) => {
+        spinner.style.display = "none";
+        progressBarEmpty.style.display = "";
+        progressBarFull.style.width = `${100 * progress}%`;
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        //_unityAwaiter.done(unityInstance);
+        loadingCover.style.display = "none";
+      }).catch((message) => {
+        //_unityAwaiter.abort(message);
+        alert(message);
+      });
+    };
+    document.body.appendChild(unityLoader);
+
+    document.addEventListener("pointerdown", () => {
+      container.focus();
+      window.focus();
+      canvas.focus();
+    });
+
+  </script><script src="Build/Frenzy_WebGL.loader.js"></script>
+
+
+
+<script src="blob:https://gn-math.github.io/6ccd6ba5-8989-4819-8324-6c65d7da6650"></script><div class="gs-global-loader" style="display: none;"><div class="gs-loader false">
+        <div class="gs-loader__outter"></div>
+        <div class="gs-loader__inner"></div>
+    </div></div><input type="file" id="gp-file-input" tabindex="-1" style="position: fixed; top: -999px; left: -999px; z-index: 0;"><input type="file" id="gp-file-input" tabindex="-1" style="position: fixed; top: -999px; left: -999px; z-index: 0;"></body></html>
