@@ -113,13 +113,41 @@
     <script>
         // Tools array with sections and games
         const tools = [
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
-//            { id: 'GAMEID', label: 'GAMELABEL', url: 'GAMEURL', section: 'GAMESECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' },
+//            { id: 'GAME_ID', label: 'GAME_LABEL', url: 'GAME_URL', section: 'GAME_SECTION' }
         ];
 
         const contentContainer = document.getElementById('content');
@@ -158,14 +186,17 @@
             contentContainer.appendChild(tabContent);
         });
 
-        // Tab switching
+        // Tab switching (without scroll behavior)
         document.querySelectorAll('.tab-button').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = tab.dataset.tab;
+            tab.addEventListener('click', (e) => {
+                const target = e.target.dataset.tab;
+                const tabContent = document.getElementById(target);
+                
+                // Highlight the active tab and display its content
                 document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                tab.classList.add('active');
-                document.getElementById(target).classList.add('active');
+                e.target.classList.add('active');
+                tabContent.classList.add('active');
             });
         });
 
