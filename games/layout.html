@@ -67,21 +67,12 @@
       display: block;
     }
 
-    iframe {
-      width: 100%;
-      max-width: 4500px;
-      height: 800px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    }
-
     .container {
       max-width: 1280px;
       margin: auto;
     }
 
-    .open-button, .fullscreen-button {
+    .open-button {
       background-color: #27ae60;
       color: white;
       padding: 12px 20px;
@@ -89,11 +80,11 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 1rem;
-      margin: 10px 10px 0 10px;
+      margin: 10px;
       transition: background 0.3s;
     }
 
-    .open-button:hover, .fullscreen-button:hover {
+    .open-button:hover {
       background-color: #2ecc71;
     }
 
@@ -110,129 +101,106 @@
     <div id="sections"></div>
     <div id="content"></div>
   </div>
-    <script>
-      const tools = [
-        { label: '1v1.LOL', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' },
-        { label: 'Evil Glitch', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html' },
-        { label: 'Fortzone Battle Royale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/fortzone-battle-royale.html' },
-        { label: 'Funny Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/funny-shooter-2.html' },
-        { label: 'Pixel Shooter', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/pixel-shooter.html' },
-        { label: 'Red VS Blue', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue.html' },
-        { label: 'Red VS Blue 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue-2.html' },
-        { label: '10 minutes till dawn', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/10-minutes-till-dawn.html' },
-        { label: 'Gun Knight', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/gun-knight.html' },
-        { label: 'There is no game', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/there-is-no-game.html' }
-//        { label: 'GAME_NAME', url: 'GAME_URL' },
-      ];
-    
-      // Auto-generate IDs from URL and auto-detect groups based on the second-to-last URL segment
-      tools.forEach(tool => {
-        // Generate ID from URL
-        tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
-    
-        // Extract the second-to-last part of the URL as the group (game category)
-        const urlParts = tool.url.split('/');
-        tool.groups = urlParts[urlParts.length - 2]; // Second-to-last segment
+
+  <script>
+    const tools = [
+      { label: '1v1.LOL', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' },
+      { label: 'Evil Glitch', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html' },
+      { label: 'Fortzone Battle Royale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/fortzone-battle-royale.html' },
+      { label: 'Funny Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/funny-shooter-2.html' },
+      { label: 'Pixel Shooter', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/pixel-shooter.html' },
+      { label: 'Red VS Blue', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue.html' },
+      { label: 'Red VS Blue 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue-2.html' },
+      { label: '10 minutes till dawn', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/10-minutes-till-dawn.html' },
+      { label: 'Gun Knight', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/gun-knight.html' },
+      { label: 'There is no game', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/there-is-no-game.html' }
+    ];
+
+    // Auto-generate IDs and detect group
+    tools.forEach(tool => {
+      tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
+      const urlParts = tool.url.split('/');
+      tool.groups = urlParts[urlParts.length - 2];
+    });
+
+    const sectionsContainer = document.getElementById('sections');
+    const contentContainer = document.getElementById('content');
+
+    const groupedTools = tools.reduce((acc, tool) => {
+      if (!acc[tool.groups]) acc[tool.groups] = [];
+      acc[tool.groups].push(tool);
+      return acc;
+    }, {});
+
+    for (const [group, groupTools] of Object.entries(groupedTools)) {
+      const section = document.createElement('div');
+      const heading = document.createElement('h2');
+      heading.textContent = group.toUpperCase();
+      const tabs = document.createElement('div');
+      tabs.className = 'tabs';
+
+      groupTools.forEach(tool => {
+        const tabButton = document.createElement('button');
+        tabButton.textContent = tool.label.toUpperCase();
+        tabButton.className = 'tab-button';
+        tabButton.dataset.tab = tool.id;
+        tabs.appendChild(tabButton);
+
+        const tabContent = document.createElement('div');
+        tabContent.id = tool.id;
+        tabContent.className = 'tab-content';
+        tabContent.innerHTML = `
+          <div class="button-container">
+            <button class="open-button" data-tool="${tool.id}">Open in New Window</button>
+          </div>
+        `;
+        contentContainer.appendChild(tabContent);
       });
-    
-      const sectionsContainer = document.getElementById('sections');
-      const contentContainer = document.getElementById('content');
-    
-      // Group tools by category
-      const groupedTools = tools.reduce((acc, tool) => {
-        if (!acc[tool.groups]) acc[tool.groups] = [];
-        acc[tool.groups].push(tool);
-        return acc;
-      }, {});
-    
-      for (const [group, groupTools] of Object.entries(groupedTools)) {
-        const section = document.createElement('div');
-        const heading = document.createElement('h2');
-        heading.textContent = group.toUpperCase(); // Capitalize the group name
-        const tabs = document.createElement('div');
-        tabs.className = 'tabs';
-    
-        groupTools.forEach(tool => {
-          const tabButton = document.createElement('button');
-          tabButton.textContent = tool.label.toUpperCase(); // Capitalize the game title
-          tabButton.className = 'tab-button';
-          tabButton.dataset.tab = tool.id;
-          tabs.appendChild(tabButton);
-    
-          const tabContent = document.createElement('div');
-          tabContent.id = tool.id;
-          tabContent.className = 'tab-content';
-          tabContent.innerHTML = `
-            <iframe id="${tool.id}Frame"></iframe>
-            <div class="button-container">
-              <button class="open-button" data-tool="${tool.id}">Open in New Window</button>
-              <button class="fullscreen-button" data-tool="${tool.id}">Fullscreen</button>
-            </div>
-          `;
-          contentContainer.appendChild(tabContent);
-        });
-    
-        section.appendChild(heading);
-        section.appendChild(tabs);
-        sectionsContainer.appendChild(section);
+
+      section.appendChild(heading);
+      section.appendChild(tabs);
+      sectionsContainer.appendChild(section);
+    }
+
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('tab-button')) {
+        const target = e.target.dataset.tab;
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(cont => cont.classList.remove('active'));
+
+        e.target.classList.add('active');
+        const activeTab = document.getElementById(target);
+        activeTab.classList.add('active');
+
+        setTimeout(() => {
+          activeTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
       }
-    
-      document.addEventListener('click', e => {
-        if (e.target.classList.contains('tab-button')) {
-          const target = e.target.dataset.tab;
-          document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-          document.querySelectorAll('.tab-content').forEach(cont => cont.classList.remove('active'));
-          e.target.classList.add('active');
-          document.getElementById(target).classList.add('active');
-        }
+
+      if (e.target.matches('.open-button')) {
+        const tool = e.target.dataset.tool;
+        const toolData = tools.find(t => t.id === tool);
+        fetch(toolData.url)
+          .then(res => res.text())
+          .then(html => {
+            const newWindow = window.open('about:blank', '_blank');
+            setTimeout(() => {
+              newWindow.document.open();
+              newWindow.document.write(html);
+              newWindow.document.close();
+            }, 100);
+          });
+      }
+    });
+
+    // Search filter
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const term = this.value.toLowerCase();
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        const match = btn.textContent.toLowerCase().includes(term);
+        btn.style.display = match ? 'inline-block' : 'none';
       });
-    
-      tools.forEach(tool => {
-        const frame = document.getElementById(`${tool.id}Frame`);
-        frame.onload = () => {
-          const doc = frame.contentWindow.document;
-          fetch(tool.url)
-            .then(res => res.text())
-            .then(html => {
-              doc.open();
-              doc.write(html);
-            });
-        };
-        frame.src = 'about:blank';
-      });
-    
-      document.addEventListener('click', e => {
-        if (e.target.matches('.open-button')) {
-          const tool = e.target.dataset.tool;
-          const toolData = tools.find(t => t.id === tool);
-          fetch(toolData.url)
-            .then(res => res.text())
-            .then(html => {
-              const newWindow = window.open('about:blank', '_blank');
-              setTimeout(() => {
-                newWindow.document.open();
-                newWindow.document.write(html);
-                newWindow.document.close();
-              }, 100);
-            });
-        }
-    
-        if (e.target.matches('.fullscreen-button')) {
-          const frame = document.getElementById(`${e.target.dataset.tool}Frame`);
-          if (frame.requestFullscreen) frame.requestFullscreen();
-          else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
-          else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
-        }
-      });
-    
-      // Search filter
-      document.getElementById('searchInput').addEventListener('input', function () {
-        const term = this.value.toLowerCase();
-        document.querySelectorAll('.tab-button').forEach(btn => {
-          const match = btn.textContent.toLowerCase().includes(term);
-          btn.style.display = match ? 'inline-block' : 'none';
-        });
-      });
-    </script>
+    });
+  </script>
 </body>
 </html>
