@@ -1,345 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Games</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f7f9fc;
-            margin: 0;
-            padding: 40px 20px;
-            color: #2c3e50;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            color: #1a365d;
-        }
-        .container {
-            max-width: 1280px;
-            margin: auto;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #2d6187;
-            text-transform: capitalize;
-        }
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            column-gap: 35px; /* Horizontal spacing */
-            row-gap: 20px;    /* Vertical spacing */
-            justify-items: center;
-        }
-        .tab-button {
-            padding: 12px 40px;
-            border: none;
-            border-radius: 10px;
-            background-color: #e2e8f0;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s, transform 0.2s;
-            width: 100%;
-            box-sizing: border-box;
-            min-width: 245px;  /* Added minimum width */
-        }
-        .tab-button:hover {
-            background-color: #cbd5e0;
-            transform: translateY(-2px);
-        }
-        .tab-button.active {
-            background-color: #4299e1;
-            color: white;
-            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .open-button, .fullscreen-button {
-            background-color: #38b2ac;
-            color: white;
-            padding: 12px 40px;  /* Increased horizontal padding */
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 10px 10px 0 10px;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            min-width: 200px;  /* Added minimum width */
-        }
-        .open-button:hover, .fullscreen-button:hover {
-            background-color: #319795;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-            gap: 10px;
-        }
-        .audio-status {
-            background-color: #edf2f7;
-            border-radius: 8px;
-            padding: 8px 15px;
-            margin-top: 10px;
-            display: inline-block;
-            font-size: 0.9rem;
-            color: #4a5568;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Games</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 40px;
+      color: #34495e;
+    }
+
+    #searchInput {
+      padding: 10px 16px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .tab-button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #e0e0e0;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .tab-button.active {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 4500px;
+      height: 800px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: auto;
+    }
+
+    .open-button, .fullscreen-button {
+      background-color: #27ae60;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 10px 10px 0 10px;
+      transition: background 0.3s;
+    }
+
+    .open-button:hover, .fullscreen-button:hover {
+      background-color: #2ecc71;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Games</h1>
-        <div id="content"></div>
-    </div>
+  <div class="container">
+    <h1>Games</h1>
+    <input type="text" id="searchInput" placeholder="Search games..." />
 
+    <div id="sections"></div>
+    <div id="content"></div>
+  </div>
     <script>
-        const tools = [
-            { label: '1v1.lol', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' },
-            { label: 'Evil Glitch', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html' },
-            { label: 'Fortzone Battle Royale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/fortzone-battle-royale.html' },
-            { label: 'Funny Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/funny-shooter-2.html' },
-            { label: 'Matrix Rampage', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/matrix-rampage.html' },
-            { label: 'Pixel Shooter', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/pixel-shooter.html' },
-            { label: 'Red VS Blue', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue.html' },
-            { label: 'Red VS Blue 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue-2.html' },
-            { label: 'Time Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/time-shooter-2.html' },
-            { label: 'Time Shooter 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/time-shooter-3.html' }
-//            { label: 'GAME_LABEL', url: 'GAME_URL' },
-        ];
-
-        const contentContainer = document.getElementById('content');
-        const sectionMap = {};
-
-        tools.forEach(tool => {
-            const parts = tool.url.split('/');
-            tool.section = parts[parts.length - 2];
-            tool.id = parts[parts.length - 1].split('.')[0];
-
-            if (!sectionMap[tool.section]) {
-                const sectionDiv = document.createElement('div');
-                sectionDiv.classList.add('section');
-                sectionDiv.innerHTML = `<h2>${tool.section}</h2><div class="game-grid" id="${tool.section}"></div>`;
-                contentContainer.appendChild(sectionDiv);
-                sectionMap[tool.section] = sectionDiv.querySelector('.game-grid');
-            }
-
-            const tabButton = document.createElement('button');
-            tabButton.textContent = tool.label;
-            tabButton.className = 'tab-button';
-            tabButton.dataset.tab = tool.id;
-            sectionMap[tool.section].appendChild(tabButton);
-
-            const tabContent = document.createElement('div');
-            tabContent.id = tool.id;
-            tabContent.className = 'tab-content';
-            tabContent.innerHTML = `
-                <iframe id="${tool.id}Frame" allow="autoplay" muted></iframe>
-                <div class="button-container">
-                    <button class="open-button" data-tool="${tool.id}">Open in New Window</button>
-                    <button class="fullscreen-button" data-tool="${tool.id}">Fullscreen</button>
-                </div>
-            `;
-            contentContainer.appendChild(tabContent);
+      const tools = [
+        { label: '1v1.LOL', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html' },
+        { label: 'Evil Glitch', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html' },
+        { label: 'Fortzone Battle Royale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/fortzone-battle-royale.html' },
+        { label: 'Funny Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/funny-shooter-2.html' },
+        { label: 'Matrix Rampage', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/matrix-rampage.html' },
+        { label: 'Pixel Shooter', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/pixel-shooter.html' },
+        { label: 'Red VS Blue', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue.html' },
+        { label: 'Red VS Blue 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/red-vs-blue-2.html' },
+        { label: 'Time Shooter 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/time-shooter-2.html' },
+        { label: 'Time Shooter 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/time-shooter-3.html' }
+      ];
+    
+      // Auto-generate IDs from URL and auto-detect groups based on the second-to-last URL segment
+      tools.forEach(tool => {
+        // Generate ID from URL
+        tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
+    
+        // Extract the second-to-last part of the URL as the group (game category)
+        const urlParts = tool.url.split('/');
+        tool.groups = urlParts[urlParts.length - 2]; // Second-to-last segment
+      });
+    
+      const sectionsContainer = document.getElementById('sections');
+      const contentContainer = document.getElementById('content');
+    
+      // Group tools by category
+      const groupedTools = tools.reduce((acc, tool) => {
+        if (!acc[tool.groups]) acc[tool.groups] = [];
+        acc[tool.groups].push(tool);
+        return acc;
+      }, {});
+    
+      for (const [group, groupTools] of Object.entries(groupedTools)) {
+        const section = document.createElement('div');
+        const heading = document.createElement('h2');
+        heading.textContent = group.toUpperCase(); // Capitalize the group name
+        const tabs = document.createElement('div');
+        tabs.className = 'tabs';
+    
+        groupTools.forEach(tool => {
+          const tabButton = document.createElement('button');
+          tabButton.textContent = tool.label.toUpperCase(); // Capitalize the game title
+          tabButton.className = 'tab-button';
+          tabButton.dataset.tab = tool.id;
+          tabs.appendChild(tabButton);
+    
+          const tabContent = document.createElement('div');
+          tabContent.id = tool.id;
+          tabContent.className = 'tab-content';
+          tabContent.innerHTML = `
+            <iframe id="${tool.id}Frame"></iframe>
+            <div class="button-container">
+              <button class="open-button" data-tool="${tool.id}">Open in New Window</button>
+              <button class="fullscreen-button" data-tool="${tool.id}">Fullscreen</button>
+            </div>
+          `;
+          contentContainer.appendChild(tabContent);
         });
-
-        document.querySelectorAll('.tab-button').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                const target = e.target.dataset.tab;
-                const tabContent = document.getElementById(target);
-                document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                e.target.classList.add('active');
-                tabContent.classList.add('active');
+    
+        section.appendChild(heading);
+        section.appendChild(tabs);
+        sectionsContainer.appendChild(section);
+      }
+    
+      document.addEventListener('click', e => {
+        if (e.target.classList.contains('tab-button')) {
+          const target = e.target.dataset.tab;
+          document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(cont => cont.classList.remove('active'));
+          e.target.classList.add('active');
+          document.getElementById(target).classList.add('active');
+        }
+      });
+    
+      tools.forEach(tool => {
+        const frame = document.getElementById(`${tool.id}Frame`);
+        frame.onload = () => {
+          const doc = frame.contentWindow.document;
+          fetch(tool.url)
+            .then(res => res.text())
+            .then(html => {
+              doc.open();
+              doc.write(html);
             });
+        };
+        frame.src = 'about:blank';
+      });
+    
+      document.addEventListener('click', e => {
+        if (e.target.matches('.open-button')) {
+          const tool = e.target.dataset.tool;
+          const toolData = tools.find(t => t.id === tool);
+          fetch(toolData.url)
+            .then(res => res.text())
+            .then(html => {
+              const newWindow = window.open('about:blank', '_blank');
+              setTimeout(() => {
+                newWindow.document.open();
+                newWindow.document.write(html);
+                newWindow.document.close();
+              }, 100);
+            });
+        }
+    
+        if (e.target.matches('.fullscreen-button')) {
+          const frame = document.getElementById(`${e.target.dataset.tool}Frame`);
+          if (frame.requestFullscreen) frame.requestFullscreen();
+          else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+          else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
+        }
+      });
+    
+      // Search filter
+      document.getElementById('searchInput').addEventListener('input', function () {
+        const term = this.value.toLowerCase();
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          const match = btn.textContent.toLowerCase().includes(term);
+          btn.style.display = match ? 'inline-block' : 'none';
         });
-
-        tools.forEach(tool => {
-            const frame = document.getElementById(`${tool.id}Frame`);
-            frame.onload = () => {
-                const doc = frame.contentWindow.document;
-                fetch(tool.url)
-                    .then(res => res.text())
-                    .then(html => {
-                        // Add script to mute all audio elements when the iframe loads
-                        const mutedHtml = html + `
-                        <script>
-                            // Function to mute all audio and video elements
-                            function muteAllMedia() {
-                                // Mute HTML5 audio/video elements
-                                document.querySelectorAll('audio, video').forEach(el => {
-                                    el.muted = true;
-                                });
-                                
-                                // Try to mute any audio context (for Web Audio API)
-                                if (window.AudioContext || window.webkitAudioContext) {
-                                    const originalAudioContext = window.AudioContext || window.webkitAudioContext;
-                                    window.AudioContext = window.webkitAudioContext = function() {
-                                        const audioCtx = new originalAudioContext();
-                                        if (audioCtx.destination) {
-                                            // Try to set volume to zero
-                                            if (audioCtx.destination.gain) {
-                                                audioCtx.destination.gain.value = 0;
-                                            }
-                                        }
-                                        return audioCtx;
-                                    };
-                                }
-                                
-                                // For Unity WebGL games
-                                if (window.unityInstance) {
-                                    try {
-                                        window.unityInstance.SetMuted(true);
-                                    } catch(e) {
-                                        console.log('Failed to mute Unity game:', e);
-                                    }
-                                }
-                                
-                                // Monitor for new audio/video elements
-                                const observer = new MutationObserver(mutations => {
-                                    mutations.forEach(mutation => {
-                                        mutation.addedNodes.forEach(node => {
-                                            if (node.tagName === 'AUDIO' || node.tagName === 'VIDEO') {
-                                                node.muted = true;
-                                            }
-                                            if (node.querySelectorAll) {
-                                                node.querySelectorAll('audio, video').forEach(el => {
-                                                    el.muted = true;
-                                                });
-                                            }
-                                        });
-                                    });
-                                });
-                                
-                                observer.observe(document.body, { childList: true, subtree: true });
-                            }
-                            
-                            // Run immediately and after window load
-                            muteAllMedia();
-                            window.addEventListener('load', muteAllMedia);
-                            
-                            // Re-run periodically to catch any delayed audio initialization
-                            setInterval(muteAllMedia, 1000);
-                        <\/script>
-                        `;
-                        
-                        doc.open();
-                        doc.write(mutedHtml);
-                        doc.close();
-                    });
-            };
-            frame.src = 'about:blank';
-        });
-
-        document.addEventListener('click', e => {
-            if (e.target.matches('.open-button')) {
-                const tool = e.target.dataset.tool;
-                const toolData = tools.find(t => t.id === tool);
-                fetch(toolData.url)
-                    .then(res => res.text())
-                    .then(html => {
-                        const newWindow = window.open('about:blank', '_blank');
-                        setTimeout(() => {
-                            // Add the muting script to the new window as well
-                            const mutedHtml = html + `
-                            <script>
-                                // Function to mute all audio and video elements
-                                function muteAllMedia() {
-                                    // Mute HTML5 audio/video elements
-                                    document.querySelectorAll('audio, video').forEach(el => {
-                                        el.muted = true;
-                                    });
-                                    
-                                    // Try to mute any audio context (for Web Audio API)
-                                    if (window.AudioContext || window.webkitAudioContext) {
-                                        const originalAudioContext = window.AudioContext || window.webkitAudioContext;
-                                        window.AudioContext = window.webkitAudioContext = function() {
-                                            const audioCtx = new originalAudioContext();
-                                            if (audioCtx.destination) {
-                                                // Try to set volume to zero
-                                                if (audioCtx.destination.gain) {
-                                                    audioCtx.destination.gain.value = 0;
-                                                }
-                                            }
-                                            return audioCtx;
-                                        };
-                                    }
-                                    
-                                    // For Unity WebGL games
-                                    if (window.unityInstance) {
-                                        try {
-                                            window.unityInstance.SetMuted(true);
-                                        } catch(e) {
-                                            console.log('Failed to mute Unity game:', e);
-                                        }
-                                    }
-                                    
-                                    // Monitor for new audio/video elements
-                                    const observer = new MutationObserver(mutations => {
-                                        mutations.forEach(mutation => {
-                                            mutation.addedNodes.forEach(node => {
-                                                if (node.tagName === 'AUDIO' || node.tagName === 'VIDEO') {
-                                                    node.muted = true;
-                                                }
-                                                if (node.querySelectorAll) {
-                                                    node.querySelectorAll('audio, video').forEach(el => {
-                                                        el.muted = true;
-                                                    });
-                                                }
-                                            });
-                                        });
-                                    });
-                                    
-                                    observer.observe(document.body, { childList: true, subtree: true });
-                                }
-                                
-                                // Run immediately and after window load
-                                muteAllMedia();
-                                window.addEventListener('load', muteAllMedia);
-                                
-                                // Re-run periodically to catch any delayed audio initialization
-                                setInterval(muteAllMedia, 1000);
-                            <\/script>
-                            `;
-                            
-                            newWindow.document.open();
-                            newWindow.document.write(mutedHtml);
-                            newWindow.document.close();
-                        }, 100);
-                    })
-                    .catch(err => alert('Failed to open tool: ' + err));
-            }
-
-            if (e.target.matches('.fullscreen-button')) {
-                const frame = document.getElementById(`${e.target.dataset.tool}Frame`);
-                if (frame.requestFullscreen) frame.requestFullscreen();
-                else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
-                else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
-            }
-        });
+      });
     </script>
 </body>
 </html>
