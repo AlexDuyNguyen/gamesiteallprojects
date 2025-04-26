@@ -1,0 +1,1436 @@
+<html><head>
+            <style>
+              body, html {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+              }
+            </style>
+          <link rel="stylesheet" type="text/css" href="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/css/g.css"></head>
+          <body style="visibility: visible;">
+            <!--?xml version="1.0" encoding="UTF-8" ?-->
+<module>
+<moduleprefs title="Google.com">
+<content type="html"><!--[CDATA[
+
+<?xml version="1.0" encoding="UTF-8" ?-->
+<module>
+<moduleprefs title="Google.com">
+<content type="html"><!--[CDATA[
+
+
+<html lang="en"-->
+<script src="//www.google.com/jsapi"></script><script>window.parent.maeExportApis_();</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=0">
+    <title>DUCK DUCK CLICKER</title>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MENBM6GSNY"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-MENBM6GSNY")</script>
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/css/g.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script><link rel="stylesheet" type="text/css" href="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/css/g.css">
+
+
+    
+    <script src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/js/lib/bignumber.js"></script>
+    <script src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/js/lib/howler.js"></script>
+    
+    
+    <script src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/js/data.js" defer=""></script>
+    <script src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/js/index.js" defer=""></script>
+    <script src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/js/ddc.js" defer=""></script>
+
+<style type="text/css">#button {
+  display:none;
+}
+.imgb_vis {
+  animation: imgb-animation 7s linear;
+}
+@keyframes imgb-animation {
+  10% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(100px);
+  }
+  90% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}</style>
+
+    
+    <!-- Loading Screen -->
+    <div id="loader" style="visibility: visible; display: none;">
+        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/loader.svg">
+        <div id="loader-bar">
+            <div id="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Game-->
+    <div id="game" style="background-image: url(&quot;https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/background/background1.svg&quot;);">
+        <!-- Main Screen -->
+        <div id="main" class="">
+            <div id="left-side">
+                <div class="flex-col">
+                    <button id="settings-btn">
+                        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/btn-settings.svg">
+                    </button>
+                    <button id="achievements-btn" class="flex-col" style="height: 6.5vw;">
+                        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/btn-achievements.svg">
+                        <p class="stroke" id="achievements-count" data-content="0/48">0/48</p>
+                    </button>
+                </div>
+                <div class="flex-col">
+                    <button id="ad-button">
+                        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/follow.svg">
+                        <p class="stroke" data-content="FOLLOW ME">FOLLOW ME</p>
+                    </button>
+                    <div class="flex-row">
+                        <button id="hats-btn">
+                            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/btn-cap.svg">
+                        </button>
+                        <button id="frames-btn">
+                            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/btn-frame.svg">
+                        </button>
+                    </div>
+                    <div class="flex-row">
+                        <button id="glasses-btn">
+                            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/btn-glasses.svg">
+                        </button>
+                        <button id="necklaces-btn">
+                            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/btn-necklace.svg">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="duck-zone">
+                <div id="stats">
+                    <div class="stat" id="ducket-stat">
+                        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/ducket-stats.svg"> <p class="stroke" data-content="0 DUCKETS">0 DUCKETS</p>
+                    </div>
+
+                    <div class="stat bounce-stat-animation" id="power-stat">
+                        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/cursor-default.svg"> <p class="stroke" data-content="1 DUCK POWER">1 DUCK POWER</p>
+                    </div>
+
+                    <div class="stat bounce-stat-animation" id="auto-stat">
+                        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/UI/cursor-pointer.svg"> <p class="stroke" data-content="0 AUTODUCKER">0 AUTODUCKER</p>
+                    </div>
+                </div>
+                <div id="duck">
+                    <p class="stroke" id="pet-text" data-content="PET THE DUCK -->">PET THE DUCK --&gt;</p>
+                    <p class="stroke pop-out" id="double-text" data-content="X2" style="display: none;">X2</p>
+                    <img id="duck-img" src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/duck.svg">
+                    <img id="duck-glasses" class="duck-costume">
+                    <img id="duck-hat" class="duck-costume">
+                    <img id="duck-necklace" class="duck-costume">
+                    <img id="duck-frame" class="duck-costume">
+                </div>
+
+            </div>
+            <div id="right-side">
+                <div id="upgrades" class="panel flex-col show right-side-list">
+                    <div id="shop-list" class="grow scroll flex-col">
+        <button class="item-button" id="upgrade-0" onclick="buy(0)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/1.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-0" data-content="0">0</p>
+                <p class="stroke item-title" data-content="TINY DUCKLING">TINY DUCKLING</p>
+                <p class="stroke" data-content="1/CLICK">1/CLICK</p>  
+                <p class="stroke" data-content="50$">50$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-1" onclick="buy(1)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/2.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-1" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK COOP">DUCK COOP</p>
+                <p class="stroke" data-content="1/SEC">1/SEC</p>  
+                <p class="stroke" data-content="120$">120$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-2" onclick="buy(2)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/3.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-2" data-content="0">0</p>
+                <p class="stroke item-title" data-content="YOUNG DUCKLING">YOUNG DUCKLING</p>
+                <p class="stroke" data-content="5/CLICK">5/CLICK</p>  
+                <p class="stroke" data-content="600$">600$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-3" onclick="buy(3)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/4.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-3" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK POND">DUCK POND</p>
+                <p class="stroke" data-content="5/SEC">5/SEC</p>  
+                <p class="stroke" data-content="1,200$">1,200$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-4" onclick="buy(4)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/5.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-4" data-content="0">0</p>
+                <p class="stroke item-title" data-content="ASPIRING DUCK">ASPIRING DUCK</p>
+                <p class="stroke" data-content="50/CLICK">50/CLICK</p>  
+                <p class="stroke" data-content="7,000$">7,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-5" onclick="buy(5)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/6.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-5" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK PARK">DUCK PARK</p>
+                <p class="stroke" data-content="40/SEC">40/SEC</p>  
+                <p class="stroke" data-content="30,000$">30,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-6" onclick="buy(6)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/7.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-6" data-content="0">0</p>
+                <p class="stroke item-title" data-content="SMART DUCK">SMART DUCK</p>
+                <p class="stroke" data-content="120/CLICK">120/CLICK</p>  
+                <p class="stroke" data-content="50,000$">50,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-7" onclick="buy(7)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/8.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-7" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK FARM">DUCK FARM</p>
+                <p class="stroke" data-content="120/SEC">120/SEC</p>  
+                <p class="stroke" data-content="90,000$">90,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-8" onclick="buy(8)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/9.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-8" data-content="0">0</p>
+                <p class="stroke item-title" data-content="ADULT DUCK">ADULT DUCK</p>
+                <p class="stroke" data-content="1,000/CLICK">1,000/CLICK</p>  
+                <p class="stroke" data-content="1,800,000$">1,800,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-9" onclick="buy(9)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/10.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-9" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK MACHINE">DUCK MACHINE</p>
+                <p class="stroke" data-content="2,000/SEC">2,000/SEC</p>  
+                <p class="stroke" data-content="4,000,000$">4,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-10" onclick="buy(10)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/11.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-10" data-content="0">0</p>
+                <p class="stroke item-title" data-content="CEO DUCK">CEO DUCK</p>
+                <p class="stroke" data-content="6,500/CLICK">6,500/CLICK</p>  
+                <p class="stroke" data-content="8,000,000$">8,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-11" onclick="buy(11)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/12.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-11" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK INDUSTRY">DUCK INDUSTRY</p>
+                <p class="stroke" data-content="40,000/SEC">40,000/SEC</p>  
+                <p class="stroke" data-content="100,000,000$">100,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-12" onclick="buy(12)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/13.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-12" data-content="0">0</p>
+                <p class="stroke item-title" data-content="PRESIDENT DUCK">PRESIDENT DUCK</p>
+                <p class="stroke" data-content="14,000/CLICK">14,000/CLICK</p>  
+                <p class="stroke" data-content="180,000,000$">180,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-13" onclick="buy(13)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/14.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-13" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK COUNTRY">DUCK COUNTRY</p>
+                <p class="stroke" data-content="120,000/SEC">120,000/SEC</p>  
+                <p class="stroke" data-content="700,000,000$">700,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-14" onclick="buy(14)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/15.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-14" data-content="0">0</p>
+                <p class="stroke item-title" data-content="LEADER DUCK">LEADER DUCK</p>
+                <p class="stroke" data-content="80,000/CLICK">80,000/CLICK</p>  
+                <p class="stroke" data-content="1,500,000,000$">1,500,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-15" onclick="buy(15)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/16.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-15" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK CONTINENT">DUCK CONTINENT</p>
+                <p class="stroke" data-content="300,000/SEC">300,000/SEC</p>  
+                <p class="stroke" data-content="6,500,000,000$">6,500,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-16" onclick="buy(16)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/17.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-16" data-content="0">0</p>
+                <p class="stroke item-title" data-content="SCIENCE DUCK">SCIENCE DUCK</p>
+                <p class="stroke" data-content="190,000/CLICK">190,000/CLICK</p>  
+                <p class="stroke" data-content="13,500,000,000$">13,500,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-17" onclick="buy(17)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/18.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-17" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK PLANET">DUCK PLANET</p>
+                <p class="stroke" data-content="1,200,000/SEC">1,200,000/SEC</p>  
+                <p class="stroke" data-content="85,000,000,000$">85,000,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-18" onclick="buy(18)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/19.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-18" data-content="0">0</p>
+                <p class="stroke item-title" data-content="ASTRONAUT DUCK">ASTRONAUT DUCK</p>
+                <p class="stroke" data-content="800,000/CLICK">800,000/CLICK</p>  
+                <p class="stroke" data-content="125,000,000,000$">125,000,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-19" onclick="buy(19)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/20.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-19" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK GALAXY">DUCK GALAXY</p>
+                <p class="stroke" data-content="8,500,000/SEC">8,500,000/SEC</p>  
+                <p class="stroke" data-content="3,000,000,000,000$">3,000,000,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-20" onclick="buy(20)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/21.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-20" data-content="0">0</p>
+                <p class="stroke item-title" data-content="COSMIC DUCK">COSMIC DUCK</p>
+                <p class="stroke" data-content="100,000,000/CLICK">100,000,000/CLICK</p>  
+                <p class="stroke" data-content="100,000,000,000,000$">100,000,000,000,000$</p>
+            </div>
+        </button>
+    
+        <button class="item-button" id="upgrade-21" onclick="buy(21)" disabled="">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/22.svg" class="side">
+            <div class="grow flex-col">
+                <p class="stroke upgrade-counter" id="upgrade-counter-21" data-content="0">0</p>
+                <p class="stroke item-title" data-content="DUCK UNIVERSE">DUCK UNIVERSE</p>
+                <p class="stroke" data-content="100,000,000/SEC">100,000,000/SEC</p>  
+                <p class="stroke" data-content="800,000,000,000,000$">800,000,000,000,000$</p>
+            </div>
+        </button>
+    </div>
+                    <p id="multiplier-stat" class="stroke" data-content="MULTIPLIER: X1.00">MULTIPLIER: X1.00</p>
+                    <button id="ascend-btn" style="display: none;"><p class="stroke" data-content="ASCEND: X2.5">ASCEND: X2.5</p></button>
+                </div>
+
+                <div id="hats" class="panel flex-col right-side-list">
+                    <div id="hats-list" class="grow scroll flex-col">
+    <button class="item-button" onclick="uiSelectCostume(-1)">
+        <div class="side">
+
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="None">None</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-0" onclick="uiSelectCostume(0)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/apple.svg" style="width: 3vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="APPLE">APPLE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-1" onclick="uiSelectCostume(1)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/ascot.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="ASCOT">ASCOT</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-2" onclick="uiSelectCostume(2)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/banana.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BANANA">BANANA</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-3" onclick="uiSelectCostume(3)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/beanie.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BEANIE">BEANIE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-4" onclick="uiSelectCostume(4)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/beret.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BERET">BERET</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-5" onclick="uiSelectCostume(5)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/bowtie.svg" style="width: 3.5vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BOWTIE">BOWTIE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-6" onclick="uiSelectCostume(6)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/bucker.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BUCKER">BUCKER</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-7" onclick="uiSelectCostume(7)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/bunny-ears.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BUNNY EARS">BUNNY EARS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-8" onclick="uiSelectCostume(8)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/cap.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="CAP">CAP</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-9" onclick="uiSelectCostume(9)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/cherry.svg" style="width: 2vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="CHERRY">CHERRY</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-10" onclick="uiSelectCostume(10)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/crown.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="CROWN">CROWN</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-11" onclick="uiSelectCostume(11)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/curly-hair.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="CURLY HAIR">CURLY HAIR</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-12" onclick="uiSelectCostume(12)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/ducket.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="DUCKET">DUCKET</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-13" onclick="uiSelectCostume(13)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/fedora.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="FEDORA">FEDORA</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-14" onclick="uiSelectCostume(14)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/fez.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="FEZ">FEZ</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-15" onclick="uiSelectCostume(15)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/flower.svg" style="width: 3vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="FLOWER">FLOWER</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-16" onclick="uiSelectCostume(16)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/hair.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="HAIR">HAIR</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-17" onclick="uiSelectCostume(17)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/headband.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="HEADBAND">HEADBAND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-18" onclick="uiSelectCostume(18)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/horns.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="HORNS">HORNS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-19" onclick="uiSelectCostume(19)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/laptop.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="LAPTOP">LAPTOP</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-20" onclick="uiSelectCostume(20)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/magician-hat.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="MAGICIAN HAT">MAGICIAN HAT</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-21" onclick="uiSelectCostume(21)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/panama.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="PANAMA">PANAMA</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-22" onclick="uiSelectCostume(22)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/ring.svg" style="width: 3.5vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="RING">RING</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-23" onclick="uiSelectCostume(23)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/straw-hat.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="STRAW HAT">STRAW HAT</p>
+        </div>
+    </button>
+    </div>
+                    <div class="flex-row flex-center">
+                        <p class="stroke" data-content="AUTOSELECT NEW ITEM">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox" id="autoselect-hats-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke" data-content="BACK">BACK</p></button>
+                </div>
+
+                <div id="glasses" class="panel flex-col right-side-list">
+                    <div id="glasses-list" class="grow scroll flex-col">
+    <button class="item-button" onclick="uiSelectCostume(-2)">
+        <div class="side">
+
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="None">None</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-24" onclick="uiSelectCostume(24)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/earrings.svg" style="width: 1.5vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="EARRINGS">EARRINGS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-25" onclick="uiSelectCostume(25)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/mustache.svg" style="width: 2vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="MUSTACHE">MUSTACHE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-26" onclick="uiSelectCostume(26)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/blue.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BLUE">BLUE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-27" onclick="uiSelectCostume(27)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/golden.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="GOLDEN">GOLDEN</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-28" onclick="uiSelectCostume(28)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/green.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="GREEN">GREEN</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-29" onclick="uiSelectCostume(29)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/pink.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="PINK">PINK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-30" onclick="uiSelectCostume(30)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/red.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="RED">RED</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-31" onclick="uiSelectCostume(31)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/sunglasses.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="SUNGLASSES">SUNGLASSES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-32" onclick="uiSelectCostume(32)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/white.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="WHITE">WHITE</p>
+        </div>
+    </button>
+    </div>
+                    <div class="flex-row flex-center">
+                        <p class="stroke" data-content="AUTOSELECT NEW ITEM">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox" id="autoselect-glasses-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke" data-content="BACK">BACK</p></button>
+                </div>
+
+                <div id="necklaces" class="panel flex-col right-side-list">
+                    <div id="necklaces-list" class="grow scroll flex-col">
+    <button class="item-button" onclick="uiSelectCostume(-3)">
+        <div class="side">
+
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="None">None</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-33" onclick="uiSelectCostume(33)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/diamond.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="DIAMOND">DIAMOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-34" onclick="uiSelectCostume(34)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/fire.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="FIRE">FIRE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-35" onclick="uiSelectCostume(35)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/gold.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="GOLD">GOLD</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-36" onclick="uiSelectCostume(36)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/heart.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="HEART">HEART</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-37" onclick="uiSelectCostume(37)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/pearls-gold.svg" style="width: 4.5vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="PEARLS GOLD">PEARLS GOLD</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-38" onclick="uiSelectCostume(38)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/pearls-red.svg" style="width: 4.5vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="PEARLS RED">PEARLS RED</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-39" onclick="uiSelectCostume(39)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/pearls.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="PEARLS">PEARLS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-40" onclick="uiSelectCostume(40)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/silver.svg" style="">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="SILVER">SILVER</p>
+        </div>
+    </button>
+    </div>
+                    <div class="flex-row  flex-center">
+                        <p class="stroke" data-content="AUTOSELECT NEW ITEM">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox" id="autoselect-necklaces-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke" data-content="BACK">BACK</p></button>
+                </div>
+
+                <div id="frames" class="panel flex-col right-side-list">
+                    <div id="frames-list" class="grow scroll flex-col">
+    <button class="item-button" onclick="uiSelectCostume(-4)">
+        <div class="side">
+
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="None">None</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-41" onclick="uiSelectCostume(41)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/balloons.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BALLOONS">BALLOONS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-42" onclick="uiSelectCostume(42)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/blue.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BLUE">BLUE</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-43" onclick="uiSelectCostume(43)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/burger.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="BURGER">BURGER</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-44" onclick="uiSelectCostume(44)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/clouds.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="CLOUDS">CLOUDS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-45" onclick="uiSelectCostume(45)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/green.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="GREEN">GREEN</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-46" onclick="uiSelectCostume(46)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/stars.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="STARS">STARS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="costume-47" onclick="uiSelectCostume(47)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/white.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke item-title" data-content="WHITE">WHITE</p>
+        </div>
+    </button>
+    </div>
+                    <div class="flex-row flex-center">
+                        <p class="stroke" data-content="AUTOSELECT NEW ITEM">AUTOSELECT NEW ITEM</p>
+                        <div class="grow"></div>
+                        <input type="checkbox" id="autoselect-frames-btn">
+                    </div>
+                    <button class="side-back-btn"><p class="stroke" data-content="BACK">BACK</p></button>
+                </div>
+
+                <div id="achievements" class="panel flex-col right-side-list">
+                    <div id="achievements-list" class="grow scroll flex-col">
+    <button class="item-button" id="achievement-0" onclick="uiSelectCostume(15)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/flower.svg" style="width: 3vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 100 TIMES">CLICK 100 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-1" onclick="uiSelectCostume(0)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/apple.svg" style="width: 3vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 200 PER CLICK">REACH 200 PER CLICK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-2" onclick="uiSelectCostume(12)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/ducket.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 100 PER SECOND">REACH 100 PER SECOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-3" onclick="uiSelectCostume(5)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/bowtie.svg" style="width: 3.5vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 5 GOLDEN DUCKETS">COLLECT 5 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-4" onclick="uiSelectCostume(25)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/mustache.svg" style="width: 2vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 10,000 DUCKETS">REACH 10,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-5" onclick="uiSelectCostume(26)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/blue.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;TINY DUCKLING&quot; A TOTAL OF 50 TIMES">BUY "TINY DUCKLING" A TOTAL OF 50 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-6" onclick="uiSelectCostume(40)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/silver.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 1,000 TIMES">CLICK 1,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-7" onclick="uiSelectCostume(47)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/white.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 2,000 PER CLICK">REACH 2,000 PER CLICK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-8" onclick="uiSelectCostume(7)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/bunny-ears.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000 PER SECOND">REACH 1,000 PER SECOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-9" onclick="uiSelectCostume(42)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/blue.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 30 GOLDEN DUCKETS">COLLECT 30 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-10" onclick="uiSelectCostume(43)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/burger.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000,000 DUCKETS">REACH 1,000,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-11" onclick="uiSelectCostume(39)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/pearls.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;DUCK FARM&quot; A TOTAL OF 100 TIMES">BUY "DUCK FARM" A TOTAL OF 100 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-12" onclick="uiSelectCostume(2)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/banana.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;DUCK MACHINE&quot; A TOTAL OF 100 TIMES">BUY "DUCK MACHINE" A TOTAL OF 100 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-13" onclick="uiSelectCostume(4)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/beret.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 5,000 TIMES">CLICK 5,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-14" onclick="uiSelectCostume(45)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/green.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 50,000 PER CLICK">REACH 50,000 PER CLICK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-15" onclick="uiSelectCostume(46)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/stars.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 25,000 PER SECOND">REACH 25,000 PER SECOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-16" onclick="uiSelectCostume(36)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/heart.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 100 GOLDEN DUCKETS">COLLECT 100 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-17" onclick="uiSelectCostume(3)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/beanie.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 500,000,000 DUCKETS">REACH 500,000,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-18" onclick="uiSelectCostume(32)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/white.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;CEO DUCK&quot; A TOTAL OF 150 TIMES">BUY "CEO DUCK" A TOTAL OF 150 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-19" onclick="uiSelectCostume(44)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/clouds.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 10,000 TIMES">CLICK 10,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-20" onclick="uiSelectCostume(8)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/cap.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 200,000 PER CLICK">REACH 200,000 PER CLICK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-21" onclick="uiSelectCostume(9)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/cherry.svg" style="width: 2vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 100,000 PER SECOND">REACH 100,000 PER SECOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-22" onclick="uiSelectCostume(41)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/frames/balloons.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 150 GOLDEN DUCKETS">COLLECT 150 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-23" onclick="uiSelectCostume(11)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/curly-hair.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000,000,000 DUCKETS">REACH 1,000,000,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-24" onclick="uiSelectCostume(14)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/fez.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;LEADER DUCK&quot; A TOTAL OF 200 TIMES">BUY "LEADER DUCK" A TOTAL OF 200 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-25" onclick="uiSelectCostume(31)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/sunglasses.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 15,000 TIMES">CLICK 15,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-26" onclick="uiSelectCostume(29)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/pink.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000,000 PER CLICK">REACH 1,000,000 PER CLICK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-27" onclick="uiSelectCostume(24)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/earrings.svg" style="width: 1.5vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 500,000 PER SECOND">REACH 500,000 PER SECOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-28" onclick="uiSelectCostume(33)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/diamond.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 200 GOLDEN DUCKETS">COLLECT 200 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-29" onclick="uiSelectCostume(1)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/ascot.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="ASCEND TO X2">ASCEND TO X2</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-30" onclick="uiSelectCostume(35)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/gold.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 500,000,000,000 DUCKETS">REACH 500,000,000,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-31" onclick="uiSelectCostume(34)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/fire.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;DUCK PLANET&quot; A TOTAL OF 250 TIMES">BUY "DUCK PLANET" A TOTAL OF 250 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-32" onclick="uiSelectCostume(6)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/bucker.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 20,000 TIMES">CLICK 20,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-33" onclick="uiSelectCostume(17)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/headband.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000,000,000 PER CLICK">REACH 1,000,000,000 PER CLICK</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-34" onclick="uiSelectCostume(20)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/magician-hat.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 500,000,000 PER SECOND">REACH 500,000,000 PER SECOND</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-35" onclick="uiSelectCostume(18)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/horns.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 250 GOLDEN DUCKETS">COLLECT 250 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-36" onclick="uiSelectCostume(38)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/pearls-red.svg" style="width: 4.5vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="COLLECT 300 GOLDEN DUCKETS">COLLECT 300 GOLDEN DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-37" onclick="uiSelectCostume(13)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/fedora.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000,000,000,000 DUCKETS">REACH 1,000,000,000,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-38" onclick="uiSelectCostume(27)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/golden.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="REACH 1,000,000,000,000,000 DUCKETS">REACH 1,000,000,000,000,000 DUCKETS</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-39" onclick="uiSelectCostume(10)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/crown.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;COSMIC DUCK&quot; A TOTAL OF 300 TIMES">BUY "COSMIC DUCK" A TOTAL OF 300 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-40" onclick="uiSelectCostume(30)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/red.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY &quot;DUCK UNIVERSE&quot; A TOTAL OF 300 TIMES">BUY "DUCK UNIVERSE" A TOTAL OF 300 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-41" onclick="uiSelectCostume(28)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/glasses/green.svg" style="width: 4vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 25,000 TIMES">CLICK 25,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-42" onclick="uiSelectCostume(21)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/panama.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="CLICK 30,000 TIMES">CLICK 30,000 TIMES</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-43" onclick="uiSelectCostume(16)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/hair.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="ASCEND TO X10">ASCEND TO X10</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-44" onclick="uiSelectCostume(37)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/necklaces/pearls-gold.svg" style="width: 4.5vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="ASCEND TO X100">ASCEND TO X100</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-45" onclick="uiSelectCostume(19)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/laptop.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="ASCEND TO X1,000">ASCEND TO X1,000</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-46" onclick="uiSelectCostume(22)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/ring.svg" style="width: 3.5vw">
+        </div>
+        <div>
+            <p class="stroke" data-content="ASCEND TO X100,000">ASCEND TO X100,000</p>
+        </div>
+    </button>
+    
+    <button class="item-button" id="achievement-47" onclick="uiSelectCostume(23)" disabled="">
+        <div class="side">
+            <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/hats/straw-hat.svg" style="">
+        </div>
+        <div>
+            <p class="stroke" data-content="BUY ALL UPGRADES AT LEAST ONCE">BUY ALL UPGRADES AT LEAST ONCE</p>
+        </div>
+    </button>
+    
+<div id="credits">
+    <p class="stroke" data-content="GAME BY: HAMDY ELZANQALI">GAME BY: HAMDY ELZANQALI</p>
+    <p class="stroke" data-content="FONT: NISKALA HURUF">FONT: NISKALA HURUF</p>
+    <p class="stroke" data-content="SFX: FLORAPHONIC(PIXABAY)">SFX: FLORAPHONIC(PIXABAY)</p>
+    <br>
+    <p class="stroke" data-content="JAVASCRIPT LIBRARIES">JAVASCRIPT LIBRARIES</p>
+    <p class="stroke" data-content="-HOWLERJS">-HOWLERJS</p>
+    <p class="stroke" data-content="-BIGNUMBERJS">-BIGNUMBERJS</p>
+    <br>
+    <div style="text-align: center">
+        <p class="stroke" data-content="THANKS FOR PLAYING!">THANKS FOR PLAYING!</p>
+        <br>
+        <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/duckroll.svg" style="width:7vw">
+    <div>
+</div>
+</div></div></div>
+                    <button class="side-back-btn"><p class="stroke" data-content="BACK">BACK</p></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Screen-->
+        <div id="secondary" class="hide" style="z-index: -10;">
+            <div id="settings-menu" class="panel">
+                <p class="stroke title" data-content="SETTINGS">SETTINGS</p>
+                <div class="flex-row">
+                    <p class="stroke" data-content="VOLUME: ">VOLUME: </p>
+                    <input type="range" min="0" max="1" step="0.01" id="volume-input" class="grow">
+                </div>
+
+                <div id="fullscreen-option" class="flex-row">
+                    <p class="stroke" data-content="FULLSCREEN: ">FULLSCREEN: </p>
+                    <div class="grow"></div>
+                    <input id="fullscreen-btn" type="checkbox">
+                </div>
+                
+                <button id="settings-background-btn">
+                    <p class="stroke" data-content="CHANGE BACKGROUND">CHANGE BACKGROUND</p>
+                </button>
+
+                <button id="settings-back-btn">
+                    <p class="stroke" data-content="BACK TO GAME">BACK TO GAME</p>
+                </button>
+            </div>
+            <div id="ascension-menu" class="panel">
+                <p class="stroke title" data-content="ASCENSION">ASCENSION</p>
+                <p class="stroke" data-content="
+                    WOULD YOU LIKE TO START OVER BUT PROGRESS FASTER? YOU WILL LOSE ALL YOUR MONEY AND UPGRADES.
+                ">
+                    WOULD YOU LIKE TO START OVER BUT PROGRESS FASTER? YOU WILL LOSE ALL YOUR MONEY AND UPGRADES.
+                </p>
+
+                <p class="stroke" data-content="
+                    YOU WILL KEEP ALL YOUR ACHIEVEMENTS AND COSTUMES.
+                ">
+                    YOU WILL KEEP ALL YOUR ACHIEVEMENTS AND COSTUMES.
+                </p>
+                
+                <div class="flex-row">
+                    <button id="ascension-back-btn">
+                        <p class="stroke" data-content="MAYBE LATER">MAYBE LATER</p>
+                    </button>
+
+                    <div class="grow"></div>
+
+                    <button id="ascension-confirm-btn">
+                        <p class="stroke" data-content="ASCEND NOW">ASCEND NOW</p>
+                    </button>
+                </div>
+            </div>
+
+            <div id="ad-menu" class="panel">
+                <p class="stroke title" data-content="AD BREAK">AD BREAK</p>
+                <p class="stroke" data-content="
+                    WOULD YOU LIKE TO WATCH AN AD TO GET DOUBLE PROGRESSION FOR 2 MINUTES?
+                ">
+                    WOULD YOU LIKE TO WATCH AN AD TO GET DOUBLE PROGRESSION FOR 2 MINUTES?
+                </p>
+                
+                <div></div>
+                
+                <div class="flex-row">
+                    <button id="ad-back-btn">
+                        <p class="stroke" data-content="MAYBE LATER">MAYBE LATER</p>
+                    </button>
+
+                    <div class="grow"></div>
+
+
+                    <button id="ad-confirm-btn">
+                        <p class="stroke" data-content="WATCH NOW">WATCH NOW</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Golden duckets -->
+        <div id="golden-rewards">
+
+        </div>
+
+        <!-- Notification -->
+        <div id="notifications">
+            <button class="item-button" id="notification">
+                <img src="https://12545143-377133625220508436.preview.editmysite.com/uploads/b/150363421-793604364414563712/files/img/shop/1.svg" class="side">
+                <div class="grow flex-col">
+                    <p class="stroke" data-content="YOU HAVE UNLOCKED A COOL ITEM">YOU HAVE UNLOCKED A COOL ITEM</p>
+                </div>
+            </button>
+        </div> 
+    </div>
+
+
+
+
+
+]]&gt;</content>
+</moduleprefs></module>
+
+
+
+]]&gt;</content>
+</moduleprefs></module><iframe allow="join-ad-interest-group" data-tagging-id="G-MENBM6GSNY" data-load-time="1744469965962" height="0" width="0" src="https://td.doubleclick.net/td/ga/rul?tid=G-MENBM6GSNY&amp;gacid=1119321196.1743724646&amp;gtm=45je5490v9132244804za200&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;pscdl=noapi&amp;aip=1&amp;fledge=1&amp;frm=0&amp;tag_exp=102509683~102803279~102813109~102887800~102926062~103021830~103027016~103050889~103051953~103055465&amp;z=225856449" style="display: none; visibility: hidden;"></iframe>
+
+          
+          
+        </body></html>
