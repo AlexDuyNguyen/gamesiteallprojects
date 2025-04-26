@@ -6,36 +6,37 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
+      background: #f8f9fa;
       margin: 0;
       padding: 40px 20px;
-      color: #333;
+      color: #212529;
       text-align: center;
     }
-
+    
     h1 {
       font-size: 3rem;
       margin-bottom: 30px;
-      color: #2c3e50;
+      color: #1a237e;
     }
-
+    
     h2 {
       font-size: 2rem;
       margin-top: 40px;
-      color: #34495e;
+      color: #283593;
     }
-
+    
     #searchInput {
-      padding: 10px 16px;
+      padding: 12px 16px;
       font-size: 1rem;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #d0d7de;
       width: 100%;
       max-width: 400px;
       margin: 0 auto 20px;
       display: block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-
+    
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -43,53 +44,68 @@
       margin-bottom: 20px;
       gap: 10px;
     }
-
+    
     .tab-button {
       padding: 12px 20px;
       border: none;
       border-radius: 8px;
-      background-color: #e0e0e0;
+      background-color: #e8eaf6;
       cursor: pointer;
       font-size: 1rem;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      color: #3949ab;
+      font-weight: 500;
     }
-
+    
+    .tab-button:hover {
+      background-color: #c5cae9;
+    }
+    
     .tab-button.active {
-      background-color: #3498db;
+      background-color: #3949ab;
       color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
+    
     .tab-content {
       display: none;
     }
-
+    
     .tab-content.active {
       display: block;
     }
-
+    
     .container {
       max-width: 1280px;
       margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-
+    
     .open-button {
-      background-color: #27ae60;
+      background-color: #3949ab;
       color: white;
-      padding: 12px 20px;
+      padding: 12px 24px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-size: 1rem;
       margin: 10px;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
+    
     .open-button:hover {
-      background-color: #2ecc71;
+      background-color: #303f9f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
-
+    
     .button-container {
-      margin-top: 20px;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -141,6 +157,13 @@
       { label: 'Recoil', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/recoil.html' },
       { label: 'Gobble', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/gobble.html' },
       { label: 'Portal (Flash Version)', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/portal-flash-version.html' },
+      { label: 'Granny', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/granny.html' },
+      { label: 'Granny 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/granny-2.html' },
+      { label: 'Granny 2 Multiplayer', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/granny-2-multiplayer.html' },
+      { label: 'Factory Balls', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/factory-balls.html' },
+      { label: 'Factory Balls 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/factory-balls-2.html' },
+      { label: 'Factory Balls 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/factory-balls-3.html' },
+      { label: 'Factory Balls 4', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/factory-balls-4.html' },
 
       { label: 'Big Tower Tiny Square', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/big-tower-tiny-square.html' },
       { label: 'Big Ice Tower Tiny Square', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/big-ice-tower-tiny-square.html' },
@@ -175,6 +198,9 @@
       { label: 'Vex Challenges', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/vex-challenges.html' },
 
       { label: 'Polytrack', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/polytrack.html' },
+      { label: 'Drive Mad', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drive-mad.html' },
+      { label: 'Drift Boss', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drift-boss.html' },
+      { label: 'Drift Hunters', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drift-hunters.html' },
       { label: 'Escape Road', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/escape-road.html' },
       { label: 'Escape Road 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/escape-road-2.html' },
       { label: 'Car Crash 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/car-crash-2.html' },
@@ -186,7 +212,54 @@
       { label: 'Slow Roads', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/slow-roads.html' },
       { label: 'Car Drawing', url: 'https://github.com/AlexDuyNguyen/gamesiteallprojects/blob/main/games/driving/car-drawing.html' },
       { label: 'Drift Master', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drift-master.html' },
-      { label: 'Top Speed Racing 3D', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/top-speed-racing-3d.html' }
+      { label: 'Top Speed Racing 3D', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/top-speed-racing-3d.html' },
+      { label: 'Driven Wild', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/driven-wild.html' },
+
+      { label: 'Cookie Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/cookie-clicker.html' },
+      { label: 'Idle Breakout', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/idle-breakout.html' },
+      { label: 'Duck Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/duck-clicker.html' },
+      { label: 'CS:GO Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/csgo-clicker.html' },
+      { label: 'Idle Idol', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/idle-idol.html' },
+      { label: 'Tiny Fishing', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/tiny-fishing.html' },
+      { label: 'Doge Miner', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/doge-miner.html' },
+      { label: 'Idle Dice', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/idle-dice.html' },
+      { label: 'Idle Miner Tycoon', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/idle-miners.html' },
+      { label: 'Learn to Fly Idle', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/learn-to-fly-idle.html' },
+      { label: 'Revolution Idle', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/revolution-idle.html' },
+      { label: 'Room Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/room-clicker.html' },
+      { label: 'Spacebar Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/space-bar-clicker.html' },
+
+      { label: 'Snow Rider 3D', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/snowrider3d.html' },
+      { label: 'Cubefield', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/cubefield.html' },
+      { label: 'Death Run 3D', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/deathrun3d.html' },
+      { label: 'Doodle Jump', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/doodle-jump.html' },
+      { label: 'Operius', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/operius.html' },
+      { label: 'Infinite Craft', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/infinite-craft.html' },
+      { label: 'Flappy Bird', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/flappybird.html' },
+      { label: 'Flappy Dunk', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/flappy-dunk.html' },
+      { label: 'Dino Game', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/dino-game.html' },
+      { label: 'Helix Jump', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/helix-jump.html' },
+      { label: 'Temple Run 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/templerun2.html' },
+      { label: 'Subway Surfers', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/subway-surfers.html' },
+      { label: 'Tunnel Rush', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/tunnelrush.html' },
+      { label: 'Agar.io Lite', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/agario-lite.html' },
+      { label: 'Paper.io', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/paperio.html' },
+      { label: 'Slither.io', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/slitherio.html' },
+
+      { label: 'Basketball Randoms', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/basketball-randoms.html' },
+      { label: 'Soccer Randoms', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/soccer-randoms.html' },
+      { label: 'Boxing Randoms', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/boxing-randoms.html' },
+      { label: 'Volley Randoms', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/volley-randoms.html' },
+      { label: 'Tube Jumpers', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/tubejumpers.html' },
+      { label: 'Ping Pong Chaos', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/pingpong-chaos.html' },
+      { label: 'Tag', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/tag.html' },
+      { label: 'Rooftop Snipers', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/rooftop-snipers.html' },
+      { label: 'Basketball Stars', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/basketball-stars.html' },
+      { label: 'Get On Top', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/get-on-top.html' },
+      { label: 'Fireboy and Watergirl', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/fireboyandwatergirl.html' },
+      { label: 'Fireboy and Watergirl 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/fireboyandwatergirl2.html' },
+      { label: 'Fireboy and Watergirl 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/fireboyandwatergirl3.html' }
+      
 //      { label: 'qwertyuiopasdfghjklzxcvbnm', url: 'qwertyuiopasdfghjklzxcvbnm' },
     ];
 
@@ -267,12 +340,32 @@
       }
     });
 
-    // Search filter
+    // Search filter with heading visibility control
     document.getElementById('searchInput').addEventListener('input', function () {
       const term = this.value.toLowerCase();
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        const match = btn.textContent.toLowerCase().includes(term);
-        btn.style.display = match ? 'inline-block' : 'none';
+      
+      // Get all section containers
+      const sections = document.querySelectorAll('#sections > div');
+      
+      // Process each section
+      sections.forEach(section => {
+        const heading = section.querySelector('h2');
+        const tabButtons = section.querySelectorAll('.tab-button');
+        
+        // Check if any game in this section matches the search term
+        let hasVisibleGames = false;
+        
+        tabButtons.forEach(btn => {
+          const match = btn.textContent.toLowerCase().includes(term);
+          btn.style.display = match ? 'inline-block' : 'none';
+          
+          if (match) {
+            hasVisibleGames = true;
+          }
+        });
+        
+        // Show/hide the entire section based on matches
+        section.style.display = hasVisibleGames ? 'block' : 'none';
       });
     });
   </script>
