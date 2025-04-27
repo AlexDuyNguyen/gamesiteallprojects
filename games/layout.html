@@ -91,7 +91,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     
-    .open-button {
+    .open-button, .random-button {
       background-color: #3949ab;
       color: white;
       padding: 12px 24px;
@@ -120,13 +120,32 @@
       color: #5c6bc0;
       margin-left: 10px;
     }
+    
+    #loadingOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #3949ab;
+      font-weight: bold;
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
+  <div id="loadingOverlay">Loading Game...</div>
+
   <div class="container">
     <h1>Games</h1>
     <div class="game-counter" id="gameCounter">Loading games...</div>
     <input type="text" id="searchInput" placeholder="Search games..." />
+    <button class="random-button" id="randomGameButton">Random Game</button>
 
     <div id="sections"></div>
     <div id="content"></div>
@@ -193,6 +212,7 @@
       { label: 'IQ Ball', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/iq-ball.html' },
       { label: 'Yellow', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/yellow.html' },
       { label: 'Primary', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/primary.html' },
+      { label: 'A Dark Room', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/a-dark-room.html' },
 
       // Driving
       { label: 'Polytrack', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/polytrack.html' },
@@ -221,6 +241,8 @@
       { label: 'OVO', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/ovo.html' },
       { label: 'OVO 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/ovo-2.html' },
       { label: 'OVO 3: Dimensions', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/ovo-3.html' },
+      { label: 'This is the only level', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/this-is-the-only-level.html' },
+      { label: 'This is the only level too', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/this-is-the-only-level-too.html' },
       { label: 'Pixel Speedrun', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/pixel-speedrun.html' },
       { label: 'Level Devil', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/level-devil.html' },
       { label: '60 second burger run', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/60-second-burger-run.html' },
@@ -249,7 +271,7 @@
       { label: 'Vex Challenges', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/vex-challenges.html' },
       { label: 'Rodha', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/rodha.html' },
       { label: 'Scrap Boy', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/scrap-boy.html' },
-
+      
       // Fighting
       { label: 'Crazy Cattle 3D', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/crazy-cattle-3d.html' },
       { label: 'Retro Bowl', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/retro-bowl.html' },
@@ -292,24 +314,20 @@
       { label: 'Rolly Vortex', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/rolly-vortex.html' },
       { label: 'Dodge', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/dodge.html' },
       
-      // Choose your own adventure
-      { label: 'Henry Stickmin: Breaking The Bank', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/breakingbank.html' },
-      { label: 'Henry Stickmin: Escaping the Prison', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/escapeprison.html' },
-      { label: 'Henry Stickmin: Stealing the Diamond', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/stealingdiamond.html' },
-      { label: 'Henry Stickmin: Infiltrating the Airship', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/henryairship.html' },
-      { label: 'Henry Stickmin: Fleeing the Complex', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/fleeingcomplex.html' },
-      { label: 'The Classroom', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/theclassroom.html' },
-      { label: 'The Classroom 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/theclassroom2.html' },
-      { label: 'The Classroom 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/theclassroom3.html' },
-      { label: 'Riddle School', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddleschool.html' },
-      { label: 'Riddle School 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddleschool.html' },
-      { label: 'Riddle School 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddleschool.html' },
-      { label: 'Riddle School 4', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddleschool.html' },
-      { label: 'Riddle School 5', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddleschool.html' },
-      { label: 'Riddle Transfer', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddletransfer.html' },
-      { label: 'Riddle Transfer 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/riddletransfer2.html' },
-      { label: 'Return to Riddle School', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/return-riddle-school.html' },
-      { label: 'Super Pickleball Adventure', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/choice/super-pickleball-adventure.html' },
+      // Point-and-click
+      { label: 'Henry Stickmin: Breaking The Bank', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/breakingbank.html' },
+      { label: 'Henry Stickmin: Escaping the Prison', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/escapeprison.html' },
+      { label: 'Henry Stickmin: Stealing the Diamond', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/stealingdiamond.html' },
+      { label: 'Henry Stickmin: Infiltrating the Airship', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/henryairship.html' },
+      { label: 'Henry Stickmin: Fleeing the Complex', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/fleeingcomplex.html' },
+      { label: 'Riddle School', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddleschool.html' },
+      { label: 'Riddle School 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddleschool.html' },
+      { label: 'Riddle School 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddleschool.html' },
+      { label: 'Riddle School 4', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddleschool.html' },
+      { label: 'Riddle School 5', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddleschool.html' },
+      { label: 'Riddle Transfer', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddletransfer.html' },
+      { label: 'Riddle Transfer 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/riddletransfer2.html' },
+      { label: 'Return to Riddle School', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/return-riddle-school.html' },
       
       // Idle
       { label: 'Cookie Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/cookie-clicker.html' },
@@ -325,7 +343,6 @@
       { label: 'Revolution Idle', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/revolution-idle.html' },
       { label: 'Room Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/room-clicker.html' },
       { label: 'Spacebar Clicker', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/space-bar-clicker.html' },
-      { label: 'A Dark Room', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/a-dark-room.html' },
 
       // Multiplayer
       { label: 'Basketball Randoms', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/basketball-randoms.html' },
@@ -386,7 +403,6 @@
       { label: 'Unfair Mario', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/unfair-mario.html' },
       
       // Indie
-      { label: 'Undertale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/untertale.html' },
       { label: 'Minecraft 1.8', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/minceraft-1dot8.html' },
       { label: 'Pizza Tower', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/pizza-tower.html' },
       { label: 'Onebit Adventure', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/onebit-adventure.html' },
@@ -395,12 +411,16 @@
       { label: 'The Enchanted Cave 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/the-enchanted-cave-2.html' },
       { label: 'Happy Wheels', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/happy-wheels.html' },
       { label: 'Celeste Pico', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste-pico.html' },
-      { label: 'Celeste 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste2.html' }
+      { label: 'Celeste 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste2.html' },
 
-//      { label: 'qwertyuiopasdfghjklzxcvbnm', url: 'qwertyuiopasdfghjklzxcvbnm' },
+      // RPG
+      { label: 'Undertale', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/untertale.html' },
+      { label: 'Super Pickleball Adventure', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/super-pickleball-adventure.html' },
+      { label: 'The Classroom', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom.html' },
+      { label: 'The Classroom 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom2.html' },
+      { label: 'The Classroom 3', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom3.html' }
     ];
 
-    // Auto-generate IDs and detect group
     tools.forEach(tool => {
       tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
       const urlParts = tool.url.split('/');
@@ -410,6 +430,7 @@
     const sectionsContainer = document.getElementById('sections');
     const contentContainer = document.getElementById('content');
     const gameCounterElement = document.getElementById('gameCounter');
+    const loadingOverlay = document.getElementById('loadingOverlay');
 
     const groupedTools = tools.reduce((acc, tool) => {
       if (!acc[tool.groups]) acc[tool.groups] = [];
@@ -417,19 +438,13 @@
       return acc;
     }, {});
 
-    // Calculate and update the game counter
     const totalGames = tools.length;
     const totalCategories = Object.keys(groupedTools).length;
     gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
 
-    // Track displayed games during search
-    let displayedGames = totalGames;
-
     for (const [group, groupTools] of Object.entries(groupedTools)) {
       const section = document.createElement('div');
       const heading = document.createElement('h2');
-      
-      // Add category count to each section header
       heading.innerHTML = `${group.toUpperCase()} <span class="category-counter">(${groupTools.length} games)</span>`;
       
       const tabs = document.createElement('div');
@@ -474,35 +489,48 @@
       }
 
       if (e.target.matches('.open-button')) {
-        const tool = e.target.dataset.tool;
-        const toolData = tools.find(t => t.id === tool);
-        fetch(toolData.url)
-          .then(res => res.text())
-          .then(html => {
-            const newWindow = window.open('about:blank', '_blank');
-            setTimeout(() => {
-              newWindow.document.open();
-              newWindow.document.write(html);
-              newWindow.document.close();
-            }, 100);
-          });
+        openGame(e.target.dataset.tool);
       }
     });
 
-    // Search functionality with counter update
+    document.getElementById('randomGameButton').addEventListener('click', () => {
+      const randomTool = tools[Math.floor(Math.random() * tools.length)];
+      openGame(randomTool.id);
+    });
+
+    function openGame(toolId) {
+      const toolData = tools.find(t => t.id === toolId);
+      if (!toolData) return;
+
+      loadingOverlay.style.display = 'flex';
+      fetch(toolData.url)
+        .then(res => res.text())
+        .then(html => {
+          const newWindow = window.open('about:blank', '_blank');
+          setTimeout(() => {
+            newWindow.document.open();
+            newWindow.document.write(html);
+            newWindow.document.close();
+            loadingOverlay.style.display = 'none';
+          }, 100);
+        })
+        .catch(err => {
+          loadingOverlay.style.display = 'none';
+          alert('Failed to load the game. Please try again later.');
+          console.error(err);
+        });
+    }
+
     document.getElementById('searchInput').addEventListener('input', function () {
       const term = this.value.toLowerCase();
       let visibleGamesCount = 0;
       
-      // Get all sections
       const sections = document.querySelectorAll('#sections > div');
       
-      // Process each section
       sections.forEach(section => {
         const heading = section.querySelector('h2');
         const tabButtons = section.querySelectorAll('.tab-button');
         
-        // Check if any game in this section matches the search term
         let hasVisibleGames = false;
         let sectionVisibleCount = 0;
         
@@ -517,23 +545,24 @@
           }
         });
         
-        // Update section counter and visibility
         const categoryCounter = heading.querySelector('.category-counter');
         if (categoryCounter) {
           categoryCounter.textContent = `(${sectionVisibleCount} games)`;
         }
         
-        // Show/hide the entire section based on matches
         section.style.display = hasVisibleGames ? 'block' : 'none';
       });
       
-      // Update the main counter with search results
       if (term) {
         gameCounterElement.textContent = `Found: ${visibleGamesCount} of ${totalGames} Games`;
       } else {
         gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
       }
     });
+
+    window.onload = () => {
+      document.getElementById('searchInput').focus();
+    };
   </script>
 </body>
 </html>
