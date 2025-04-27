@@ -15,8 +15,15 @@
     
     h1 {
       font-size: 3rem;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       color: #1a237e;
+    }
+    
+    .game-counter {
+      font-size: 1.2rem;
+      color: #3949ab;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
     
     h2 {
@@ -107,11 +114,18 @@
     .button-container {
       margin-top: 30px;
     }
+
+    .category-counter {
+      font-size: 0.9rem;
+      color: #5c6bc0;
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Games</h1>
+    <div class="game-counter" id="gameCounter">Loading games...</div>
     <input type="text" id="searchInput" placeholder="Search games..." />
 
     <div id="sections"></div>
@@ -380,7 +394,7 @@
       { label: 'Super House of Dead Ninjas', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/superhouseofdeadninjas.html' },
       { label: 'The Enchanted Cave 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/the-enchanted-cave-2.html' },
       { label: 'Happy Wheels', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/happy-wheels.html' },
-      { label: 'Celeste Pico', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste-pico.html' }
+      { label: 'Celeste Pico', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste-pico.html' },
       { label: 'Celeste 2', url: 'https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste2.html' }
 
 //      { label: 'qwertyuiopasdfghjklzxcvbnm', url: 'qwertyuiopasdfghjklzxcvbnm' },
@@ -395,6 +409,7 @@
 
     const sectionsContainer = document.getElementById('sections');
     const contentContainer = document.getElementById('content');
+    const gameCounterElement = document.getElementById('gameCounter');
 
     const groupedTools = tools.reduce((acc, tool) => {
       if (!acc[tool.groups]) acc[tool.groups] = [];
@@ -402,10 +417,21 @@
       return acc;
     }, {});
 
+    // Calculate and update the game counter
+    const totalGames = tools.length;
+    const totalCategories = Object.keys(groupedTools).length;
+    gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
+
+    // Track displayed games during search
+    let displayedGames = totalGames;
+
     for (const [group, groupTools] of Object.entries(groupedTools)) {
       const section = document.createElement('div');
       const heading = document.createElement('h2');
-      heading.textContent = group.toUpperCase();
+      
+      // Add category count to each section header
+      heading.innerHTML = `${group.toUpperCase()} <span class="category-counter">(${groupTools.length} games)</span>`;
+      
       const tabs = document.createElement('div');
       tabs.className = 'tabs';
 
@@ -463,11 +489,12 @@
       }
     });
 
-    // Search duck with goose visibility control
+    // Search functionality with counter update
     document.getElementById('searchInput').addEventListener('input', function () {
       const term = this.value.toLowerCase();
+      let visibleGamesCount = 0;
       
-      // Get all quack containers
+      // Get all sections
       const sections = document.querySelectorAll('#sections > div');
       
       // Process each section
@@ -477,6 +504,7 @@
         
         // Check if any game in this section matches the search term
         let hasVisibleGames = false;
+        let sectionVisibleCount = 0;
         
         tabButtons.forEach(btn => {
           const match = btn.textContent.toLowerCase().includes(term);
@@ -484,12 +512,27 @@
           
           if (match) {
             hasVisibleGames = true;
+            sectionVisibleCount++;
+            visibleGamesCount++;
           }
         });
         
-        // Show/hide the entire duck with goose skin based on matches
+        // Update section counter and visibility
+        const categoryCounter = heading.querySelector('.category-counter');
+        if (categoryCounter) {
+          categoryCounter.textContent = `(${sectionVisibleCount} games)`;
+        }
+        
+        // Show/hide the entire section based on matches
         section.style.display = hasVisibleGames ? 'block' : 'none';
       });
+      
+      // Update the main counter with search results
+      if (term) {
+        gameCounterElement.textContent = `Found: ${visibleGamesCount} of ${totalGames} Games`;
+      } else {
+        gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
+      }
     });
   </script>
 </body>
