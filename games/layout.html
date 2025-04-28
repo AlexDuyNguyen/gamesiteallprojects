@@ -136,6 +136,23 @@
       font-weight: bold;
       z-index: 9999;
     }
+
+    #games {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 50px;
+      text-decoration: none;
+      opacity: 0.3;
+      z-index: 999;
+      pointer-events: auto;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #games:hover {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -150,9 +167,10 @@
     <div id="sections"></div>
     <div id="content"></div>
   </div>
-     <script>
+  <a id="games" href="https://sites.google.com/view/trollingtime/games" target="_blank" aria-label="">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</a>
+
+  <script>
     const tools = [
-     
      // Shooter
       { label: "1v1.LOL", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html" },
       { label: "Evil Glitch", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html" },
@@ -484,152 +502,151 @@
       { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" }
 
 //      { label: 'qwertyuiopasdfghjklzxcvbnm', url: 'qwertyuiopasdfghjklzxcvbnm' },
-      ];
+    ];
     
-      tools.forEach(tool => {
-        tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
-        const urlParts = tool.url.split('/');
-        tool.groups = urlParts[urlParts.length - 2];
+    tools.forEach(tool => {
+      tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
+      const urlParts = tool.url.split('/');
+      tool.groups = urlParts[urlParts.length - 2];
+    });
+    
+    const sectionsContainer = document.getElementById('sections');
+    const contentContainer = document.getElementById('content');
+    const gameCounterElement = document.getElementById('gameCounter');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    
+    const groupedTools = tools.reduce((acc, tool) => {
+      if (!acc[tool.groups]) acc[tool.groups] = [];
+      acc[tool.groups].push(tool);
+      return acc;
+    }, {});
+    
+    const totalGames = tools.length;
+    const totalCategories = Object.keys(groupedTools).length;
+    gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
+    
+    const noGamesFoundMessage = document.createElement('p');
+    noGamesFoundMessage.textContent = 'No games found.';
+    noGamesFoundMessage.style.display = 'none';
+    noGamesFoundMessage.style.marginTop = '20px';
+    noGamesFoundMessage.style.color = '#9e9e9e';
+    noGamesFoundMessage.style.fontSize = '1.2rem';
+    sectionsContainer.after(noGamesFoundMessage);
+    
+    for (const [group, groupTools] of Object.entries(groupedTools)) {
+      const section = document.createElement('div');
+      const heading = document.createElement('h2');
+      heading.innerHTML = `${group.toUpperCase()} <span class="category-counter">(${groupTools.length} games)</span>`;
+      
+      const tabs = document.createElement('div');
+      tabs.className = 'tabs';
+  
+      groupTools.forEach(tool => {
+        const tabButton = document.createElement('button');
+        tabButton.textContent = tool.label.toUpperCase();
+        tabButton.className = 'tab-button';
+        tabButton.dataset.tab = tool.id;
+        tabButton.setAttribute('aria-label', `Open ${tool.label}`);
+        tabs.appendChild(tabButton);
       });
-    
-      const sectionsContainer = document.getElementById('sections');
-      const contentContainer = document.getElementById('content');
-      const gameCounterElement = document.getElementById('gameCounter');
-      const loadingOverlay = document.getElementById('loadingOverlay');
-    
-      const groupedTools = tools.reduce((acc, tool) => {
-        if (!acc[tool.groups]) acc[tool.groups] = [];
-        acc[tool.groups].push(tool);
-        return acc;
-      }, {});
-    
-      const totalGames = tools.length;
-      const totalCategories = Object.keys(groupedTools).length;
-      gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
-    
-      const noGamesFoundMessage = document.createElement('p');
-      noGamesFoundMessage.textContent = 'No games found.';
-      noGamesFoundMessage.style.display = 'none';
-      noGamesFoundMessage.style.marginTop = '20px';
-      noGamesFoundMessage.style.color = '#9e9e9e';
-      noGamesFoundMessage.style.fontSize = '1.2rem';
-      sectionsContainer.after(noGamesFoundMessage);
-    
-      for (const [group, groupTools] of Object.entries(groupedTools)) {
-        const section = document.createElement('div');
-        const heading = document.createElement('h2');
-        heading.innerHTML = `${group.toUpperCase()} <span class="category-counter">(${groupTools.length} games)</span>`;
-        
-        const tabs = document.createElement('div');
-        tabs.className = 'tabs';
-    
-        groupTools.forEach(tool => {
-          const tabButton = document.createElement('button');
-          tabButton.textContent = tool.label.toUpperCase();
-          tabButton.className = 'tab-button';
-          tabButton.dataset.tab = tool.id;
-          tabButton.setAttribute('aria-label', `Open ${tool.label}`);
-          tabs.appendChild(tabButton);
-        });
-    
-        section.appendChild(heading);
-        section.appendChild(tabs);
-        sectionsContainer.appendChild(section);
+  
+      section.appendChild(heading);
+      section.appendChild(tabs);
+      sectionsContainer.appendChild(section);
+    }
+  
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('tab-button')) {
+        const target = e.target.dataset.tab;
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+  
+        const toolData = tools.find(t => t.id === target);
+        if (toolData) openGame(toolData.id);
       }
-    
-      document.addEventListener('click', e => {
-        if (e.target.classList.contains('tab-button')) {
-          const target = e.target.dataset.tab;
-          document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-          e.target.classList.add('active');
-    
-          const toolData = tools.find(t => t.id === target);
-          if (toolData) openGame(toolData.id);
-        }
-      });
-    
-      document.getElementById('randomGameButton').addEventListener('click', () => {
-        const randomTool = tools[Math.floor(Math.random() * tools.length)];
-        openGame(randomTool.id);
-      });
-    
-      function openGame(toolId) {
-        const toolData = tools.find(t => t.id === toolId);
-        if (!toolData) return;
-    
-        loadingOverlay.style.display = 'flex';
-        const newWindow = window.open('about:blank', '_blank');
-        if (!newWindow) {
-          loadingOverlay.style.display = 'none';
-          alert('Popup blocked! Please allow popups for this site.');
-          return;
-        }
-        fetch(toolData.url)
-          .then(res => res.text())
-          .then(html => {
-            setTimeout(() => {
-              newWindow.document.open();
-              newWindow.document.write(html);
-              newWindow.document.close();
-              loadingOverlay.style.display = 'none';
-            }, 100);
-          })
-          .catch(err => {
+    });
+  
+    document.getElementById('randomGameButton').addEventListener('click', () => {
+      const randomTool = tools[Math.floor(Math.random() * tools.length)];
+      openGame(randomTool.id);
+    });
+  
+    function openGame(toolId) {
+      const toolData = tools.find(t => t.id === toolId);
+      if (!toolData) return;
+  
+      loadingOverlay.style.display = 'flex';
+      const newWindow = window.open('about:blank', '_blank');
+      if (!newWindow) {
+        loadingOverlay.style.display = 'none';
+        alert('Popup blocked! Please allow popups for this site.');
+        return;
+      }
+      fetch(toolData.url)
+        .then(res => res.text())
+        .then(html => {
+          setTimeout(() => {
+            newWindow.document.open();
+            newWindow.document.write(html);
+            newWindow.document.close();
             loadingOverlay.style.display = 'none';
-            alert('Failed to load the game. Please try again later.');
-            console.error(err);
-          });
-      }
-    
-      document.getElementById('searchInput').addEventListener('input', function () {
-        const term = this.value.toLowerCase();
-        let visibleGamesCount = 0;
-    
-        const sections = document.querySelectorAll('#sections > div');
-    
-        sections.forEach(section => {
-          const heading = section.querySelector('h2');
-          const tabButtons = section.querySelectorAll('.tab-button');
-    
-          let hasVisibleGames = false;
-          let sectionVisibleCount = 0;
-    
-          tabButtons.forEach(btn => {
-            const match = btn.textContent.toLowerCase().includes(term);
-            btn.style.display = match ? 'inline-block' : 'none';
-    
-            if (match) {
-              hasVisibleGames = true;
-              sectionVisibleCount++;
-              visibleGamesCount++;
-            }
-          });
-    
-          const categoryCounter = heading.querySelector('.category-counter');
-          if (categoryCounter) {
-            categoryCounter.textContent = `(${sectionVisibleCount} games)`;
-          }
-    
-          section.style.display = hasVisibleGames ? 'block' : 'none';
+          }, 100);
+        })
+        .catch(err => {
+          loadingOverlay.style.display = 'none';
+          alert('Failed to load the game. Please try again later.');
+          console.error(err);
         });
-    
-        if (term) {
-          gameCounterElement.textContent = `Found: ${visibleGamesCount} of ${totalGames} Games`;
-        } else {
-          gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
+    }
+  
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const term = this.value.toLowerCase();
+      let visibleGamesCount = 0;
+  
+      const sections = document.querySelectorAll('#sections > div');
+  
+      sections.forEach(section => {
+        const heading = section.querySelector('h2');
+        const tabButtons = section.querySelectorAll('.tab-button');
+  
+        let hasVisibleGames = false;
+        let sectionVisibleCount = 0;
+  
+        tabButtons.forEach(btn => {
+          const match = btn.textContent.toLowerCase().includes(term);
+          btn.style.display = match ? 'inline-block' : 'none';
+  
+          if (match) {
+            hasVisibleGames = true;
+            sectionVisibleCount++;
+            visibleGamesCount++;
+          }
+        });
+  
+        const categoryCounter = heading.querySelector('.category-counter');
+        if (categoryCounter) {
+          categoryCounter.textContent = `(${sectionVisibleCount} games)`;
         }
-    
-        // Handle no games found message
-        if (visibleGamesCount === 0) {
-          noGamesFoundMessage.style.display = 'block';
-        } else {
-          noGamesFoundMessage.style.display = 'none';
-        }
+  
+        section.style.display = hasVisibleGames ? 'block' : 'none';
       });
-    
-      window.onload = () => {
-        document.getElementById('searchInput').focus();
-      };
-    </script>
+  
+      if (term) {
+        gameCounterElement.textContent = `Found: ${visibleGamesCount} of ${totalGames} Games`;
+      } else {
+        gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
+      }
+  
+      if (visibleGamesCount === 0) {
+        noGamesFoundMessage.style.display = 'block';
+      } else {
+        noGamesFoundMessage.style.display = 'none';
+      }
+    });
+  
+    window.onload = () => {
+      document.getElementById('searchInput').focus();
+    };
+  </script>
 </body>
 </html>
