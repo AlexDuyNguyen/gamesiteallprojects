@@ -105,7 +105,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     
-    .open-button:hover {
+    .open-button:hover, .random-button:hover {
       background-color: #303f9f;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -162,11 +162,15 @@
     <h1>Games</h1>
     <div class="game-counter" id="gameCounter">Loading games...</div>
     <input type="text" id="searchInput" placeholder="Search games..." />
-    <button class="random-button" id="randomGameButton">Random Game</button>
 
     <div id="sections"></div>
     <div id="content"></div>
+
+    <div class="button-container">
+      <button class="random-button" id="randomGameButton">Random Game</button>
+    </div>
   </div>
+
   <a id="games" href="https://sites.google.com/view/trollingtime/games" target="_blank" aria-label="">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</a>
 
   <script>
