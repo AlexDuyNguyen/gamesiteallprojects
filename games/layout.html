@@ -11,27 +11,28 @@
       padding: 40px 20px;
       color: #212529;
       text-align: center;
+      transition: background 0.3s ease, color 0.3s ease;
     }
-    
+
     h1 {
       font-size: 3rem;
       margin-bottom: 10px;
       color: #1a237e;
     }
-    
+
     .game-counter {
       font-size: 1.2rem;
       color: #3949ab;
       margin-bottom: 20px;
       font-weight: 500;
     }
-    
+
     h2 {
       font-size: 2rem;
       margin-top: 40px;
       color: #283593;
     }
-    
+
     #searchInput {
       padding: 12px 16px;
       font-size: 1rem;
@@ -43,7 +44,7 @@
       display: block;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-    
+
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -51,7 +52,7 @@
       margin-bottom: 20px;
       gap: 10px;
     }
-    
+
     .tab-button {
       padding: 12px 20px;
       border: none;
@@ -63,25 +64,25 @@
       color: #3949ab;
       font-weight: 500;
     }
-    
+
     .tab-button:hover {
       background-color: #c5cae9;
     }
-    
+
     .tab-button.active {
       background-color: #3949ab;
       color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
+
     .tab-content {
       display: none;
     }
-    
+
     .tab-content.active {
       display: block;
     }
-    
+
     .container {
       max-width: 1280px;
       margin: auto;
@@ -89,9 +90,10 @@
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: background 0.3s ease;
     }
-    
-    .open-button, .random-button {
+
+    .open-button, .random-button, .settings-button {
       background-color: #3949ab;
       color: white;
       padding: 12px 24px;
@@ -104,15 +106,18 @@
       font-weight: 500;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
-    .open-button:hover, .random-button:hover {
+
+    .open-button:hover, .random-button:hover, .settings-button:hover {
       background-color: #303f9f;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
-    
+
     .button-container {
       margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .category-counter {
@@ -120,7 +125,7 @@
       color: #5c6bc0;
       margin-left: 10px;
     }
-    
+
     #loadingOverlay {
       position: fixed;
       top: 0;
@@ -153,6 +158,169 @@
       opacity: 0.6;
       transform: scale(1.1);
     }
+
+    /* Settings Section */
+    #settingsSection {
+      margin-top: 40px;
+      max-width: 1280px;
+      margin: 20px auto 0;
+    }
+
+    #settingsSection h2 {
+      margin-top: 0;
+    }
+
+    /* Toggle Switch Styles */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 28px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 28px;
+    }
+    
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .toggle-slider {
+      background-color: #3949ab;
+    }
+    
+    input:focus + .toggle-slider {
+      box-shadow: 0 0 1px #3949ab;
+    }
+    
+    input:checked + .toggle-slider:before {
+      transform: translateX(22px);
+    }
+    
+    .toggle-label {
+      font-weight: 700;
+      font-size: 1.3rem;
+      vertical-align: middle;
+    }
+    
+    body.dark-mode input:checked + .toggle-slider {
+      background-color: #bb86fc;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .container {
+      background: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode .game-counter,
+    body.dark-mode .category-counter {
+      color: #bb86fc;
+    }
+
+    body.dark-mode .tab-button {
+      background-color: #333;
+      color: #bb86fc;
+    }
+
+    body.dark-mode .tab-button:hover {
+      background-color: #444;
+    }
+
+    body.dark-mode .tab-button.active {
+      background-color: #6200ee;
+      color: white;
+    }
+
+    body.dark-mode .open-button,
+    body.dark-mode .random-button,
+    body.dark-mode .settings-button {
+      background-color: #6200ee;
+    }
+
+    body.dark-mode .open-button:hover,
+    body.dark-mode .random-button:hover,
+    body.dark-mode .settings-button:hover {
+      background-color: #3700b3;
+    }
+
+    /* Recently Played Section */
+    .recently-played {
+      margin-top: 40px;
+      padding: 20px;
+      background: #e8eaf6;
+      border-radius: 8px;
+    }
+    
+    .recently-played h2 {
+      margin-top: 0;
+      color: #3949ab;
+    }
+    
+    .recent-games-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    
+    .recent-game {
+      background: #c5cae9;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .recent-game:hover {
+      background: #9fa8da;
+      transform: translateY(-2px);
+    }
+    
+    body.dark-mode .recently-played {
+      background: #333;
+    }
+    
+    body.dark-mode .recent-game {
+      background: #6200ee;
+      color: white;
+    }
+    
+    body.dark-mode .recent-game:hover {
+      background: #3700b3;
+    }
   </style>
 </head>
 <body>
@@ -168,6 +336,27 @@
 
     <div class="button-container">
       <button class="random-button" id="randomGameButton">Random Game</button>
+    </div>
+
+    <!-- Recently Played Section -->
+    <div class="recently-played">
+      <h2>RECENTLY PLAYED</h2>
+      <div class="recent-games-list" id="recentGamesList">
+        <p>No recently played games yet</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Separate Settings Card -->
+  <div class="container" id="settingsSection">
+    <h2>SETTINGS</h2>
+    <div class="tabs">
+      <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label">Dark Mode</span>
     </div>
   </div>
 
@@ -350,7 +539,7 @@
       { label: "Paper.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/paperio.html" },
       { label: "Slither.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/slitherio.html" },
       { label: "Rolly Vortex", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/rolly-vortex.html" },
-      { label: "Dodge", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/dodge.html" },
+      { label: "Dodge", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/dodge2.html" },
       { label: "Crossy Road", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/crossy-road.html" },
 
       // Point-and-click
@@ -443,7 +632,7 @@
       { label: "Storm The House 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/defense/stormthehouse3.html" },
       { label: "Age Of War", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/defense/age-of-war.html" },
       { label: "Age Of War 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/defense/age-or-war2.html" },
-      { label: "Mana God", url: "https://github.com/AlexDuyNguyen/gamesiteallprojects/blob/main/games/defense/mana-god.html" },
+      { label: "Mana God", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/defense/mana-god.html" },
 
       // Progression
       { label: "Duck Life", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/progression/duck-life.html" },
@@ -534,28 +723,30 @@
 //      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
 //      { label: 'qwertyuiopasdfghjklzxcvbnm', url: 'qwertyuiopasdfghjklzxcvbnm' },
     ];
-    
+
     tools.forEach(tool => {
       tool.id = tool.url.split('/').pop().replace(/[^a-z0-9]/gi, '');
       const urlParts = tool.url.split('/');
       tool.groups = urlParts[urlParts.length - 2];
     });
-    
+
     const sectionsContainer = document.getElementById('sections');
     const contentContainer = document.getElementById('content');
     const gameCounterElement = document.getElementById('gameCounter');
     const loadingOverlay = document.getElementById('loadingOverlay');
-    
+    const RECENT_GAMES_KEY = 'recentGames';
+    const MAX_RECENT_GAMES = 5;
+
     const groupedTools = tools.reduce((acc, tool) => {
       if (!acc[tool.groups]) acc[tool.groups] = [];
       acc[tool.groups].push(tool);
       return acc;
     }, {});
-    
+
     const totalGames = tools.length;
     const totalCategories = Object.keys(groupedTools).length;
     gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
-    
+
     const noGamesFoundMessage = document.createElement('p');
     noGamesFoundMessage.textContent = 'No games found.';
     noGamesFoundMessage.style.display = 'none';
@@ -563,15 +754,15 @@
     noGamesFoundMessage.style.color = '#9e9e9e';
     noGamesFoundMessage.style.fontSize = '1.2rem';
     sectionsContainer.after(noGamesFoundMessage);
-    
+
     for (const [group, groupTools] of Object.entries(groupedTools)) {
       const section = document.createElement('div');
       const heading = document.createElement('h2');
       heading.innerHTML = `${group.toUpperCase()} <span class="category-counter">(${groupTools.length} games)</span>`;
-      
+
       const tabs = document.createElement('div');
       tabs.className = 'tabs';
-  
+
       groupTools.forEach(tool => {
         const tabButton = document.createElement('button');
         tabButton.textContent = tool.label.toUpperCase();
@@ -580,32 +771,32 @@
         tabButton.setAttribute('aria-label', `Open ${tool.label}`);
         tabs.appendChild(tabButton);
       });
-  
+
       section.appendChild(heading);
       section.appendChild(tabs);
       sectionsContainer.appendChild(section);
     }
-  
+
     document.addEventListener('click', e => {
       if (e.target.classList.contains('tab-button')) {
         const target = e.target.dataset.tab;
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
-  
+
         const toolData = tools.find(t => t.id === target);
         if (toolData) openGame(toolData.id);
       }
     });
-  
+
     document.getElementById('randomGameButton').addEventListener('click', () => {
       const randomTool = tools[Math.floor(Math.random() * tools.length)];
       openGame(randomTool.id);
     });
-  
+
     function openGame(toolId) {
       const toolData = tools.find(t => t.id === toolId);
       if (!toolData) return;
-  
+
       loadingOverlay.style.display = 'flex';
       const newWindow = window.open('about:blank', '_blank');
       if (!newWindow) {
@@ -621,6 +812,9 @@
             newWindow.document.write(html);
             newWindow.document.close();
             loadingOverlay.style.display = 'none';
+            
+            // Add to recently played
+            addToRecentlyPlayed(toolData);
           }, 100);
         })
         .catch(err => {
@@ -629,54 +823,112 @@
           console.error(err);
         });
     }
-  
+
+    function addToRecentlyPlayed(game) {
+      let recentGames = JSON.parse(localStorage.getItem(RECENT_GAMES_KEY)) || [];
+      
+      // Remove if already exists
+      recentGames = recentGames.filter(g => g.id !== game.id);
+      
+      // Add to beginning
+      recentGames.unshift({
+        id: game.id,
+        label: game.label,
+        url: game.url
+      });
+      
+      // Limit to max items
+      if (recentGames.length > MAX_RECENT_GAMES) {
+        recentGames = recentGames.slice(0, MAX_RECENT_GAMES);
+      }
+      
+      localStorage.setItem(RECENT_GAMES_KEY, JSON.stringify(recentGames));
+      updateRecentlyPlayedDisplay();
+    }
+    
+    function updateRecentlyPlayedDisplay() {
+      const recentGamesList = document.getElementById('recentGamesList');
+      const recentGames = JSON.parse(localStorage.getItem(RECENT_GAMES_KEY)) || [];
+      
+      if (recentGames.length === 0) {
+        recentGamesList.innerHTML = '<p>No recently played games yet</p>';
+        return;
+      }
+      
+      recentGamesList.innerHTML = '';
+      recentGames.forEach(game => {
+        const gameElement = document.createElement('div');
+        gameElement.className = 'recent-game';
+        gameElement.textContent = game.label;
+        gameElement.addEventListener('click', () => {
+          openGame(game.id);
+        });
+        recentGamesList.appendChild(gameElement);
+      });
+    }
+
     document.getElementById('searchInput').addEventListener('input', function () {
       const term = this.value.toLowerCase();
       let visibleGamesCount = 0;
-  
+
       const sections = document.querySelectorAll('#sections > div');
-  
+
       sections.forEach(section => {
         const heading = section.querySelector('h2');
         const tabButtons = section.querySelectorAll('.tab-button');
-  
+
         let hasVisibleGames = false;
         let sectionVisibleCount = 0;
-  
+
         tabButtons.forEach(btn => {
           const match = btn.textContent.toLowerCase().includes(term);
           btn.style.display = match ? 'inline-block' : 'none';
-  
+
           if (match) {
             hasVisibleGames = true;
             sectionVisibleCount++;
             visibleGamesCount++;
           }
         });
-  
+
         const categoryCounter = heading.querySelector('.category-counter');
         if (categoryCounter) {
           categoryCounter.textContent = `(${sectionVisibleCount} games)`;
         }
-  
+
         section.style.display = hasVisibleGames ? 'block' : 'none';
       });
-  
+
       if (term) {
         gameCounterElement.textContent = `Found: ${visibleGamesCount} of ${totalGames} Games`;
       } else {
         gameCounterElement.textContent = `Total: ${totalGames} Games in ${totalCategories} Categories`;
       }
-  
-      if (visibleGamesCount === 0) {
-        noGamesFoundMessage.style.display = 'block';
-      } else {
-        noGamesFoundMessage.style.display = 'none';
-      }
+
+      noGamesFoundMessage.style.display = visibleGamesCount === 0 ? 'block' : 'none';
     });
-  
+
+    // Dark Mode
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    function applyDarkMode(enabled) {
+      document.body.classList.toggle('dark-mode', enabled);
+      localStorage.setItem('darkMode', enabled);
+      darkModeToggle.checked = enabled;
+    }
+
+    // On load
+    const darkModeSetting = localStorage.getItem('darkMode') === 'true';
+    applyDarkMode(darkModeSetting);
+
+    // Toggle listener
+    darkModeToggle.addEventListener('change', (e) => {
+      applyDarkMode(e.target.checked);
+    });
+
     window.onload = () => {
       document.getElementById('searchInput').focus();
+      updateRecentlyPlayedDisplay();
     };
   </script>
 </body>
