@@ -69,12 +69,6 @@
       background-color: #c5cae9;
     }
 
-    .tab-button.active {
-      background-color: #3949ab;
-      color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
     .tab-content {
       display: none;
     }
@@ -232,6 +226,12 @@
       background-color: #bb86fc;
     }
 
+    /* Star icon styles */
+    .star-icon {
+      color: #3949ab;
+      cursor: pointer;
+    }
+
     /* Dark Mode Styles */
     body.dark-mode {
       background: #121212;
@@ -259,11 +259,6 @@
       background-color: #444;
     }
 
-    body.dark-mode .tab-button.active {
-      background-color: #6200ee;
-      color: white;
-    }
-
     body.dark-mode .open-button,
     body.dark-mode .random-button,
     body.dark-mode .settings-button {
@@ -274,6 +269,10 @@
     body.dark-mode .random-button:hover,
     body.dark-mode .settings-button:hover {
       background-color: #3700b3;
+    }
+
+    body.dark-mode .star-icon {
+      color: #bb86fc;
     }
 
     /* Recently Played Section */
@@ -321,6 +320,66 @@
     body.dark-mode .recent-game:hover {
       background: #3700b3;
     }
+
+    /* Favorites Section */
+    .favorites-section {
+      margin-top: 40px;
+      padding: 20px;
+      background: #e8eaf6;
+      border-radius: 8px;
+    }
+
+    .favorites-section h2 {
+      margin-top: 0;
+      color: #3949ab;
+    }
+
+    .favorites-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .favorite-game {
+      background: #c5cae9;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .favorite-game:hover {
+      background: #9fa8da;
+      transform: translateY(-2px);
+    }
+
+    .remove-favorite {
+      margin-left: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #3949ab;
+    }
+
+    /* Dark mode styles for favorites */
+    body.dark-mode .favorites-section {
+      background: #333;
+    }
+
+    body.dark-mode .favorite-game {
+      background: #6200ee;
+      color: white;
+    }
+
+    body.dark-mode .favorite-game:hover {
+      background: #3700b3;
+    }
+
+    body.dark-mode .remove-favorite {
+      color: #bb86fc;
+    }
   </style>
 </head>
 <body>
@@ -338,6 +397,14 @@
       <button class="random-button" id="randomGameButton">Random Game</button>
     </div>
 
+    <!-- Favorites Section -->
+    <div class="favorites-section">
+      <h2>YOUR FAVORITES</h2>
+      <div class="favorites-list" id="favoritesList">
+        <p>No favorite games yet</p>
+      </div>
+    </div>
+
     <!-- Recently Played Section -->
     <div class="recently-played">
       <h2>RECENTLY PLAYED</h2>
@@ -346,7 +413,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Separate Settings Card -->
   <div class="container" id="settingsSection">
@@ -378,16 +444,21 @@
       { label: "Gun Knight", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/gun-knight.html" },
       { label: "Rotodefendo", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/rotodefendo.html" },
       { label: "Counter-Strike 1.6", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/counter-strike-1-6.html" },
-      { label: "There Is No Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/there-is-no-game.html" },
+      { label: "Minecraft Shooter", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/minecraft-shooter.html" },
       { label: "Archery World Tour", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/archery-world-tour.html" },
       { label: "Bowmasters", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/bowmasters.html" },
       { label: "2doom", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/2doom.html" },
       { label: "2D Shooting", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/2d-shooting.html" },
       { label: "Super Hotline Miami", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/ssuper-hotline-miami.html" },
-
+      { label: "Gun Mayhem", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/gunmayhem.html" },
+      { label: "Gun Mayhem 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/gunmayhem2.html" },
+      { label: "Gun Mayhem Redux", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/gunmayhemredux.html" },
+      
       // Puzzle
       { label: "Toodee and Topdee", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/toodee-and-topdee.html" },
+      { label: "Snekburd", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/snekburd.html" },
       { label: "CircloO2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/circloO2.html" },
+      { label: "There Is No Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/there-is-no-game.html" },
       { label: "Abandoned", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/abandoned.html" },
       { label: "Abandoned 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/abandoned3.html" },
       { label: "40xescape", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/40xescape.html" },
@@ -395,20 +466,15 @@
       { label: "Woodworm", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/woodworm.html" },
       { label: "Cut The Rope", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/cut-the-rope.html" },
       { label: "Block Blast", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/block-blast.html" },
-      { label: "Angry Birds", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/angry-birds.html" },
-      { label: "Angry Birds Showdown", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/angry-birds-showdown.html" },
-      { label: "Angry Birds Space", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/angry-birds-space.html" },
       { label: "Very Long Dog", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/very-long-dog.html" },
       { label: "Tiny Fragments", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/tiny-fragments.html" },
       { label: "2048", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/2048.html" },
       { label: "2048 cupcakes", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/2048-cupcakes.html" },
       { label: "1", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/1.html" },
       { label: "9007199254740992", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/9007199254740992.html" },
-      { label: "10 bullets", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/10bullets.html" },
-      { label: "Hextris", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/hextris.html" },
       { label: "Trap The Cat", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/trap-the-cat.html" },
+      { label: "Block The Pig", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/block-the-pig.html" },
       { label: "Trivia Crack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/trivia-crack.html" },
-      { label: "Telephone Trouble", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/telephone-trouble.html" },
       { label: "Recoil", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/recoil.html" },
       { label: "Gobble", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/gobble.html" },
       { label: "Portal (Flash Version)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/portal-flash-version.html" },
@@ -421,27 +487,69 @@
       { label: "IQ Ball", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/iq-ball.html" },
       { label: "Yellow", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/yellow.html" },
       { label: "Primary", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/primary.html" },
-      { label: "A Dark Room", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/a-dark-room.html" },
-      { label: "Mimic", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/mimic.html" },
-      { label: "Peggle", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/peggle.html" },
-      { label: "Among Us", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/amogus.html" },
-      { label: "Avalanche", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/avalanche.html" },
-      { label: "AMAZE!", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/amaze.html" },
-      { label: "Mob Control", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/mob-control.html" },
       { label: "You Are Lucky", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/youarelucky.html" },
+      { label: "Civiballs", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/civiballs.html" },
+      { label: "Civiballs 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/civiballs2.html" },
+      { label: "Single Block Pushing Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/single-block-pushing-game.html" },
+      { label: "Sugar Sugar", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/sugarsugar.html" },
+
+      // Strategy
+      { label: "Papa's Pizzeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-pizzeria.html" },
+      { label: "Papa's Burgeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-bakeria.html" },
+      { label: "Papa's Taco Mia", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-taco-mia.html" },
+      { label: "Papa's Freezeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-freezeria.html" },
+      { label: "Papa's Pancakeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-pancakeria.html" },
+      { label: "Papa's Wingeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-wingeria.html" },
+      { label: "Papa's Hot Doggeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-hot-doggeria.html" },
+      { label: "Papa's Cupcakeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-cupcakeria.html" },
+      { label: "Papa's Pastaria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-pasteria.html" },
+      { label: "Papa's Donuteria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-donuteria.html" },
+      { label: "Papa's Cheeseria ", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-cheeseria.html" },
+      { label: "Papa's Bakeria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-bakeria.html" },
+      { label: "Papa's Sushiria", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-sushiria.html" },
+      { label: "Papa's Scooperia", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papas-scooperia.html" },
+      { label: "Papa Louie Night Hunt 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papalouienighthunt2.html" },
+      { label: "Papa Louie 2: When Burgers Attack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papalouiewhenburgersattack.html" },
+      { label: "Papa Louie 2: When Pizzas Attack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papalouiewhenpizzasattack.html" },
+      { label: "Papa Louie 2: When Sundaes Attack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/papalouiewhensundaesattack.html" },
+      { label: "Not Your Pawn!", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/not-your-pawn.html" },
+      { label: "Deal or No Deal", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/deal-or-no-deal.html" },
+      { label: "Peggle", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/peggle.html" },
+      { label: "A Dark Room", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/a-dark-room.html" },
+      { label: "Hextris", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/hextris.html" },
+      { label: "Suika Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/suika.html" },
+      { label: "Suika Pico", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/suikapico.html" },
+      { label: "Telephone Trouble", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/telephone-trouble.html" },
+      { label: "Avalanche", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/avalanche.html" },
+      { label: "AMAZE!", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/amaze.html" },
+      { label: "Mimic", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/mimic.html" },
+      { label: "Angry Birds", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/angry-birds.html" },
+      { label: "Angry Birds Showdown", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/angry-birds-showdown.html" },
+      { label: "Angry Birds Space", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/angry-birds-space.html" },
+      { label: "Mob Control", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/mob-control.html" },
+      { label: "Among Us", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/amogus.html" },
+      { label: "10 bullets", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/10bullets.html" },
 
       // Driving
       { label: "Polytrack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/polytrack.html" },
       { label: "Drive Mad", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drive-mad.html" },
       { label: "Drift Boss", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drift-boss.html" },
       { label: "Drift Hunters", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drift-hunters.html" },
+      { label: "Rocket League 2D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/rocketleague.html" },
       { label: "Escape Road", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/escape-road.html" },
       { label: "Escape Road 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/escape-road-2.html" },
       { label: "Indian Truck Simulator", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/indiantrucksim.html" },
+      { label: "Survival Race", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/survival-race.html" },
       { label: "Car Crash 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/car-crash-2.html" },
       { label: "Car Crash 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/car-crash-3.html" },
+      { label: "Moto 3XM", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/motox3m.html" },
+      { label: "Moto 3XM 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/motox3m2.html" },
+      { label: "Moto 3XM 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/motox3m3.html" },
+      { label: "Moto 3XM Pool Party", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/motox3mpoolparty.html" },
+      { label: "Moto 3XM Spooky Land", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/motox3mspookyland.html" },
+      { label: "Moto 3XM Winter", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/motox3mwinter.html" },
+      { label: "Mountain Bike Racer", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/mountainbikeracer.html" },
       { label: "Car Stunts Driving", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/car-stunts-driving.html" },
-      { label: "Survival Race", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/survival-race.html" },
       { label: "Madalin Stunt Cars", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/madalin-stunt-cars.html" },
       { label: "Super Car Rush", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/super-car-rush.html" },
       { label: "Slow Roads", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/slow-roads.html" },
@@ -451,6 +559,7 @@
       { label: "Driven Wild", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/driven-wild.html" },
       { label: "Ace Gangster Taxi", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/ace-gangster-taxi.html" },
       { label: "Ice Dodo", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/icedodo.html" },
+      { label: "Monster Tracks", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/monster-tracks.html" },
 
       // Platformers
       { label: "Big Tower Tiny Square", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/big-tower-tiny-square.html" },
@@ -466,15 +575,17 @@
       { label: "Level Devil", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/level-devil.html" },
       { label: "60 second burger run", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/60-second-burger-run.html" },
       { label: "60 second santa run", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/60-second-santa-run.html" },
+      { label: "Geometry Dash Lite", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/geometry-dash-lite.html" },
+      { label: "3dash", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/3dash.html" },
       { label: "Space is key", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/space-is-key.html" },
       { label: "Space is key 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/space-is-key-2.html" },
       { label: "Space is key Xmas", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/space-is-key-xmas.html" },
       { label: "Obey The Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/obey-the-game.html" },
       { label: "Offline Paradise", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/offline-paradise.html" },
+      { label: "N-Gon", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/n-gon.html" },
+      { label: "Rodha", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/rodha.html" },
       { label: "Slime Laboratory", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/slime-laboratory.html" },
       { label: "Glitch Buster", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/glitch-buster.html" },
-      { label: "Geometry Dash Lite", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/geometry-dash-lite.html" },
-      { label: "3dash", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/3dash.html" },
       { label: "Run", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/run.html" },
       { label: "Run 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/run-2.html" },
       { label: "Run 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/run-3.html" },
@@ -488,8 +599,12 @@
       { label: "Vex 7", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/vex-7.html" },
       { label: "Vex 8", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/vex-8.html" },
       { label: "Vex Challenges", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/vex-challenges.html" },
-      { label: "Rodha", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/rodha.html" },
       { label: "Ascent", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/ascent.html" },
+      { label: "Opposite Day", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/opposite-day.html" },
+      { label: "Only Up", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/only-up.html" },
+      { label: "Obby Robby: Only Up", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/obby-robby-only-up.html" },
+      { label: "Obby: 99% Will Lose", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/obby-99percent-will-lose.html" },
+      { label: "Minecraft Parkour", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/minecraft-parkour.html" },
 
       // Fighting
       { label: "Crazy Cattle 3D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/crazy-cattle-3d.html" },
@@ -518,11 +633,14 @@
       { label: "Awesome Tanks 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/awesome-tanks2.html" },
       { label: "Super Liquid Soccer", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/superliquidsoccer.html" },
       { label: "Iron Snout", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/iron-stout.html" },
+      { label: "Mighty Knight", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/mightyknight.html" },
+      { label: "Mighty Knight 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/mightyknight2.html" },
 
       // Endless
       { label: "Slope", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/slope.html" },
       { label: "Slope 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/slope-3.html" },
       { label: "Snow Rider 3D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/snowrider3d.html" },
+      { label: "Jetpack Joyride", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/jetpack-joyride.html" },
       { label: "Operius", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/operius.html" },
       { label: "Cubefield", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/cubefield.html" },
       { label: "Death Run 3D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/deathrun3d.html" },
@@ -538,10 +656,13 @@
       { label: "Tunnel Rush", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/tunnelrush.html" },
       { label: "Agar.io Lite", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/agario-lite.html" },
       { label: "Paper.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/paperio.html" },
+      { label: "Paper.io 3D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/paperio3d.html" },
+      { label: "Paper.io Mania", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/paperiomania.html" },
       { label: "Slither.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/slitherio.html" },
       { label: "Rolly Vortex", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/rolly-vortex.html" },
       { label: "Dodge", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/dodge2.html" },
       { label: "Crossy Road", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/crossy-road.html" },
+      { label: "Get To The Top Although There Is No Top", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/gtttatint.html" },
 
       // Point-and-click
       { label: "Henry Stickmin: Breaking The Bank", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/breakingbank.html" },
@@ -575,7 +696,9 @@
       { label: "Spacebar Clicker", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/space-bar-clicker.html" },
       { label: "Planet Clicker", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/planet-clicker.html" },
       { label: "Candy Clicker 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/candy-clicker2.html" },
-
+      { label: "Monkey Mart", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/monkey-mart.html" },
+      { label: "My Perfect Hotel", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/my-perfect-hotel.html" },
+      
       // Multiplayer
       { label: "Basketball Randoms", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/basketball-randoms.html" },
       { label: "Soccer Randoms", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/soccer-randoms.html" },
@@ -690,9 +813,11 @@
       { label: "QWOP", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/qwop.html" },
       { label: "Cat Mario", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/cat-mario.html" },
       { label: "Unfair Mario", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/unfair-mario.html" },
+      { label: "Getting Over It", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/getting-over-it.html" },
 
       // Indie
       { label: "Minecraft 1.8", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/minceraft-1dot8.html" },
+      { label: "Minecraft Indev", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/eaglercraft-indev.html" },
       { label: "Happy Wheels", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/happy-wheels.html" },
       { label: "Pizza Tower", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/pizza-tower.html" },
       { label: "Celeste Pico", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/indie/celeste-pico.html" },
@@ -708,20 +833,7 @@
       { label: "Super Pickleball Adventure", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/super-pickleball-adventure.html" },
       { label: "The Classroom", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom.html" },
       { label: "The Classroom 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom2.html" },
-      { label: "The Classroom 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom3.html" }
-
-      // idk
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: "qwertyuiopasdfghjklzxcvbnm", url: "qwertyuiopasdfghjklzxcvbnm" },
-//      { label: 'qwertyuiopasdfghjklzxcvbnm', url: 'qwertyuiopasdfghjklzxcvbnm' },
+      { label: "The Classroom 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom3.html" },
     ];
 
     tools.forEach(tool => {
@@ -735,6 +847,7 @@
     const gameCounterElement = document.getElementById('gameCounter');
     const loadingOverlay = document.getElementById('loadingOverlay');
     const RECENT_GAMES_KEY = 'recentGames';
+    const FAVORITES_KEY = 'favoriteGames';
     const MAX_RECENT_GAMES = 5;
 
     const groupedTools = tools.reduce((acc, tool) => {
@@ -769,6 +882,16 @@
         tabButton.className = 'tab-button';
         tabButton.dataset.tab = tool.id;
         tabButton.setAttribute('aria-label', `Open ${tool.label}`);
+        
+        // Add star icon for favorites
+        const starIcon = document.createElement('span');
+        starIcon.innerHTML = ' ☆';
+        starIcon.className = 'star-icon';
+        starIcon.dataset.gameId = tool.id;
+        starIcon.style.marginLeft = '8px';
+        starIcon.style.cursor = 'pointer';
+        tabButton.appendChild(starIcon);
+        
         tabs.appendChild(tabButton);
       });
 
@@ -780,11 +903,16 @@
     document.addEventListener('click', e => {
       if (e.target.classList.contains('tab-button')) {
         const target = e.target.dataset.tab;
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
-
         const toolData = tools.find(t => t.id === target);
         if (toolData) openGame(toolData.id);
+      }
+
+      // Star icon click handler
+      if (e.target.classList.contains('star-icon') || e.target.parentElement.classList.contains('star-icon')) {
+        const star = e.target.classList.contains('star-icon') ? e.target : e.target.parentElement;
+        const gameId = star.dataset.gameId;
+        toggleFavorite(gameId);
+        e.stopPropagation();
       }
     });
 
@@ -867,6 +995,84 @@
       });
     }
 
+    // Initialize favorites
+    function initializeFavorites() {
+      if (!localStorage.getItem(FAVORITES_KEY)) {
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify([]));
+      }
+    }
+
+    // Toggle favorite status
+    function toggleFavorite(gameId) {
+      const favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY));
+      const index = favorites.indexOf(gameId);
+      
+      if (index === -1) {
+        favorites.push(gameId);
+      } else {
+        favorites.splice(index, 1);
+      }
+      
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+      updateFavoritesDisplay();
+      updateStarIcons();
+    }
+
+    // Update favorites display
+    function updateFavoritesDisplay() {
+      const favoritesList = document.getElementById('favoritesList');
+      const favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+      
+      if (favorites.length === 0) {
+        favoritesList.innerHTML = '<p>No favorite games yet</p>';
+        return;
+      }
+      
+      favoritesList.innerHTML = '';
+      favorites.forEach(gameId => {
+        const gameData = tools.find(t => t.id === gameId);
+        if (!gameData) return;
+        
+        const gameElement = document.createElement('div');
+        gameElement.className = 'favorite-game';
+        gameElement.innerHTML = `
+          ${gameData.label}
+          <span class="remove-favorite" data-game-id="${gameId}">×</span>
+        `;
+        
+        gameElement.addEventListener('click', () => {
+          openGame(gameId);
+        });
+        
+        favoritesList.appendChild(gameElement);
+      });
+      
+      // Add event listeners to remove buttons
+      document.querySelectorAll('.remove-favorite').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleFavorite(btn.dataset.gameId);
+        });
+      });
+    }
+
+    // Update star icons to reflect favorite status
+    function updateStarIcons() {
+      const favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      
+      document.querySelectorAll('.star-icon').forEach(star => {
+        const gameId = star.dataset.gameId;
+        if (favorites.includes(gameId)) {
+          star.innerHTML = ' ★';
+          star.style.color = isDarkMode ? '#bb86fc' : '#3949ab';
+        } else {
+          star.innerHTML = ' ☆';
+          star.style.color = isDarkMode ? '#bb86fc' : '#3949ab';
+        }
+      });
+    }
+
     document.getElementById('searchInput').addEventListener('input', function () {
       const term = this.value.toLowerCase();
       let visibleGamesCount = 0;
@@ -915,6 +1121,7 @@
       document.body.classList.toggle('dark-mode', enabled);
       localStorage.setItem('darkMode', enabled);
       darkModeToggle.checked = enabled;
+      updateStarIcons();
     }
 
     // On load
@@ -929,6 +1136,9 @@
     window.onload = () => {
       document.getElementById('searchInput').focus();
       updateRecentlyPlayedDisplay();
+      initializeFavorites();
+      updateFavoritesDisplay();
+      updateStarIcons();
     };
   </script>
 </body>
