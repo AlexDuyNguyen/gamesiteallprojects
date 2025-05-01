@@ -41,7 +41,7 @@
 
     function launch() {
       try {
-        fetch("https://raw.githubusercontent.com/AlexDuyNguyen/gamesiteallprojects/main/games/layout.html")
+        fetch("https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/layout.html?t=timestamp")
           .then(response => response.text())
           .then(text => {
             const newWin = window.open("about:blank", "_blank");
