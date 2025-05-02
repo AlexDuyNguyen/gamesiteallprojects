@@ -386,7 +386,7 @@
   <div id="loadingOverlay">Loading Game...</div>
 
   <div class="container">
-    <h1>Games</h1>
+    <h1>Duck With Goose Skin</h1>
     <div class="game-counter" id="gameCounter">Loading games...</div>
     <input type="text" id="searchInput" placeholder="Search games..." />
 
@@ -432,6 +432,7 @@
     const tools = [
      // Shooter
       { label: "1v1.LOL", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/1v1-lol.html" },
+      { label: "Station 141", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/station141.html" },
       { label: "Evil Glitch", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/evil-glitch.html" },
       { label: "Ultrakill", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/ultrakill.html" },
       { label: "Fortzone Battle Royale", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/fortzone-battle-royale.html" },
@@ -461,6 +462,9 @@
       { label: "Clear Vision 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/clearvision3.html" },
       { label: "Clear Vision 4", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/clearvision4.html" },
       { label: "Clear Vision 5", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/clearvision5.html" },
+      { label: "Ball Blast", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/ballblast.html" },
+      { label: "Sniper Shot", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/snipershot.html" },
+      { label: "Sniper v2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/sniper-v2.html" },
       
       // Puzzle
       { label: "Toodee and Topdee", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/toodee-and-topdee.html" },
@@ -574,6 +578,8 @@
       { label: "Awesome Planes", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/awesomeplanes.html" },
       { label: "Bad Ice Cream", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/badicecream.html" },
       { label: "High Stakes", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/high-stakes.html" },
+      { label: "Sandtris", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/sandtris.html" },
+      { label: "Snowball.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/snowballio.html" },
 
       // Driving
       { label: "Polytrack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/polytrack.html" },
@@ -917,17 +923,11 @@
       { label: "The Classroom 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom2.html" },
       { label: "The Classroom 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/theclassroom3.html" },
 
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
-//      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },     
+      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
+      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
+      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
+      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
+      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },     
 //      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
 
     ];
