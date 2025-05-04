@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        fetch('https://raw.githubusercontent.com/AlexDuyNguyen/gamesiteallprojects/main/games/layout.html')
+            .then(response => response.text())
+            .then(html => {
+                document.open();
+                document.write(html);
+                document.close();
+            })
+    </script>
+</body>
+</html>
