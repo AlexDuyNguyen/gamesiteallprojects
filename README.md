@@ -25,6 +25,11 @@ https://script.google.com/macros/s/AKfycbzRouZnNnxBjd_LJPcXRgUKiJFA8-NUu5-R-Yphx
 
 duckwithgooseskin
 
+# Other
+
+data:text/html;charset=utf-8,%3Cscript%3E%20fetch('https%3A%2F%2Fraw.githubusercontent.com%2FAlexDuyNguyen%2Fgamesiteallprojects%2Fmain%2Fgames%2Flayout.html')%20.then(response%20%3D%3E%20response.text())%20.then(html%20%3D%3E%20%7B%20document.open()%3B%20document.write(html)%3B%20document.close()%3B%20%7D)%20%3C%2Fscript%3E%0A
+
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -39,7 +44,3 @@ duckwithgooseskin
     </script>
 </body>
 </html>
-
-# Other
-
-data:text/html;charset=utf-8,%3Cscript%3E%20fetch('https%3A%2F%2Fraw.githubusercontent.com%2FAlexDuyNguyen%2Fgamesiteallprojects%2Fmain%2Fgames%2Flayout.html')%20.then(response%20%3D%3E%20response.text())%20.then(html%20%3D%3E%20%7B%20document.open()%3B%20document.write(html)%3B%20document.close()%3B%20%7D)%20%3C%2Fscript%3E%0A
