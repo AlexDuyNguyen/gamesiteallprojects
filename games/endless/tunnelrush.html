@@ -1,1 +1,26 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nettleweb/nettleweb@2ec37b0d6ecb5be03efdc85f884b7ca8ef6566ca/r/91d3e775-26be-4620-b379-54475c663648/style/style.css"> <script src="https://cdn.jsdelivr.net/gh/nettleweb/nettleweb@2ec37b0d6ecb5be03efdc85f884b7ca8ef6566ca/r/91d3e775-26be-4620-b379-54475c663648/UnityProgress.js"></script> <script src="https://cdn.jsdelivr.net/gh/poopoofartnut/ppfn@6cf67e43152d74965ab5fde3922e61dbd353c054/projects/tunnel-rush/UnityLoader.js"></script> <script> var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/poopoofartnut/ppfn@6cf67e43152d74965ab5fde3922e61dbd353c054/projects/tunnel-rush/build.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script> <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div> <script src=""></script>
+<html><head>
+    <base href="https://cdn.jsdelivr.net/gh/genizy/assets@main/tunnel-rush/">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Tunnel Rush</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script id="gamedistribution-jssdk"></script><script src="UnityLoader.js"></script>
+    <script src="UnityProgress.js"></script>
+    <link rel="icon" href="img/tunnel.jpg">
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "build.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}});
+    </script>
+  </head>
+  <body>
+    <!-- 
+-->
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 100%; height: 95%; margin: 0px; padding: 0px; border: 0px; position: relative; background: rgb(128, 128, 128);"><canvas id="#canvas" style="cursor: default;" width="1858" height="1113"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+	  <div class="footer">
+	            <div class="webgl-logo"></div>
+	            <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+	            <div class="title">Tunnel Rush</div>
+	        </div>
+    </div>
+  
+<script src="blob:null/9aaec413-4446-4e84-b7d3-448df5e77630"></script></body></html>
