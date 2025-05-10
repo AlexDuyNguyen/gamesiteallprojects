@@ -1,0 +1,18 @@
+<html>
+<head>
+    <style>
+        html, body { margin:0; padding:0; height:100%; width:100%; }
+        ruffle-player { display:block; width:100%; height:100%; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+</head>
+<body>
+    <script>
+        window.addEventListener("load", () => {
+            const player = window.RufflePlayer.newest().createPlayer();
+            document.body.appendChild(player);
+            player.load("https://cdn.jsdelivr.net/gh/supaub/interstellar-3@8a13c735e7df6d86602b354e45c090405f21f45a/play/flash/swf/clickerheroes.swf");
+        });
+    </script>
+</body>
+</html>
