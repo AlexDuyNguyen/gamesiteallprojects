@@ -1,1 +1,284 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8" /> <meta name="format-detection" content="telephone=no"> <meta name="HandheldFriendly" content="true" /> <meta name="apple-mobile-web-app-capable" content="yes" /> <meta name="apple-mobile-web-app-status-bar-style" content="black" /> <meta name="apple-mobile-web-app-title" content="Bubblez"> <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui,shrink-to-fit=no" /> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-title" content="Fireboy and Watergirl 2 Light Temple"> <title>Fireboy & Watergirl 2 Light Temple</title> <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/assets/styles/main.css'> <script type="text/javascript"> var gtag; </script> </head> <body style="margin: 0px; overflow: hidden"> <script type="text/javascript"> window.requireNode = window.require; window.require = undefined; </script> <script src="https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/bower_components/requirejs/require.js"></script> <div id="root"> <div id="container"></div> <div id="hammer"></div> <div id="debug-fps" style="color:#ff0000; position: absolute; top: 0;"></div> </div> <script type="text/javascript">  function addScript(src, buster, callback) { var s = document.createElement('script'); s.setAttribute('src', src + '?v=' + buster); if (typeof callback === 'function') { s.onload = callback; } document.body.appendChild(s); } var fbrqLA = false, fbrqBD = 0, playBtn = true, fbrqSA = true, libs = [], version = '5'; require(["https://cdn.jsdelivr.net/gh/bobydob/godotpack@137b954a7a2d8e0a28efe82a778000c02bcc1481/side/faw2/faw2.min.js?v=" + version]); </script> </body> </html>
+<html lang="en"><head>
+      
+      
+      <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-60359697-50&amp;cx=c&amp;gtm=453e5571za200&amp;tag_exp=101509156~103101750~103101752~103116025~103200001~103233424~103251618~103251620~103284320~103284322~103301114~103301116"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114527842-45&amp;cx=c&amp;gtm=453e5571za200&amp;tag_exp=101509156~103101750~103101752~103116025~103200001~103233424~103251618~103251620~103284320~103284322~103301114~103301116"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WX5VS54ZDW&amp;cx=c&amp;gtm=453e5571za200&amp;tag_exp=101509156~103101750~103101752~103116025~103200001~103233424~103251618~103251620~103284320~103284322~103301114~103301116"></script><script async="" src="//cdn.raygun.io/raygun4js/raygun.min.js"></script><script>
+          window.dataLayer = window.dataLayer || [];
+  
+          function gtag() {
+              dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-WX5VS54ZDW');
+      </script>
+      <meta charset="utf-8">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="HandheldFriendly" content="true">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Bubblez">
+      <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui,shrink-to-fit=no">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-title" content="Fireboy and Watergirl 2 Light Temple">
+      <title>Fireboy &amp; Watergirl 2 Light Temple</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/assets/styles/main.css">
+      <script type="text/javascript"> var gtag; </script> 
+   <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://cdn.jsdelivr.net/gh/bobydob/godotpack@137b954a7a2d8e0a28efe82a778000c02bcc1481/side/faw2/faw2.min.js?v=5" src="https://cdn.jsdelivr.net/gh/bobydob/godotpack@137b954a7a2d8e0a28efe82a778000c02bcc1481/side/faw2/faw2.min.js?v=5"></script><style type="text/css">
+        #h5branding-center {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            text-align: center;
+            width: 100%;
+        }
+        #h5branding-wrapper {
+            position: relative;
+            z-index: 665;
+            width: 150px;
+            height: 150px;
+            display:inline-block;
+            margin: 35px 40px 96px 40px;
+        }
+
+        #h5branding-version {
+            position: absolute;
+            right: 5px;
+            font-family: Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            font-size: 0.5em;
+            top: 5px;
+        }
+
+        #h5branding-wrapper > #h5branding-bar, #h5branding-wrapper > img {
+            box-shadow: inset 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #h5branding-ad {
+            position: relative;
+            z-index: 667;
+            border-radius: 5px;
+            border: 3px solid white;
+            background: rgba(256, 256, 256, 0.2);
+            width: 336px;
+            height: 280px;
+            display: none;
+            margin: 0px 10px 0px 10px;
+        }
+
+        #h5branding-wrapper > img {
+            /* Needs appropriate vendor prefixes */
+            box-sizing: border-box;
+
+            /* This needs to be equal to strokeWidth */
+            padding: 4%;
+        }
+
+        #h5branding-wrapper > img {
+            border-radius: 50%;
+            box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5), 5px 5px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        #h5branding-container {
+            box-sizing: border-box;
+            position: absolute;
+            z-index: 664;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        #h5branding-background {
+            position: absolute;
+            top: -25%;
+            left: -25%;
+            width: 150%;
+            height: 150%;
+            background-blend-mode: multiply;
+            background-size: cover;
+            filter: blur(40px) brightness(1.5);
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+             /* IE10+ CSS styles go here */
+             #h5branding-background {
+                background-image: none !important;
+             }
+        }
+
+        #h5branding-logo {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            top: 10%;
+        }
+
+        #h5branding-logo > img {
+            height: 150px;
+        }
+
+        #h5branding-title {
+            position: absolute;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5) 50%, transparent);
+            color: #fff;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+            bottom:10%;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            line-height: 100%;
+        }
+
+        #h5branding-button {
+            /* border: 0; */
+            padding: 10px 22px;
+            border-radius: 5px;
+            border: 3px solid white;
+            background: linear-gradient(0deg, #dddddd, #ffffff);
+            color: #222;
+            text-transform: uppercase;
+            text-shadow: 0 0 1px #fff;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            display: none;
+            width: 150px;
+            position: absolute;
+            top: 170px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+
+        @media (orientation: portrait) and (max-width: 1080px) {
+            #h5branding-logo > img {
+                height: initial;
+                width:100%;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 640px) {
+            #h5branding-title {
+                display: none;
+            }
+
+            #h5branding-logo > img {
+                height: 100px;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 460px) {
+            #h5branding-title {
+                display: none;
+            }
+
+            #h5branding-wrapper {
+                width: 110px;
+                height: 110px;
+                margin: 0;
+            }
+
+            #h5branding-logo {
+                top: 0;
+                transform: scale(0.7, 0.7);
+            }
+
+            #h5branding-button {
+                top: initial;
+                width: 110px;
+                font-size: 14px;
+                position: absolute;
+                top: 140px;
+                left: 0;
+                right: 0;
+            }
+
+            #h5branding-ad {
+               display: none !important;
+            }
+        }
+
+        @media (orientation: portrait) and (max-width: 250px) {
+            #h5branding-logo {
+                top: 2%;
+            }
+        }
+
+        @media (orientation: landscape) and (max-width: 330px) {
+             #h5branding-button {
+                top: 120px;
+            }
+
+            #h5branding-logo > img {
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 600px) and (max-height: 850px) {
+            #h5branding-ad {
+               display: none !important;
+            }
+        }
+
+        @media (max-width: 600px) and (max-height: 1100px) {
+            #h5branding-center {
+                top: 40%;
+            }
+
+            #h5branding-title {
+               bottom: 5%
+            }
+        }
+
+        @media (max-width: 600px) and (max-height: 900px) {
+            #h5branding-title {
+               display: none
+            }
+        }
+
+        @media (orientation: landscape) and (min-width: 800px) {
+            #h5branding-wrapper {
+                margin-left: 120px;
+                margin-right: 120px;
+            }
+        }
+
+        </style><script src="https://www.googletagmanager.com/gtag/js?id=none" async=""></script></head>
+   <body style="margin: 0px; overflow: hidden"><div id="h5branding-container">
+        <div id="h5branding-background" style="background-image: url(&quot;https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/assets/383ad09b92c7446b9113cccc29630517-512x512.jpeg&quot;); background-color: rgb(1, 47, 80);"></div>
+        <div id="h5branding-version">5</div>
+        <div id="h5branding-logo"></div>
+        <div id="h5branding-center">
+            <div id="h5branding-ad"></div>
+            <div id="h5branding-wrapper">
+                <img src="https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/assets/383ad09b92c7446b9113cccc29630517-512x512.jpeg">
+                <div id="h5branding-bar"><svg viewBox="0 0 100 100" style="display: block; width: 100%;"><path d="M 50,50 m 0,-48.5 a 48.5,48.5 0 1 1 0,97 a 48.5,48.5 0 1 1 0,-97" stroke="white" stroke-width="3" fill-opacity="0" style="stroke-dasharray: 304.844, 304.844; stroke-dashoffset: 0;"></path></svg></div>
+                <button id="h5branding-button" onclick="h5branding.SplashLoader.getInstance().onPlayButtonClick();" style="display: block;">Play</button>
+            </div>
+        </div>
+        <div id="h5branding-title">Fireboy Watergirl Light Temple</div>
+    </div>
+      <script type="text/javascript"> window.requireNode = window.require; window.require = undefined; </script> <script src="https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/bower_components/requirejs/require.js"></script> 
+      <div id="root">
+         <div id="container"><canvas width="2150" height="2374" style="display: block; touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 1075px; height: 1187px; cursor: inherit;"></canvas></div>
+         <div id="hammer" style="position: absolute; top: 0px; width: 1075px; height: 1187px; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+         <div id="debug-fps" style="color:#ff0000; position: absolute; top: 0;"></div>
+      </div>
+      <script type="text/javascript">  function addScript(src, buster, callback) { var s = document.createElement('script'); s.setAttribute('src', src + '?v=' + buster); if (typeof callback === 'function') { s.onload = callback; } document.body.appendChild(s); } var fbrqLA = false, fbrqBD = 0, playBtn = true, fbrqSA = true, libs = [], version = '5'; require(["https://cdn.jsdelivr.net/gh/bobydob/godotpack@137b954a7a2d8e0a28efe82a778000c02bcc1481/side/faw2/faw2.min.js?v=" + version]); </script> 
+   
+</body></html>
