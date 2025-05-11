@@ -381,6 +381,15 @@
     body.dark-mode .remove-favorite {
       color: #bb86fc;
     }
+
+    /* Settings option styles */
+    .settings-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
   </style>
 </head>
 <body>
@@ -415,12 +424,21 @@
 
   <div class="container" id="settingsSection">
     <h2>SETTINGS</h2>
-    <div class="tabs">
+    
+    <div class="settings-option">
       <label class="toggle-switch">
         <input type="checkbox" id="darkModeToggle">
         <span class="toggle-slider"></span>
       </label>
       <span class="toggle-label">Dark Mode</span>
+    </div>
+
+    <div class="settings-option">
+      <label class="toggle-switch">
+        <input type="checkbox" id="confirmCloseToggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label">Confirm Tab Close</span>
     </div>
   </div>
   <script>
@@ -1095,11 +1113,11 @@
       { label: "The Impossible Quiz 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/the-impossible-quiz-2.html" },
       { label: "The Impossible Quiz Book", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/the-impossible-quizbook.html" },
       { label: "The Impossible Quizmas", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/impossiblequizmas.html" },
-      { label: "Super Meat Boy", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/supermeatboy.html" },
       { label: "Worlds Hardest Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/worldshardestgame.html" },
       { label: "Worlds Hardest Game 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/worldshardestgame2.html" },
       { label: "Worlds Hardest Game 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/worldshardestgame3.html" },
       { label: "Worlds Hardest Game 4", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/worldshardestgame4.html" },
+      { label: "Super Meat Boy", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/supermeatboy.html" },
       { label: "QWOP", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/qwop.html" },
       { label: "Cat Mario", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/cat-mario.html" },
       { label: "Unfair Mario", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rage/unfair-mario.html" },
@@ -1132,6 +1150,7 @@
     const RECENT_GAMES_KEY = 'recentGames';
     const FAVORITES_KEY = 'favoriteGames';
     const MAX_RECENT_GAMES = 5;
+    const CONFIRM_CLOSE_KEY = 'confirmClose';
 
     const groupedTools = tools.reduce((acc, tool) => {
       if (!acc[tool.groups]) acc[tool.groups] = [];
@@ -1416,12 +1435,55 @@
       applyDarkMode(e.target.checked);
     });
 
+    // Tab Close Confirmation
+    const confirmCloseToggle = document.getElementById('confirmCloseToggle');
+    
+    // Initialize tab close confirmation setting
+    function initializeConfirmClose() {
+      const confirmCloseSetting = localStorage.getItem(CONFIRM_CLOSE_KEY);
+      // Default to enabled if not set
+      if (confirmCloseSetting === null) {
+        localStorage.setItem(CONFIRM_CLOSE_KEY, 'true');
+        confirmCloseToggle.checked = true;
+        setupBeforeUnloadListener(true);
+      } else {
+        const isEnabled = confirmCloseSetting === 'true';
+        confirmCloseToggle.checked = isEnabled;
+        setupBeforeUnloadListener(isEnabled);
+      }
+    }
+    
+    // Toggle tab close confirmation
+    confirmCloseToggle.addEventListener('change', (e) => {
+      const isEnabled = e.target.checked;
+      localStorage.setItem(CONFIRM_CLOSE_KEY, isEnabled);
+      setupBeforeUnloadListener(isEnabled);
+    });
+    
+    // Set up or remove the beforeunload event listener
+    function setupBeforeUnloadListener(enabled) {
+      if (enabled) {
+        window.addEventListener('beforeunload', handleBeforeUnload);
+      } else {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+      }
+    }
+    
+    // Handle the beforeunload event
+    function handleBeforeUnload(e) {
+      // The message actually shown is controlled by the browser and may be generic
+      const message = "Are you sure you want to leave?";
+      e.returnValue = message; // Standard for most browsers
+      return message; // For older browsers
+    }
+
     window.onload = () => {
       document.getElementById('searchInput').focus();
       updateRecentlyPlayedDisplay();
       initializeFavorites();
       updateFavoritesDisplay();
       updateStarIcons();
+      initializeConfirmClose();
     };
   </script>
 </body>
