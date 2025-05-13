@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Runner</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    #controls {
+      padding: 10px;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 14px;
+      border: none;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <span><strong>HTML Runner</strong></span>
+    <div id="buttons">
+      <button id="popOutBtn">Pop-Out</button>
+      <button id="downloadBtn">Download HTML</button>
+    </div>
+  </div>
+
+  <textarea id="htmlInput" placeholder="Type your HTML here..." spellcheck="false">
+  </textarea>
+
+  <iframe id="preview"></iframe>
+
+  <script>
+    const input = document.getElementById('htmlInput');
+    const iframe = document.getElementById('preview');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const popOutBtn = document.getElementById('popOutBtn');
+
+    function updatePreview() {
+      iframe.srcdoc = input.value;
+    }
+
+    function downloadHTML() {
+      const blob = new Blob([input.value], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'index.html';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function popOutPreview() {
+      const newWindow = window.open('about:blank', '_blank');
+      if (newWindow) {
+        newWindow.document.open();
+        newWindow.document.write(input.value);
+        newWindow.document.close();
+      } else {
+        alert('Pop-up blocked! Please allow pop-ups for this site.');
+      }
+    }
+
+    input.addEventListener('input', updatePreview);
+    downloadBtn.addEventListener('click', downloadHTML);
+    popOutBtn.addEventListener('click', popOutPreview);
+
+    updatePreview(); // Load initial content
+  </script>
+</body>
+</html>
