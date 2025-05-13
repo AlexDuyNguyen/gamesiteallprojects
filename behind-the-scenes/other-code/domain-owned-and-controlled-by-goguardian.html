@@ -1,0 +1,56 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>GoGuardian Hosting Platform</title>
+<link rel="icon" href="https://assets-global.website-files.com/60db82d1be38ad3341c2ff23/63c9935a303583e961aaa6a5_GoGuardian-logo-bubble.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0px;}
+body{font-family:'Roboto',sans-serif;background:#f4f4f4;color:#333;display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;overflow:hidden;margin:0;}
+.container{width:110%;max-width:600px;padding:30px;background:#fff;box-shadow:0 6px 0px rgba(0,0,0,0.1);display:none;font-size:16px;}
+.logo{margin-bottom:20px;max-width:180px;margin-left:auto;margin-right:auto;margin-top:12px;}
+.logo img{width:100%;filter:grayscale(0%) brightness(100%);}
+h1{font-size:17px;margin-bottom:8px;color:#444;}
+p{font-size:15px;margin-bottom:5px;}
+ul{list-style-type:none;padding:0;margin-bottom:25px;}
+li{margin:8px 0;}
+a{text-decoration:none;color:#0066cc;font-weight:bold;}
+a:hover{color:#004499;}
+.button{display:inline-block;background-color:#0066cc;color:white;padding:10px 20px;font-size:16px;border:none;border-radius:5px;cursor:pointer;text-align:center;text-decoration:none;}
+.button:hover{background-color:#004499;}
+.loading-container{display:flex;justify-content:center;align-items:center;position:absolute;width:100%;height:100%;background-color:rgba(255,255,255,0.9);top:0;left:0;opacity:1;transition:opacity 0.5s ease-out;}
+.loading-circle{border:5px solid #f3f3f3;border-top:5px solid #0066cc;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+footer{margin-top:27px;font-size:8px;color:#888;}
+footer a{color:#0066cc;font-weight:bold;}
+footer a:hover{color:#004499;}
+footer p{font-size:12px;color:#bbb;margin-bottom:15px;}
+footer p span{color:#333;}
+@media (max-width:768px){.container{padding:30px;width:90%;}h1{font-size:15px;}p{font-size:14px;}.button{font-size:14px;padding:8px 16px;}}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",function(){const delay=Math.random()*(0.7-0.4)+0.2;setTimeout(function(){document.querySelector('.loading-container').style.opacity='0';document.querySelector('.loading-container').style.pointerEvents='none';document.querySelector('.container').style.display='block';},delay*1000);});
+</script>
+</head>
+<body>
+<div class="loading-container" style="opacity: 0; pointer-events: none;">
+<div class="loading-circle"></div>
+</div>
+<div class="container" style="display: block;">
+<header>
+<div class="logo">
+<img src="https://cdn.prod.website-files.com/60db82d1be38ad3341c2ff23/60e512dfc456960e0d670a4e_full-logo-2c.svg" alt="Logo">
+</div>
+</header>
+<h1></h1>
+<h1>This domain is owned and controlled by GoGuardian.</h1>
+<p>Having issues? Check our <a href="https://status.goguardian.com" target="_blank">Status Page</a>.</p>
+<footer>
+<p>Powered by GoGuardian</p>
+<p>© 2025 Liminex, Inc. All rights reserved.</p>
+</footer>
+</div>
+
+
+</body></html>
