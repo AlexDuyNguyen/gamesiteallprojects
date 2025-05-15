@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="https://rawcdn.githack.com/duckwithgooseskin/games/d820cf6dde346963941786b6954fd7056affeaf7/grow-golf/index.html">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>ld52b</title>
+	
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+	
+	<script src="./progress.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+		//document.addEventListener('contextmenu', event => event.preventDefault());
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content { width: 960px; height: 704px; }
+		canvas {
+			transform: translateZ(0px);
+			max-width: 960px;
+			max-height: 704px;
+			object-fit: contain;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 100% !important;
+			height: 100% !important;
+		}
+		#progress { position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; }
+
+	</style>
+	
+</head>
+<body>
+	
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	
+	<div id="openfl-content"><progress id="progress" value="0" max = "1"></progress></div>
+	
+	<script>
+		
+		var __filesToLoad = {
+			"./ld52b.js": {total: 4423919}
+		}
+		
+		var __progressBar;
+		
+		var __progressListener = function __progressListener(progress) {
+			if(!__progressBar) __progressBar = document.getElementById("progress");
+			if(__progressBar) __progressBar.value = progress;
+		};
+
+		var __completionCallback = function __completionCallback() {
+			__progressBar.parentNode.removeChild(__progressBar);
+			lime.embed ("ld52b", "openfl-content", 960, 704, { parameters: {} });
+		};
+
+		__loadWithProgress(__filesToLoad, __progressListener, __completionCallback);
+		
+	</script>
+	
+</body>
+</html>
