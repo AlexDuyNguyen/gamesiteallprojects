@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="https://rawcdn.githack.com/duckwithgooseskin/games/908f8b8b0892d3bef2d66c922425905de51d5f10/woah-thats-ssspicy/index.html">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>SSSPICY!</title>
+	
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+	
+	<script src="./progress.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+	</script>
+	
+	<style>
+		
+		@keyframes wave {
+		  0% {
+			margin-top:-40px;
+		  }
+
+		  50% {
+			margin-top:40px;
+		  }
+          
+		  100% {
+			margin-top:-40px;
+		  }
+		}
+	
+	
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #3399FF; }
+		#openfl-content { background: #3399FF; width: 100%; height: 100%; }
+		#progress { position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; }
+		
+		#loader {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			font-family: 'Fredoka One', cursive;
+			font-size: 100px;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#loader>span {
+			display: inline-block;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	
+	<div id="openfl-content"><progress id="progress" value="0" max = "1"></progress></div>
+	
+	<div id="loader">
+		<span style="animation: wave 2s -1.8s infinite ease-in-out">l</span>
+		<span style="animation: wave 2s -1.6s infinite ease-in-out">o</span>
+		<span style="animation: wave 2s -1.4s infinite ease-in-out">a</span>
+		<span style="animation: wave 2s -1.2s infinite ease-in-out">d</span>
+		<span style="animation: wave 2s -1.0s infinite ease-in-out">i</span>
+		<span style="animation: wave 2s -0.8s infinite ease-in-out">n</span>
+		<span style="animation: wave 2s -0.6s infinite ease-in-out">g</span>
+		<span style="animation: wave 2s -0.4s infinite ease-in-out">.</span>
+		<span style="animation: wave 2s -0.2s infinite ease-in-out">.</span>
+		<span style="animation: wave 2s 0s    infinite ease-in-out">.</span>
+	</div>
+	
+	<script>
+		
+		var __filesToLoad = {
+			"./kajam22b.js": {total: 2465134}
+		}
+		
+		var __progressBar;
+		
+		var __progressListener = function __progressListener(progress) {
+			if(!__progressBar) __progressBar = document.getElementById("progress");
+			if(__progressBar) __progressBar.value = progress;
+		};
+
+		var __completionCallback = function __completionCallback() {
+			__progressBar.parentNode.removeChild(__progressBar);
+			lime.embed ("kajam22b", "openfl-content", 640, 360, { parameters: {} });
+		};
+
+		__loadWithProgress(__filesToLoad, __progressListener, __completionCallback);
+		
+	</script>
+	
+</body>
+</html>
