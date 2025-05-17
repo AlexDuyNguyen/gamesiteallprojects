@@ -1,157 +1,98 @@
-</style><script src="https://cdn.jsdelivr.net/gh/bubbls/ruffle@2d942b638a721bcd9878dde84c6530acaa422385/offpi.js"></script><style type="text/css">#button {
-  display:none;
-}
-.imgb_vis {
-  animation: imgb-animation 7s linear;
-}
-@keyframes imgb-animation {
-  10% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(100px);
-  }
-  90% {
-    transform: translateX(100px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}</style></head><body dir="ltr" class="animated"> 
-	<div id="fb-root"></div>
-	
-	<script>
-	// Issue a warning if trying to preview an exported project on disk.
-	(function(){
-		// Check for running exported on file protocol
-		if (window.location.protocol.substr(0, 4) ==="file")
-		{
-			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
-		}
-	})();
-	</script>
-	
-	<!-- The canvas must be inside a div called c2canvasdiv -->
-	<div id="c2canvasdiv" style="width: 1262px; height: 928px; margin-left: 0px; margin-top: 0px;">
-	
-		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
-		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
-		<canvas height="928" id="c2canvas" width="1262" style="width: 1262px; height: 928px;">
-			<!-- This text is displayed if the visitor's browser does not support HTML5.
-			You can change it, but it is a good idea to link to a description of a browser
-			and provide some links to download some popular HTML5-compatible browsers. -->
-			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
-			<br><br><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br>
-			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br>
-			<a href="http://www.google.com/chrome/">Google Chrome</a><br>
-			<a href="http://www.apple.com/safari/download/">Apple Safari</a></h1>
-		</canvas>
-		
-	</div>
-	
-	<!-- Pages load faster with scripts at the bottom -->
-	
-	<!-- Construct 2 exported games require jQuery. -->
-	<script src="https://cdn.jsdelivr.net/gh/bubbls/ruffle@2d942b638a721bcd9878dde84c6530acaa422385/jp.js"></script>
+<html lang="en-us"><head>
+    <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/pizza-tower/">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="x-icon" href="favicon.png">
+    <title>Pizza Tower 1.1.0 Web Port</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1">
+    </canvas>
+    <div id="pauseMenuContainer" hidden="">
+        <div id="pauseMenuBorder">
+            <div id="pauseMenu">
+                <button id="resumeButton" onclick="resume()"> Resume </button>
+                <button id="quitButton" onclick="quitIfSupported()"> Quit </button>
+            </div>
+        </div>
+    </div>
+    <div class="loading">
+        <div class="spinner" id="spinner"></div>
+        <div class="emscripten" id="status">Downloading...</div>
+        <progress value="0" max="100" id="progress" hidden="1"></progress>
+    </div>
+    <div class="output-container" id="output-container">
+        <div id="message-container">
+            <div id="messages">
+            </div>
+        </div>
+        <script>
+          function mergeFiles(fileParts) {
+              return new Promise((resolve, reject) => {
+                  let buffers = [];
+      
+                  function fetchPart(index) {
+                      if (index >= fileParts.length) {
+                          let mergedBlob = new Blob(buffers);
+                          let mergedFileUrl = URL.createObjectURL(mergedBlob);
+                          resolve(mergedFileUrl);
+                          return;
+                      }
+                      fetch(fileParts[index]).then((response) => response.arrayBuffer()).then((data) => {
+                          buffers.push(data);
+                          fetchPart(index + 1);
+                      }).catch(reject);
+                  }
+                  fetchPart(0);
+              });
+          }
+      
+          function getParts(file, start, end) {
+              let parts = [];
+              for (let i = start; i <= end; i++) {
+                  parts.push(file + ".part" + i);
+              }
+              return parts;
+          }
+      
+          mergeFiles(getParts("game.unx", 1, 13)).then(async url => {
+              window.gameUnxUrl = url;
+      
+              const originalFetch = window.fetch;
+              window.fetch = async function (...args) {
+                  let [url, options] = args;
+                  if (typeof url === 'string' && url.includes("game.unx")) {
+                      console.log("fetch:", url);
+                      url = window.gameUnxUrl;
+                  } else if (url instanceof Request && url.url.includes("game.unx")) {
+                      console.log("fetch request:", url.url);
+                      url = new Request(window.gameUnxUrl, url);
+                  }
+                  return originalFetch.call(this, url, options);
+              };
+      
+              const originalOpen = XMLHttpRequest.prototype.open;
+              XMLHttpRequest.prototype.open = function (method, url, ...rest) {
+                  if (url.includes("game.unx")) {
+                      console.log("XHR:", url);
+                      url = window.gameUnxUrl;
+                  }
+                  return originalOpen.call(this, method, url, ...rest);
+              };
+              let index = document.createElement("script");
+              index.src = "index.js";
+              document.body.appendChild(index);
+      
+              let runner = document.createElement("script");
+              runner.src = "runner.js";
+              document.body.appendChild(runner);
+          }).catch(error => {
+              console.error("Failed to merge files:", error);
+          });
+      </script>      
 
 
-	
-    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
-    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
-	<script src="https://cdn.jsdelivr.net/gh/bubbls/ruffle@2d942b638a721bcd9878dde84c6530acaa422385/c2p.js"></script>
-
-    <script>
-		// Start the Construct 2 project running on window load.
-		jQuery(document).ready(function ()
-		{			
-			// Create new runtime using the c2canvas
-			cr_createRuntime("c2canvas");
-		});
-		
-		// Pause and resume on page becoming visible/invisible
-		function onVisibilityChanged() {
-			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
-				cr_setSuspended(true);
-			else
-				cr_setSuspended(false);
-		};
-		
-		document.addEventListener("visibilitychange", onVisibilityChanged, false);
-		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
-		
-		function OnRegisterSWError(e)
-		{
-			console.warn("Failed to register service worker: ", e);
-		};
-		
-		// Runtime calls this global method when ready to start caching (i.e. after startup).
-		// This registers the service worker which caches resources for offline support.
-		window.C2_RegisterSW = function C2_RegisterSW()
-		{
-			if (!navigator.serviceWorker)
-				return;		// no SW support, ignore call
-			
-			try {
-				navigator.serviceWorker.register("sw.js", { scope: "./" })
-				.then(function (reg)
-				{
-					console.log("Registered service worker on " + reg.scope);
-				})
-				.catch(OnRegisterSWError);
-			}
-			catch (e)
-			{
-				OnRegisterSWError(e);
-			}
-		};
-    </script>
-	<script src=""></script>
- 
-
-<script>gadgets.util.runOnLoadHandlers();</script><script>window.google.csi.tickDl();
-</script></body></html>
-</script><style type="text/css">
-		* {
-			padding: 0;
-			margin: 0;
-		}
-		html, body {
-			background: #000;
-			color: #fff;
-			overflow: hidden;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-		canvas {
-			touch-action-delay: none;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-		c2canvas{
-   height: 100vh; 
-  width: 100vw; 
-  display: block;
-}
-    </style><link href="https://cdn.jsdelivr.net/gh/bubbls/ruffle@e412e02bf3f9785174978b3b420f0bc21d166b5f/annie.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8">
-	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-	<title>Pizza Tower</title>
-
-	
-	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" name="viewport">
-	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta content="black" name="apple-mobile-web-app-status-bar-style">
-	<meta content="true" name="HandheldFriendly">
-	
-	<!-- Chrome for Android web app tags -->
-	<meta content="yes" name="mobile-web-app-capable">
-
-    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
-	
-	
-	
-
-<script>
+</div></body></html>
