@@ -1334,8 +1334,18 @@
     });
 
     document.getElementById('randomGameButton').addEventListener('click', () => {
-      const randomTool = tools[Math.floor(Math.random() * tools.length)];
-      openGame(randomTool.id);
+      const visibleButtons = Array.from(document.querySelectorAll('.tab-button'))
+        .filter(btn => btn.style.display !== 'none');
+      
+      if (visibleButtons.length === 0) {
+        alert('No visible games to choose from! Please clear or modify your search.');
+        return;
+      }
+      
+      const randomButton = visibleButtons[Math.floor(Math.random() * visibleButtons.length)];
+      const toolId = randomButton.dataset.tab;
+      
+      openGame(toolId);
     });
 
     function openGame(toolId) {
@@ -1599,6 +1609,25 @@
       updateFavoritesDisplay();
       updateStarIcons();
       initializeConfirmClose();
+      
+      const buttonContainer = document.querySelector('.button-container');
+      const randomFavoriteButton = document.createElement('button');
+      randomFavoriteButton.className = 'random-button';
+      randomFavoriteButton.id = 'randomFavoriteButton';
+      randomFavoriteButton.textContent = 'Random Favorite';
+      buttonContainer.appendChild(randomFavoriteButton);
+    
+      document.getElementById('randomFavoriteButton').addEventListener('click', () => {
+        const favorites = JSON.parse(localStorage.getItem('favoriteGames')) || [];
+      
+        if (favorites.length === 0) {
+          alert('You have no favorite games yet! Add some favorites first.');
+          return;
+        }
+      
+        const randomFavoriteId = favorites[Math.floor(Math.random() * favorites.length)];
+        openGame(randomFavoriteId);
+    });
     };
   </script>
 </body>
