@@ -1,0 +1,18 @@
+<html>
+<head>
+    <style>
+        html, body { margin:0; padding:0; height:100%; width:100%; }
+        ruffle-player { display:block; width:100%; height:100%; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+</head>
+<body>
+    <script>
+        window.addEventListener("load", () => {
+            const player = window.RufflePlayer.newest().createPlayer();
+            document.body.appendChild(player);
+            player.load("https://cdn.jsdelivr.net/gh/Tsyuay/FrivReborn@ef556a5664a6dfccfc66aa0e94cc321495b19ae8/games/adamandeve/adam-and-eve.swf");
+        });
+    </script>
+</body>
+</html>
