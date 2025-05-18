@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    ruffle-player {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+      autoplay: "off",
+      polyfills: true,
+      letterbox: "on",
+      backgroundColor: null,
+      scale: "showAll",
+      allowFullscreen: true,
+      forceScale: true,
+      forceAlign: true,
+      splashScreen: true,
+      wmode: "window",
+      unmuteOverlay: "hidden",
+      quality: "high"
+    };
+
+    window.addEventListener("load", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      document.getElementById("container").appendChild(player);
+      player.load("https://cdn.jsdelivr.net/gh/abdufarooq7272/work-v2@9584c4e3ba6e99b806cbd9e40b160a6eb0f888c0/cmd/worker/b-live.js");
+    });
+  </script>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+</html>
