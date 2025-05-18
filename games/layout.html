@@ -390,6 +390,43 @@
       margin: 20px 0;
     }
 
+    /* Credits Section */
+    .credits-section {
+      margin-top: 20px;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+    }
+    
+    .credits-section h2 {
+      margin-top: 0;
+      color: #3949ab;
+    }
+    
+    .credits-list {
+      list-style: none;
+      padding: 0;
+      font-size: 1.25rem;
+      color: #3f51b5;
+    }
+    
+    .credits-list li {
+      margin: 8px 0;
+    }
+    
+    .credits-list a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    /* Dark mode styles for credits */
+    body.dark-mode .credits-section {
+      background: #333;
+    }
+    
+    body.dark-mode .credits-list {
+      color: #bb86fc;
+    }
   </style>
 </head>
 <body>
@@ -441,6 +478,16 @@
       <span class="toggle-label">Confirm Tab Close</span>
     </div>
   </div>
+  
+  <div class="container credits-section">
+    <h2>CREDITS</h2>
+    <ul class="credits-list">
+      <li>Hosted games using <a href="https://www.jsdelivr.com/github" target="_blank">Jsdelivr's CDN</a></li>
+      <li><a href="https://chatgpt.com/" target="_blank">ChatGPT</a> and <a href="https://claude.ai/new" target="_blank">Claude.ai</a> are REALLY good at coding</li>
+      <li>Multiple games from <a href="https://gn-math.github.io/" target="_blank">gn-math</a>, <a href="https://github.com/" target="_blank">Github</a>, <a href="https://sites.google.com/view/classroom6x/" target="_blank">Classroom6X</a>, <a href="https://sites.google.com/classroom.center/view/" target="_blank">Classroom Center G+</a>, and <a href="https://burnedwebsite.vercel.app/projects/" target="_blank">burnedpopcorn</a></li>
+    </ul>
+  </div>
+  
   <script>
     const tools = [
       // Shooter
@@ -519,7 +566,10 @@
       { label: "Bubble Shooter Pirate", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/bubbleshooterpirate.html" },
       { label: "Blockpost", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/blockpost.html" },
       { label: "Pixel Combat 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/pixel-combat-2.html" },
-
+      { label: "Strike Force Heros", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/strikeforceheroes.html" },
+      { label: "Strike Force Heros 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/strikeforceheroes2.html" },
+      { label: "Strike Force Heros 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/shooter/strikeforceheroes3.html" },
+      
       // Puzzle
       { label: "Woah, That's, SSSPICY!", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/woah-thats-ssspicy.html" },
       { label: "Grapple Tongue", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/grapple-tongue.html" },
@@ -575,11 +625,11 @@
       { label: "Wheely", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely.html" },
       { label: "Wheely 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely2.html" },
       { label: "Wheely 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely3.html" },
-      { label: "Wheely 4", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely4.html" },
-      { label: "Wheely 5", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely5.html" },
-      { label: "Wheely 6", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely6.html" },
-      { label: "Wheely 7", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely7.html" },
-      { label: "Wheely 8", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely8.html" },
+      { label: "Wheely 4: Time Travel", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely4.html" },
+      { label: "Wheely 5: Armageddon", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely5.html" },
+      { label: "Wheely 6: Fairytale", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely6.html" },
+      { label: "Wheely 7: Dectective", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely7.html" },
+      { label: "Wheely 8: Aliens", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/wheely8.html" },
       { label: "Cell Machine", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/cell-machine.html" },
       { label: "Grey Box Testing", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/grey-box-testing.html" },
       { label: "IQ Ball", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/iq-ball.html" },
@@ -588,6 +638,8 @@
       { label: "Civiballs", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/civiballs.html" },
       { label: "Civiballs 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/civiballs2.html" },
       { label: "Sugar Sugar", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/sugarsugar.html" },
+      { label: "Sugar Sugar 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/sugarsugar2.html" },
+      { label: "Sugar Sugar 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/sugarsugar3.html" },
       { label: "Apple Worm", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/appleworm.html" },
       { label: "Allocation", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/allocation.html" },
       { label: "3 Slices", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/puzzle/3slices.html" },
@@ -680,6 +732,7 @@
       { label: "You Are Lucky", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/youarelucky.html" },
       { label: "Quarantined", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/quarantined.html" },
       { label: "Pre-Civilization Bronze Age", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/pre-civilizationbronzeage.html" },
+      { label: "Overkill Apache", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/strategy/overkill-apache.html" },
 
       // Driving
       { label: "Polytrack", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/polytrack.html" },
@@ -725,8 +778,15 @@
       { label: "Cyberbung Racing", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/cyberbungracing.html" },
       { label: "Edy's Car Simulator", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/edyscarsimulator.html" },
       { label: "Traffic Run", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/traffic-run.html" },
+      { label: "Russian Car Driver", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/russiancardriver.html" },
+      { label: "Cyber Cars Punk Racing", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/cyber-cars-punk-racing.html" },
+      { label: "Drive In Russia", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/drive-in-russia.html" },
+      { label: "Crazy Cars", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/crazycars.html" },
+      { label: "Crazy Crash Landing", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/crazycrashlanding.html" },
+      { label: "Car Eats Car 2 Deluxe", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/driving/careatscar2deluxe.html" },
 
       // Platformers
+      { label: "Jump King", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/jump-king.html" },
       { label: "Speed²", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/speedsquared.html" },
       { label: "Big Tower Tiny Square", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/big-tower-tiny-square.html" },
       { label: "Big Ice Tower Tiny Square", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/big-ice-tower-tiny-square.html" },
@@ -816,6 +876,8 @@
       { label: "Synesthesia", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/synesthesia.html" },
       { label: "Pucamuc", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/pucamuc.html" },
       { label: "Raven Star", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/raven-star.html" },
+      { label: "Roller Baller", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/rollerballer.html" },
+      { label: "Dank Tomb", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/platformers/danktomb.html" },
 
       // Fighting
       { label: "Crazy Cattle 3D", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/fighting/crazycattle3d.html" },
@@ -861,7 +923,7 @@
       { label: "Madness Project Nexus", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/madnesscombatnexus.html" },
       { label: "Madness Retaliation", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/madnessretaliation.html" },
       { label: "Electric Man 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/electricman2.html" },
-      { label: "Re:Run", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/re%3Arun.html" },
+      { label: "Re:Run", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/rerun.html" },
       { label: "Bearbarians", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/bearbarians.html" },
       { label: "Super Smash Flash", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/supersmashflash.html" },
       { label: "Super Smash Flash 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/supersmashflash2.html" },
@@ -869,6 +931,10 @@
       { label: "Bit Planes", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/bitplanes.html" },
       { label: "Blocky Snakes", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/blockysnakes.html" },
       { label: "Curse of the Lich King", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/curse-of-the-lich-king.html" },
+      { label: "Renegades", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/renegades.html" },
+      { label: "Swords And Sandals", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/swordsandsandals.html" },
+      { label: "Swords And Sandals 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/swordsandsandals2.html" },
+      { label: "Fairy Tail vs One Piece", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/fighting/fairytalevsonepiece.html" },
 
       // Endless
       { label: "Gamblers Table", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/endless/gamblers-table.html" },
@@ -1004,6 +1070,10 @@
       { label: "Don't Escape", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/dontescape.html" },
       { label: "Don't Escape 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/dontescape2.html" },
       { label: "Don't Escape 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/dontescape3.html" },
+      { label: "Sift Heads Cartels: Act 1", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/siftheadscartelsact1.html" },
+      { label: "Sift Heads Cartels: Act 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/siftheadscartelsact2.html" },
+      { label: "Sift Heads Cartels: Act 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/siftheadscartelsact3.html" },
+      { label: "Sift Heads World: Ultimatum", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/siftheadsworldultimatum" },
       { label: "We Become What We Behold", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/we-become-what-we-behold.html" },
       { label: "Whack Your Boss", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/whackyourboss.html" },
       { label: "Whack The Theif", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/point-and-click/whackthetheif.html" },
@@ -1036,7 +1106,7 @@
       { label: "Doge Miner", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/doge-miner.html" },
       { label: "Doge Miner 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/doge-miner-2.html" },
       { label: "Learn to Fly Idle", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/learn-to-fly-idle.html" },
-      { label: "Revolution Idle", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/revolution-idle.html" },
+      { label: "Revolution Idle X", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/revolution-idle.html" },
       { label: "Room Clicker", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/room-clicker.html" },
       { label: "Spacebar Clicker", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/space-bar-clicker.html" },
       { label: "Planet Clicker", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/idle/planet-clicker.html" },
@@ -1068,9 +1138,11 @@
       { label: "12 mini battles", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/12-mini-battles.html" },
       { label: "Slope 2 Player", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/slope2player.html" },
       { label: "Doomz.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/doomzio.html" },
+      { label: "Skibidi Toilet.io", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/skullemojiio.html" },
       { label: "Arena", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/arena.html" },
       { label: "Scratchball 3D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/scratchball3d.html" },
       { label: "Battles", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/battles.html" },
+      { label: "Bump Battle Royale", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/multiplayer/bumpbattleroyale.html" },
 
       // Horror
       { label: "Do Not Take This Cat Home", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/do-not-take-this-cat-home.html" },    
@@ -1086,14 +1158,21 @@
       { label: "Five Nights At Freddy's 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fnaf2.html" },
       { label: "Five Nights At Freddy's 3", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fnaf3.html" },
       { label: "Five Nights At Freddy's 4", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fnaf4.html" },
-      { label: "FNAF Animatronics", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fnafanimatronics.html" },
-      { label: "A Bite At Freddy's", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/abiteatfreddys.html" },
+      { label: "Five Nights At Freddy's: Pizza Simulator", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatfreddyspizzasimulator.html" },
+      { label: "Five Nights At Freddy's: Sister Location", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatfreddyssisterlocation.html" },
+      { label: "Five Nights At Freddy's: Ultimate Custom Night", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatfreddyspizzasimulator.html" },
+      { label: "Five Nights at Freddy's: World", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatfreddysworld.html" },
+      { label: "Five Nights At Winston's", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatwinstons.html" },
       { label: "Five Nights At Shrek's Hotel", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatshrekshotel.html" },
       { label: "Five Nights At Baldi's Redone", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatbaldisredone.html" },
+      { label: "Five Nights At Diddy's", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fivenightsatdiddys.html" },
+      { label: "A Bite At Freddy's", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/abiteatfreddys.html" },
+      { label: "FNAF Animatronics", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/fnafanimatronics.html" },
       { label: "Baldi's Basics", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/baldibasics.html" },
       { label: "Baldi's Fun New School Ultimate", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/baldis-fun-new-school-ultimate.html" },
       { label: "Backrooms", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/backrooms.html" },
       { label: "Backrooms 2D", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/backrooms-2d.html" },
+      { label: "Skibidi In The Backrooms", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/skullemojisinthebackrooms.html" },
       { label: "Granny", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/granny.html" },
       { label: "Granny 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/granny-2.html" },
       { label: "Granny 2 Multiplayer", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/granny-2-multiplayer.html" },
@@ -1107,6 +1186,7 @@
       { label: "Dreader", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/dreader.html" },
       { label: "Leftovers", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/leftovers.html" },
       { label: "Last Train Home", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/last-train-home.html" },
+      { label: "Hungry Lamu", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/horror/hungrylamu.html" },
 
       // Defense
       { label: "Bloons TD1", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/defense/bloonstd1.html" },
@@ -1182,7 +1262,9 @@
       { label: "Bounceback", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/progression/bounceback.html" },
       { label: "Rocketpult", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/progression/rocketpult.html" },
       { label: "Slice Of Sasha", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/progression/slice-of-sasha.html" },
-      
+      { label: "Robby Blocks", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/progression/robbyblocks.html" },
+      { label: "Shopping Cart Hero", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/progression/shoppingcarthero.html" },
+
       // Sports
       { label: "Retro Bowl", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/retro-bowl.html" },
       { label: "Retro Bowl College", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/retrobowlcollege.html" },
@@ -1212,6 +1294,9 @@
       { label: "Football Legends", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/footballlegends.html" },
       { label: "Puppet Hockey", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/puppethockey.html" },
       { label: "Crunchball 3000", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/crunchball3000.html" },
+      { label: "Ragdoll Soccer", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/ragdollsoccer.html" },
+      { label: "Rocket Soccer Derby", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/rocketsoccerderby.html" },
+      { label: "Curve Ball", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/sports/curveball.html" },
 
       // Rhythm
       { label: "Incredibox", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rhythm/incredibox.html" },
@@ -1235,6 +1320,7 @@
       { label: "8-ball classic", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/classic/8-ball-pool.html" },
       { label: "Mini Crossword", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/classic/mini-crossword.html" },
       { label: "Uno", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/classic/uno.html" },
+      { label: "Bowling (Flash Version)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/classic/bowling.html" },
 
       // Satisfying
       { label: "Fluidism", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/fluidism.html" },
@@ -1243,6 +1329,7 @@
       { label: "Minecraft 1.9", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/minecraft1dot9.html" },
       { label: "Minecraft Indev", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/eaglercraft-indev.html" },
       { label: "Melon Playground", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/melon-playground.html" },
+      { label: "Squid Playground", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/squidplayground.html" },
       { label: "Line Rider", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/line-rider.html" },
       { label: "Bash The Computer", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/bash-the-computer.html" },
       { label: "Ages Of Conflict", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/satisfying/agesofconflict.html" },
@@ -1288,9 +1375,11 @@
       { label: "Blightborne", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/rpg/blightborne.html" },
 
       // Casual
+      { label: "Papers, Please", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/papersplease.html" },
       { label: "Deal or No Deal", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/deal-or-no-deal.html" },
-      { label: "Balatro v1.8 (Scratch Demake)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/balatroscratch1.4.12.html" },
-      { label: "Balatro Scratch (1.4.12)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/balatrov1.8scratchdemake.html" },
+      { label: "Papery Planes", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/papery-planes.html" },
+      { label: "Balatro v1.8 (Scratch Demake)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/balatrov1.8scratchdemake.html" },
+      { label: "Balatro Scratch (1.4.12)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/balatroscratch1.4.12.html" },
       { label: "Balatro (Pico-8 Version)", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/balatro-pico8.html" },
       { label: "Coreball", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/coreball.html" },
       { label: "Typing Fighter", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/typing-fighter.html" },
@@ -1299,6 +1388,12 @@
       { label: "Suika Game", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/suika.html" },
       { label: "Suika Pico", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/suikapico.html" },
       { label: "Sandtris", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/sandtris.html" },
+      { label: "StrikeForce Kitty", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/strikeforce-kitty.html" },
+      { label: "StrikeForce Kitty 2", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/strikeforce-kitty-2.html" },
+      { label: "StrikeForce Kitty Last Stand", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/strikeforce-kitty-last-stand.html" },
+      { label: "StrikeForce Kitty League", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/strikeforce-kitty-league.html" },
+      { label: "Sprinter", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/sprinter.html" },
+      { label: "Bounty Of One", url: "https://cdn.jsdelivr.net/gh/AlexDuyNguyen/gamesiteallprojects@main/games/casual/bountyofone.html" },
 
 //      { label: "0132c489m092opiproioprwwioprkwpop", url: "2vn40v2n028nvn80v0v5vn25025nn9852n8020n825n08520n82809n250" },
     ];
