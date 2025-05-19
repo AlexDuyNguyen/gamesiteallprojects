@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eazy-man/shHH@main/TemplateData/style.css">
+    <script src="https://cdn.jsdelivr.net/gh/eazy-man/shHH@main/TemplateData/UnityProgress.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/eazy-man/shHH@refs/heads/main/Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "https://rawcdn.githack.com/eazy-man/shHH/5964ec1c6a2d608595cad04ef5573f3113169c41/Build/Frequencies_html5.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">10-103</div>
+      </div>
+    </div>
+  </body>
+</html>
