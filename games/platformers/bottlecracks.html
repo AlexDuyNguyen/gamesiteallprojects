@@ -1,10 +1,12 @@
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <base href="https://rawcdn.githack.com/Stinkalistic/junk/a708041828a04650c8e74645d8835a51375258f6/bottlecracks/index.html">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Bottle Cracks</title>
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/bottlecracks/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/bottlecracks/TemplateData/style.css">
+    <title>Unity WebGL Player | Bottle Cracks</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -54,12 +56,12 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/bottlecracks/Build";
+      var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebGLBottle.loader.js";
       var config = {
-        dataUrl: "https://bitbucket.org/epicgaming/gamesepic/raw/a6f7de936c9b608ff412b4a7b9b9df0e420eece4/unity/WebGLBottle.data",
+        dataUrl: buildUrl + "/WebGLBottle.data",
         frameworkUrl: buildUrl + "/WebGLBottle.framework.js",
-        codeUrl: "https://raw.githubusercontent.com/Stinkalistic/junk/refs/heads/main/bottlecracks/Build/WebGLBottle.wasm",
+        codeUrl: buildUrl + "/WebGLBottle.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "FrowsyFrog",
         productName: "Bottle Cracks",
