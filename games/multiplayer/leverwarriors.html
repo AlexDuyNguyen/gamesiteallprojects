@@ -1,10 +1,12 @@
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <base href = "https://rawcdn.githack.com/Stinkalistic/junk/4d9f7480281a733e060343dc0f90bbac49f9f73a/leverwarriors/index.html">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Lever Warriors</title>
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/leverwarriors/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/leverwarriors/TemplateData/style.css">
+    <title>Unity WebGL Player | Web Game</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -54,11 +56,11 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "https://raw.githubusercontent.com/Stinkalistic/junk/refs/heads/main/leverwarriors/Build";
-      var loaderUrl = "https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/leverwarriors/Build/LeverWarriors.loader.js";
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/LeverWarriors.loader.js";
       var config = {
         dataUrl: buildUrl + "/LeverWarriors.data",
-        frameworkUrl: "https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/leverwarriors/Build/LeverWarriors.framework.js",
+        frameworkUrl: buildUrl + "/LeverWarriors.framework.js",
         codeUrl: buildUrl + "/LeverWarriors.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
