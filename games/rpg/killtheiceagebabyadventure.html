@@ -1,9 +1,12 @@
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
+    <base href="https://rawcdn.githack.com/Stinkalistic/web-games/4ae0b1ad8aff8691f4da81f9807f766358d5deee/unitygodot/Ice%20Age%20Baby%20Adventure/index.html" target="_blank">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Ice Age Baby Adventure</title>
+    <title>Unity Web Player | Ice Age Baby Adventure</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Stinkalistic/web-games@main/unitygodot/Ice%20Age%20Baby%20Adventure/TemplateData/style.css">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -49,12 +52,12 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "https://rawcdn.githack.com/Stinkalistic/web-games/tree/main/unitygodot/Ice%20Age%20Baby%20Adventure/Build";
-      var loaderUrl = "https://cdn.jsdelivr.net/gh/Stinkalistic/web-games@main/unitygodot/Ice%20Age%20Baby%20Adventure/Build/web.loader.js";
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/web.loader.js";
       var config = {
         arguments: [],
         dataUrl: buildUrl + "/web.data",
-        frameworkUrl: "https://cdn.jsdelivr.net/gh/Stinkalistic/web-games@main/unitygodot/Ice%20Age%20Baby%20Adventure/Build/web.framework.js",
+        frameworkUrl: buildUrl + "/web.framework.js",
         codeUrl: buildUrl + "/web.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SwagSoft",
