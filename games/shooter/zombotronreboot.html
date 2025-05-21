@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-  <base href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/zombotronreboot/">
+    <base href="https://rawcdn.githack.com/Stinkalistic/junk/a708041828a04650c8e74645d8835a51375258f6/zombotronreboot/index.html">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Zombotron</title>
+    <title>Unity WebGL Player | Zombotron</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
@@ -55,8 +57,8 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "https://raw.githubusercontent.com/Stinkalistic/junk/refs/heads/main/zombotronreboot/Build";
-      var loaderUrl = "https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/zombotronreboot/Build/Zombotron.loader.js";
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/Zombotron.loader.js";
       var config = {
         dataUrl: buildUrl + "/Zombotron.data.unityweb",
         frameworkUrl: buildUrl + "/Zombotron.framework.js.unityweb",
