@@ -1,45 +1,224 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Setris</title>
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<meta name="generator" content="Scirra Construct">
-	<link rel="stylesheet"
-		href="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/style.css"
-		type="text/css">
-	<link rel="stylesheet"
-		href="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/file.css"
-		type="text/css">
-</head>
-
+<html lang="en"><head>
+  <base href="https://cdn.jsdelivr.net/gh/gn-math/assets@main/311/">
+  <!--v0.4-->
+  <title>SANDTRIS</title>
+  <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202505190101/show_ads_impl_fy2021.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+  <script src="sketch.js"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style>
+@font-face {
+font-family: retroFont;
+src: url(fonts/retroFont.ttf);
+}
+</style></head>
 <body>
-	<script>
-		if (location.protocol.substr(0, 4) ==="file") { alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)"); } 
-	</script>
-	<script
-		src="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/liquidfun.js">
-	</script> <noscript>
-		<div id="notSupportedWrap">
-			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
-			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
-		</div>
-	</noscript>
-	<script
-		src="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/scripts/supportcheck.js">
-	</script>
-	<script
-		src="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/scripts/offlineclient.js"
-		type="module"></script>
-	<script
-		src="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/scripts/main.js"
-		type="module"></script>
-	<script
-		src="https://163825035-152770483258605163.preview.editmysite.com/uploads/b/139890129-446632214207186211/files/scripts/register-sw.js"
-		type="module"></script>
-	<script src=""></script>
-</body>
+  <!-- Header Title -->
+   <div id="sandtrislogo" style="transform: scale(1); height: 100px;">
+  	<h1>SANDTRIS</h1>
+	</div>
+  
+  <div id="main2">
+    <!-- Ads - Left Column -->
+    <div class="adsbox">
+      ads!
+      <div class="ad">
+        <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200311124038960" crossorigin="anonymous" data-checked-head="true"></script>
+        <!-- top sandtris ad -->
+        <ins class="adsbygoogle" style="display:inline-block;width:200px;height:310px" data-ad-client="ca-pub-9200311124038960" data-ad-slot="4677385647" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 310px; width: 200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:200px;height:310px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="200" height="310" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9200311124038960&amp;output=html&amp;h=310&amp;slotname=4677385647&amp;adk=1550750013&amp;adf=3223233512&amp;pi=t.ma~as.4677385647&amp;w=200&amp;abgtt=6&amp;lmt=1747945959&amp;format=200x310&amp;url=file%3A%2F%2F%2FUsers%2Fttn12%2FDownloads%2FSandtris.html&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEzLjcuNSIsIng4NiIsIiIsIjEzNi4wLjcxMDMuMTE0IixudWxsLDAsbnVsbCwiNjQiLFtbIkNocm9taXVtIiwiMTM2LjAuNzEwMy4xMTQiXSxbIkdvb2dsZSBDaHJvbWUiLCIxMzYuMC43MTAzLjExNCJdLFsiTm90LkEvQnJhbmQiLCI5OS4wLjAuMCJdXSwwXQ..&amp;dt=1747945962603&amp;bpp=1&amp;bdt=1347&amp;idt=71&amp;shv=r20250521&amp;mjsv=m202505190101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=566149164724&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=1&amp;u_h=1440&amp;u_w=2560&amp;u_ah=1309&amp;u_aw=2560&amp;u_cd=24&amp;u_sd=2&amp;dmc=8&amp;adx=760&amp;ady=129&amp;biw=2560&amp;bih=1148&amp;scr_x=0&amp;scr_y=0&amp;eid=95353387%2C95360391%2C95360814%2C95361618%2C95360959&amp;oid=2&amp;pvsid=4179413645355829&amp;tmod=923224846&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C25%2C0%2C25%2C2560%2C25%2C2560%2C1269%2C2560%2C1148&amp;vis=2&amp;rsz=%7C%7CoeEr%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=78" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <div class="ad">
+        <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200311124038960" crossorigin="anonymous" data-checked-head="true"></script>
+        <!-- bottom sandtris ad -->
+        <ins class="adsbygoogle" style="display:inline-block;width:200px;height:310px" data-ad-client="ca-pub-9200311124038960" data-ad-slot="1316725130" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" style="border: none; height: 310px; width: 200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:200px;height:310px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="200" height="310" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9200311124038960&amp;output=html&amp;h=310&amp;slotname=1316725130&amp;adk=2649008731&amp;adf=2586942284&amp;pi=t.ma~as.1316725130&amp;w=200&amp;abgtt=6&amp;lmt=1747945959&amp;format=200x310&amp;url=file%3A%2F%2F%2FUsers%2Fttn12%2FDownloads%2FSandtris.html&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEzLjcuNSIsIng4NiIsIiIsIjEzNi4wLjcxMDMuMTE0IixudWxsLDAsbnVsbCwiNjQiLFtbIkNocm9taXVtIiwiMTM2LjAuNzEwMy4xMTQiXSxbIkdvb2dsZSBDaHJvbWUiLCIxMzYuMC43MTAzLjExNCJdLFsiTm90LkEvQnJhbmQiLCI5OS4wLjAuMCJdXSwwXQ..&amp;dt=1747945962604&amp;bpp=1&amp;bdt=1348&amp;idt=82&amp;shv=r20250521&amp;mjsv=m202505190101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0%2C200x310&amp;nras=1&amp;correlator=566149164724&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=1&amp;u_h=1440&amp;u_w=2560&amp;u_ah=1309&amp;u_aw=2560&amp;u_cd=24&amp;u_sd=2&amp;dmc=8&amp;adx=760&amp;ady=444&amp;biw=2560&amp;bih=1148&amp;scr_x=0&amp;scr_y=0&amp;eid=95353387%2C95360391%2C95360814%2C95361618%2C95360959&amp;oid=2&amp;pvsid=4179413645355829&amp;tmod=923224846&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C25%2C0%2C25%2C2560%2C25%2C2560%2C1269%2C2560%2C1148&amp;vis=2&amp;rsz=%7C%7CoeEr%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;fsb=1&amp;dtd=86" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </div>
 
-</html>
+    <!-- Game Canvas - Middle Column -->
+    <div id="cnv" style="transform: scale(1);">
+      <!-- Various Dialog Pages -->
+      <dialog id="aboutpage" class="page" close="">
+        <div class="box">
+          <div class="logo is-animation">
+            <span>S</span>
+            <span>A</span>
+            <span>N</span>
+            <span>D</span>
+            <span>T</span>
+            <span>R</span>
+            <span>I</span>
+            <span>S</span>
+          </div>
+          <p>MADE BY <a href="https://francomiranda.com/" target="_blank">FRANCO MIRANDA</a> USING P5.JS</p>
+          <p>INSPIRED BY SETRIS BY <a href="https://itch.io/profile/mslivo" target="_blank">MSLIVO</a></p>
+          <br>
+          <u>CONTROLS</u>
+          <br>
+          <table style="font-size: 12px">
+            <tbody>
+              <tr>
+                <td>Move Block:</td>
+                <td>Left/Right Arrows</td>
+              </tr>
+              <tr>
+                <td>Spin Block: </td>
+                <td>Up Arrow</td>
+              </tr>
+              <tr>
+                <td>Move Down Faster: </td>
+                <td>Down Arrow</td>
+              </tr>
+              <tr>
+                <td>Move Sideways Faster: </td>
+                <td>Shift/Ctrl</td>
+              </tr>
+              <tr>
+                <td>Pause: </td>
+                <td>P</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Connect the same color <br> across the screen to clear lines!</p>
+          <br>
+          <p>NOT AFFILIATED WITH Tetris®</p>
+          <br>
+          <button type="button" class="redbutton" onclick="toggleAbout()">X</button>
+        </div>
+      </dialog>
+
+      <dialog id="startpage" class="page" open="">
+        <div class="box">
+          Welcome to
+          <div class="logo is-animation">
+            <span>S</span>
+            <span>A</span>
+            <span>N</span>
+            <span>D</span>
+            <span>T</span>
+            <span>R</span>
+            <span>I</span>
+            <span>S</span>
+          </div>
+          <br>
+          <button type="button" class="greenbutton" onclick="startGame()">START</button>
+          <button type="button" class="redbutton" onclick="toggleAbout()">ABOUT</button>
+          <br><br>
+          <div style="display: grid; width:300px; grid-template-columns: auto auto;">
+            <div>
+              <p id="musicText" style="margin:0px; padding:5px;">MUS</p>
+              <input style="width:120px" type="range" min="0" max="10" value="1" class="slider" id="mus1Slider" onchange="MUSvolume(this.value)">
+            </div>
+            <div>
+              <p id="soundText" style="margin:0px; padding:5px;">SFX</p>
+              <input style="width:120px" type="range" min="0" max="10" value="1" class="slider" id="sfx1Slider" onchange="SFXvolume(this.value)">
+            </div>
+          </div>
+		  <p style="font-size: 12px; color:bisque">now works on mobile!</p>
+        </div>
+      </dialog>
+
+      <dialog id="pausepage" class="page" close="">
+        <div class="box">
+          <br>
+          PAUSED
+          <br><br>
+          <button type="button" class="redbutton" onclick="unpauseGame()">RESUME</button>
+          <br><br>
+          <button type="button" class="bluebutton" onclick="newGame()">NEW GAME</button>
+          <br><br>
+          MUS
+          <input style="width:80px" type="range" min="0" max="10" value="1" class="slider" id="mus2Slider" onchange="MUSvolume(this.value)">
+          <br>
+          SFX
+          <input style="width:80px" type="range" min="0" max="10" value="0.5" class="slider" id="sfx2Slider" onchange="SFXvolume(this.value)">
+        </div>
+      </dialog>
+
+      <dialog id="gameoverpage" class="page" close="">
+        <div class="box">
+          <br><br>
+          GAME OVER
+          <br>
+          <p id="gameoverText"></p>
+          <button type="button" class="greenbutton" onclick="newGame()">NEW GAME</button>
+          <br><br>
+          <button type="button" class="bluebutton" onclick="shareText()">share</button>
+          <br><br>
+          <div style="width:400px">
+            <h4>SUBMIT YOUR SCORE:</h4>
+            <span>
+              <input type="text" class="namebox" id="name" placeholder="enter your name" maxlength="16">
+              <button class="submitbutton" onclick="submitScore()">Submit</button>
+            </span>
+            <p id="responseBox" style="font-size: 12px"></p>
+          </div>
+        </div>
+      </dialog>
+	  <dialog id="mobile-controls" class="page" open="">
+		<button class="mobile-button" style="top:32px; left:192px;" ontouchstart="setButton('rotate', true)" ontouchend="setButton('rotate', false)">
+		<i class="fa fa-rotate-right" style="font-size:32px;"></i>
+		</button>
+
+		<button class="mobile-button" style="top:32px; left:64px;" ontouchstart="setButton('fast', true)" ontouchend="setButton('fast', false)">
+		<i class="fa fa-forward" style="font-size:32px;"></i>
+		</button>
+
+		<button class="mobile-button" style="top:128px; left:128px;" ontouchstart="setButton('down', true)" ontouchend="setButton('down', false)">
+		<i class="fa fa-arrow-down style=" font-size:32px;"=""></i>
+		</button>
+
+		<button class="mobile-button" style="top:96px; right:192px;" ontouchstart="setButton('left', true)" ontouchend="setButton('left', false)">
+		<i class="fa fa-arrow-left" style="font-size:32px;"></i>
+		</button>
+
+		<button class="mobile-button" style="top:96px; right:64px;" ontouchstart="setButton('right', true)" ontouchend="setButton('right', false)">
+		<i class="fa fa-arrow-right" style="font-size:32px;"></i>
+		</button>
+		</dialog>
+      <div id="p5_loading">LOADING</div>
+	  
+    </div>
+
+    <!-- Leaderboard - Right Column -->
+    <div class="adsbox">
+      Weekly Leaderboard
+      <div id="leaderboard-list"></div>
+      Your Rank
+      <div id="bestScoreEntry" class="leaderboard"></div>
+    </div>
+  </div>
+
+  <script>
+    function scaleDiv() {
+		//
+      var container = document.getElementById('cnv');
+      var baseWidth = parseFloat(getComputedStyle(document.documentElement)
+	  	.getPropertyValue('--base-width'));
+      var viewportWidth = window.innerWidth;
+      var scaleFactor = viewportWidth / baseWidth;
+	  if( scaleFactor > 1){
+		scaleFactor = 1;
+	  }
+
+      container.style.transform = 'scale(' + scaleFactor + ')';
+
+	  container = document.getElementById('sandtrislogo');
+	  container.style.transform = 'scale(' + scaleFactor + ')';
+	  container.style.height = 100*scaleFactor;
+    }
+
+    window.onload = scaleDiv;
+    window.onresize = scaleDiv;
+  </script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9200311124038960&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1747945959&amp;plat=8%3A32768%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;plas=634x903_l%7C634x903_r&amp;format=0x0&amp;url=file%3A%2F%2F%2FUsers%2Fttn12%2FDownloads%2FSandtris.html&amp;pra=5&amp;wgl=1&amp;aihb=0&amp;asro=0&amp;aifxl=29_18~30_19&amp;aiapm=0.1&amp;aiapmi=0.16&amp;aiact=0.65&amp;aicct=0.7&amp;ailct=0.5848985667413091&amp;aimart=6&amp;uach=WyJtYWNPUyIsIjEzLjcuNSIsIng4NiIsIiIsIjEzNi4wLjcxMDMuMTE0IixudWxsLDAsbnVsbCwiNjQiLFtbIkNocm9taXVtIiwiMTM2LjAuNzEwMy4xMTQiXSxbIkdvb2dsZSBDaHJvbWUiLCIxMzYuMC43MTAzLjExNCJdLFsiTm90LkEvQnJhbmQiLCI5OS4wLjAuMCJdXSwwXQ..&amp;dt=1747945962599&amp;bpp=4&amp;bdt=1343&amp;idt=46&amp;shv=r20250521&amp;mjsv=m202505190101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=566149164724&amp;frm=20&amp;pv=2&amp;u_tz=-240&amp;u_his=1&amp;u_h=1440&amp;u_w=2560&amp;u_ah=1309&amp;u_aw=2560&amp;u_cd=24&amp;u_sd=2&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=2560&amp;bih=1148&amp;scr_x=0&amp;scr_y=0&amp;eid=95353387%2C95360391%2C95360814%2C95361618%2C95360959&amp;oid=2&amp;pvsid=4179413645355829&amp;tmod=923224846&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C25%2C0%2C25%2C2560%2C25%2C2560%2C1269%2C2560%2C1148&amp;vis=2&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=71" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20250521/r20190131/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>
