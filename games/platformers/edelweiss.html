@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en-us"><head>
+    <base href="https://rawcdn.githack.com/duckwithgooseskin/games/d64033777a63233e0a1f729cd10b828436926ab9/edelweiss/index.html">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Edelweiss</title>
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/Edelweiss/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/Edelweiss/TemplateData/style.css">
+    <title>Unity WebGL Player | Edelweiss</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=540 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
+      <canvas id="unity-canvas" width="1920" height="1080" tabindex="-1" style="width: 960px; height: 540px; cursor: default;"></canvas>
+      <div id="unity-loading-bar" style="display: none;">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+          <div id="unity-progress-bar-full" style="width: 100%;"></div>
         </div>
       </div>
       <div id="unity-warning"> </div>
@@ -56,12 +55,12 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "https://rawcdn.githack.com/Stinkalistic/junk/tree/main/Edelweiss/Build";
-      var loaderUrl = "https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/Edelweiss/Build/Edelweiss%202.0%20web.loader.js";
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/Edelweiss 2.0 web.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Edelweiss%202.0%20web.data.br",
-        frameworkUrl: "https://cdn.jsdelivr.net/gh/Stinkalistic/junk@main/Edelweiss/Build/Edelweiss%202.0%20web.framework.js",
-        codeUrl: buildUrl + "/Edelweiss%202.0%20web.wasm.br",
+        dataUrl: buildUrl + "/Edelweiss 2.0 web.data.br",
+        frameworkUrl: buildUrl + "/Edelweiss 2.0 web.framework.js.br",
+        codeUrl: buildUrl + "/Edelweiss 2.0 web.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "genialbuilder",
         productName: "Edelweiss",
@@ -117,6 +116,7 @@
 
       document.body.appendChild(script);
 
-    </script>
-  </body>
-</html>
+    </script><script src="Build/Edelweiss 2.0 web.loader.js"></script>
+  
+
+<script src="Build/Edelweiss 2.0 web.framework.js.br"></script></body></html>
