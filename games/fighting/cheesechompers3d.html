@@ -1,120 +1,132 @@
-<html lang="en-us"><head>
-    
-    
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-WX5VS54ZDW');
-    </script>
-    <base href="https://rawcdn.githack.com/gn-math/assets/main/165/">
+
     <meta charset="utf-8">
+      
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | CheeseChompers 3D</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-</head>
-
-<body>
-    <div id="unity-container" class="unity-desktop" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;">
-        <canvas id="unity-canvas" width="480" height="270" tabindex="-1" style="width: 100%; height: 100%;"></canvas>
-        <div id="unity-loading-bar" style="display: block;">
-            <div id="unity-logo"></div>
-            <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full" style="width: 24.2751%;"></div>
-            </div>
+    <title>google.com</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/classroomusers/notlook@main/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bubbls/cheesechomp@7adf6b379977b88fe2becd36070c546d462f1eec/TemplateData/styles.css">
+  
+  
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" tabindex="-1" width="940" height="598" style="cursor: default;"></canvas>
+      <div id="unity-loading-bar" style="display: none;">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full" style="width: 100%;"></div>
         </div>
-        <div id="unity-warning" style="display: block;"> <div style="background: yellow; padding: 10px;">HTTP Response Header "Content-Type" configured incorrectly on the server for file Build/CheeseChompers3DWeb.wasm.gz , should be "application/wasm". Startup time performance will suffer.</div></div>
+      </div>
+      <div id="unity-warning" style="display: block;"><div style="background: yellow; padding: 10px;">Birleştiriliyor: CheeseChompers3dWebUpdate.wasm.unityweb</div></div>
     </div>
     <script>
-        var container = document.querySelector("#unity-container");
-        var canvas = document.querySelector("#unity-canvas");
-        var loadingBar = document.querySelector("#unity-loading-bar");
-        var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-        var warningBanner = document.querySelector("#unity-warning");
-        // Shows a temporary message banner/ribbon for a few seconds, or
-        // a permanent error message on top of the canvas if type=='error'.
-        // If type=='warning', a yellow highlight color is used.
-        // Modify or remove this function to customize the visually presented
-        // way that non-critical warnings and error messages are presented to the
-        // user.
-        function unityShowBanner(msg, type) {
-            function updateBannerVisibility() {
-                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-            }
-            var div = document.createElement('div');
-            div.innerHTML = msg;
-            warningBanner.appendChild(div);
-            if (type == 'error') div.style = 'background: red; padding: 10px;';
-            else {
-                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-                setTimeout(function () {
-                    warningBanner.removeChild(div);
-                    updateBannerVisibility();
-                }, 5000);
-            }
-            updateBannerVisibility();
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
         }
-        var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/CheeseChompers3DWeb.loader.js";
-        var config = {
-            dataUrl: buildUrl + "/CheeseChompers3DWeb.data.gz",
-            frameworkUrl: buildUrl + "/CheeseChompers3DWeb.framework.js.gz",
-            codeUrl: buildUrl + "/CheeseChompers3DWeb.wasm.gz",
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "https://cdn.jsdelivr.net/gh/bubbls/cheesechomp@7adf6b379977b88fe2becd36070c546d462f1eec/Build";
+      const totalParts = 13; // 10 data + 3 wasm
+      let partsLoaded = 0;
+
+      async function fetchAndCombineParts(partUrls, fileName) {
+        try {
+          unityShowBanner(`yellow box: ${fileName}`, 'warning');
+          const buffers = [];
+          for (const partUrl of partUrls) {
+            const response = await fetch(partUrl);
+            if (!response.ok) throw new Error(`Parça yüklenemedi: ${partUrl}`);
+            const buffer = await response.arrayBuffer();
+            buffers.push(buffer);
+            partsLoaded++;
+            // Update progress bar based on parts loaded
+            const partProgress = (partsLoaded / totalParts) * 0.5; // Parts loading is 50% of total progress
+            progressBarFull.style.width = (partProgress * 100) + "%";
+          }
+          const combined = new Blob(buffers, { type: 'application/octet-stream' });
+          return URL.createObjectURL(combined);
+        } catch (error) {
+          unityShowBanner(`Hata: ${fileName} uh oh - ${error.message}`, 'error');
+          throw error;
+        }
+      }
+
+      const dataParts = Array.from({ length: 10 }, (_, i) => `${buildUrl}/CheeseChompers3dWebUpdate.data.unityweb.part${i + 1}`);
+      const wasmParts = Array.from({ length: 3 }, (_, i) => `${buildUrl}/CheeseChompers3dWebUpdate.wasm.unityweb.part${i + 1}`);
+
+      async function loadUnity() {
+        try {
+          loadingBar.style.display = "block";
+          
+          const dataUrl = await fetchAndCombineParts(dataParts, 'CheeseChompers3dWebUpdate.data.unityweb');
+          const wasmUrl = await fetchAndCombineParts(wasmParts, 'CheeseChompers3dWebUpdate.wasm.unityweb');
+
+          var config = {
+            dataUrl: dataUrl,
+            frameworkUrl: `${buildUrl}/CheeseChompers3dWebUpdate.framework.js.unityweb`,
+            codeUrl: wasmUrl,
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "CheeseChompers 3D",
             productVersion: "0.1",
             showBanner: unityShowBanner,
-        };
-        // By default, Unity keeps WebGL canvas render target size matched with
-        // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-        // Set this to false if you want to decouple this synchronization from
-        // happening inside the engine, and you would instead like to size up
-        // the canvas DOM size and WebGL render target sizes yourself.
-        // config.matchWebGLToCanvasSize = false;
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            // Mobile device style: fill the whole browser client area with the game canvas:
-            var meta = document.createElement('meta');
-            meta.name = 'viewport';
-            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-            document.getElementsByTagName('head')[0].appendChild(meta);
-            container.className = "unity-mobile";
-            canvas.className = "unity-mobile";
-            // To lower canvas resolution on mobile devices to gain some
-            // performance, uncomment the following line:
-            // config.devicePixelRatio = 1;
-        } else {
-            container.style.position = "fixed";
-            container.style.top = "0";
-            container.style.left = "0";
-            container.style.width = "100%";
-            container.style.height = "100%";
-            canvas.style.width = "100%";
-            canvas.style.height = "100%";
-        }
-        loadingBar.style.display = "block";
-        var script = document.createElement("script");
-        script.src = loaderUrl;
-        script.onload = () => {
+          };
+
+          var script = document.createElement("script");
+          script.src = `${buildUrl}/CheeseChompers3dWebUpdate.loader.js`;
+          script.onload = () => {
             createUnityInstance(canvas, config, (progress) => {
-                progressBarFull.style.width = 100 * progress + "%";
+              // Unity loading is the second 50% of total progress
+              const unityProgress = 0.5 + (progress * 0.5);
+              const progressPercent = Math.min(Math.max(unityProgress, 0), 1) * 100;
+              progressBarFull.style.width = progressPercent + "%";
             }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                    unityInstance.SetFullscreen(1);
-                };
+              loadingBar.style.display = "none";
             }).catch((message) => {
-                alert(message);
+              unityShowBanner(`Hata: ${message}`, 'error');
+              loadingBar.style.display = "none";
             });
-        };
-        document.body.appendChild(script);
-    </script><script src="Build/CheeseChompers3DWeb.loader.js"></script>
+          };
+          document.body.appendChild(script);
+        } catch (error) {
+          unityShowBanner(`Unity yüklenemedi: ${error.message}`, 'error');
+          loadingBar.style.display = "none";
+        }
+      }
+
+      loadUnity();
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+      }
+    </script>
+  
 
 
 
-<script src="Build/CheeseChompers3DWeb.framework.js.gz"></script></body></html>
+
+
+]]&gt;</content>
+</moduleprefs></module><script src="https://cdn.jsdelivr.net/gh/bubbls/cheesechomp@7adf6b379977b88fe2becd36070c546d462f1eec/Build/CheeseChompers3dWebUpdate.loader.js"></script></body></html>
