@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stumble Guys</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="https://375849150-274819463027539483.preview.editmysite.com/uploads/b/139890129-743802609650628943/files/style.css" type="text/css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #adsbox {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 999;
+      display: none;
+    }
+  </style>
+  <script type="module" src="https://375849150-274819463027539483.preview.editmysite.com/uploads/b/139890129-743802609650628943/files/scripts/c3runtime.js"></script>
+  <script src="https://375849150-274819463027539483.preview.editmysite.com/uploads/b/139890129-743802609650628943/files/scripts/supportcheck.js"></script>
+  <script type="module" src="https://375849150-274819463027539483.preview.editmysite.com/uploads/b/139890129-743802609650628943/files/scripts/offlineclient.js"></script>
+  <script type="module" src="https://375849150-274819463027539483.preview.editmysite.com/uploads/b/139890129-743802609650628943/files/scripts/main.js"></script>
+  <script type="module" src="https://375849150-274819463027539483.preview.editmysite.com/uploads/b/139890129-743802609650628943/files/scripts/register-sw.js"></script>
+  <script src="https://www.google.com/jsapi"></script>
+  <script>window.parent.maeExportApis_ && window.parent.maeExportApis_();</script>
+</head>
+
+<body onkeydown="checkKey(event)">
+  <div id="fb-root"></div>
+
+  <noscript>
+    <div id="notSupportedWrap">
+      <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+      <p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+    </div>
+  </noscript>
+  <script>
+    function checkKey(e) {
+      e = e || window.event;
+      if (e.preventDefault) e.preventDefault();
+      else e.returnValue = false;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/st39/sdk@main/api.js"></script>
+  <canvas width="100%" height="100%" style="width: 0px; height: 0px; margin-left: 0px; margin-top: 85px;"></canvas>
+</body>
+</html>
