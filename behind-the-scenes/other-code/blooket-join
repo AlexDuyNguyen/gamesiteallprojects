@@ -1,0 +1,452 @@
+<html lang="en" data-sentry-component="RootLayout" data-sentry-source-file="layout.tsx"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="preload" as="image" href="https://ac.blooket.com/marketassets/blooks/lightblue.svg"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/3c554b9e885e7251.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/6023cff24f659282.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/15acb7de41ca1dbf.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/946956625f6086f5.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/291f6b6bff7ee9a3.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/8bfd3754eaea6920.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/1fe09aeaac22aa6d.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5627f42ebecff371.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/46fddd4c305fef11.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5799e42163636667.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/ea4d1bc5b247d0c8.css" data-precedence="next"><link rel="stylesheet" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/47f9fc0cfa2a6254.css" data-precedence="next"><link rel="preload" as="script" fetchpriority="low" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/webpack-cd12ef174f8c5b30.js"><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/fd9d1056-cd52c683650ad9ff.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/721-c23743b546c74f3d.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/main-app-c15946dde58bb663.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/846b7684-1b50d311353636a8.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/565-c7176447b90d4c4e.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/app/(routes)/play/layout-36b9be991a894c80.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/e2799680-36ac290d320f68a6.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/3ae5402b-2aa0a4ad025d172d.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/326-b7331cfcdf6e141a.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/479-c819e7c3a852be4c.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/app/global-error-fb219e1cddc71786.js" async=""></script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/213-e5269e40870a4513.js" async=""></script><link rel="preload" href="https://cdn-cookieyes.com/client_data/79e41bd3b1a75f452ac71716/script.js" as="script"><title>Play Blooket | Blooket</title><meta name="description" content="Join a game of Blooket to answer questions and compete in a fierce clash to determine who is the best and what Blook will come out victorious."><link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="48x48"><meta name="next-size-adjust"><script>(self.__next_s=self.__next_s||[]).push(["https://cdn-cookieyes.com/client_data/79e41bd3b1a75f452ac71716/script.js",{}])</script><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/polyfills-42372ed130431b0a.js" nomodule=""></script><script src="https://cdn-cookieyes.com/client_data/79e41bd3b1a75f452ac71716/script.js"></script><script src="https://cdn-cookieyes.com/client_data/79e41bd3b1a75f452ac71716/banner.js" async="" id="cookieyes-banner"></script><link rel="preload" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/media/21ed5661b47f7f6d-s.p.woff2" as="font" crossorigin="" type="font/woff2"><link rel="preload" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/media/c54f5554a21e3ae1-s.p.woff2" as="font" crossorigin="" type="font/woff2"><style id="_goober"> @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}</style><link rel="stylesheet" type="text/css" href="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/a181c46e0b67d3af.css"><style id="cky-style">.cky-overlay{background: #000000; opacity: 0.4; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999999;}.cky-hide{display: none;}.cky-btn-revisit-wrapper{display: flex; align-items: center; justify-content: center; background: #0056a7; width: 45px; height: 45px; border-radius: 50%; position: fixed; z-index: 999999; cursor: pointer;}.cky-revisit-bottom-left{bottom: 15px; left: 15px;}.cky-revisit-bottom-right{bottom: 15px; right: 15px;}.cky-btn-revisit-wrapper .cky-btn-revisit{display: flex; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; position: relative; margin: 0; padding: 0;}.cky-btn-revisit-wrapper .cky-btn-revisit img{max-width: fit-content; margin: 0; height: 30px; width: 30px;}.cky-revisit-bottom-left:hover::before{content: attr(data-tooltip); position: absolute; background: #4e4b66; color: #ffffff; left: calc(100% + 7px); font-size: 12px; line-height: 16px; width: max-content; padding: 4px 8px; border-radius: 4px;}.cky-revisit-bottom-left:hover::after{position: absolute; content: ""; border: 5px solid transparent; left: calc(100% + 2px); border-left-width: 0; border-right-color: #4e4b66;}.cky-revisit-bottom-right:hover::before{content: attr(data-tooltip); position: absolute; background: #4e4b66; color: #ffffff; right: calc(100% + 7px); font-size: 12px; line-height: 16px; width: max-content; padding: 4px 8px; border-radius: 4px;}.cky-revisit-bottom-right:hover::after{position: absolute; content: ""; border: 5px solid transparent; right: calc(100% + 2px); border-right-width: 0; border-left-color: #4e4b66;}.cky-revisit-hide{display: none;}.cky-consent-container{position: fixed; width: 440px; box-sizing: border-box; z-index: 9999999; border-radius: 6px;}.cky-consent-container .cky-consent-bar{background: #ffffff; border: 1px solid; padding: 20px 26px; box-shadow: 0 -1px 10px 0 #acabab4d; border-radius: 6px;}.cky-box-bottom-left{bottom: 40px; left: 40px;}.cky-box-bottom-right{bottom: 40px; right: 40px;}.cky-box-top-left{top: 40px; left: 40px;}.cky-box-top-right{top: 40px; right: 40px;}.cky-custom-brand-logo-wrapper .cky-custom-brand-logo{width: 100px; height: auto; margin: 0 0 12px 0;}.cky-notice .cky-title{color: #212121; font-weight: 700; font-size: 18px; line-height: 24px; margin: 0 0 12px 0; word-break: break-word;}.cky-notice-des *,.cky-preference-content-wrapper *,.cky-dma-content-wrapper *,.cky-accordion-header-des *,.cky-gpc-wrapper .cky-gpc-desc *{font-size: 14px;}.cky-notice-des{color: #212121; font-size: 14px; line-height: 24px; font-weight: 400;}.cky-notice-des img{min-height: 25px; min-width: 25px;}.cky-consent-bar .cky-notice-des p,.cky-gpc-wrapper .cky-gpc-desc p,.cky-preference-body-wrapper .cky-preference-content-wrapper p,.cky-accordion-header-wrapper .cky-accordion-header-des p,.cky-cookie-des-table li div:last-child p{color: inherit; margin-top: 0; word-break: break-word;}.cky-notice-des P:last-child,.cky-preference-content-wrapper p:last-child,.cky-cookie-des-table li div:last-child p:last-child,.cky-gpc-wrapper .cky-gpc-desc p:last-child{margin-bottom: 0;}.cky-notice-des a.cky-policy,.cky-notice-des button.cky-policy,.cky-dma-content-wrapper a.cky-policy,.cky-dma-content-wrapper button.cky-policy{font-size: 14px; color: #1863dc; white-space: nowrap; cursor: pointer; background: transparent; border: 1px solid; text-decoration: underline;}.cky-notice-des button.cky-policy,.cky-dma-content-wrapper button.cky-policy{padding: 0;}.cky-notice-des a.cky-policy:focus-visible,.cky-notice-des button.cky-policy:focus-visible,.cky-dma-content-wrapper a.cky-policy:focus-visible,.cky-dma-content-wrapper button.cky-policy:focus-visible,.cky-preference-content-wrapper .cky-show-desc-btn:focus-visible,.cky-accordion-header .cky-accordion-btn:focus-visible,.cky-preference-header .cky-btn-close:focus-visible,.cky-switch input[type="checkbox"]:focus-visible,.cky-footer-wrapper a:focus-visible,.cky-btn:focus-visible{outline: 2px solid #1863dc; outline-offset: 2px;}.cky-btn:focus:not(:focus-visible),.cky-accordion-header .cky-accordion-btn:focus:not(:focus-visible),.cky-preference-content-wrapper .cky-show-desc-btn:focus:not(:focus-visible),.cky-btn-revisit-wrapper .cky-btn-revisit:focus:not(:focus-visible),.cky-preference-header .cky-btn-close:focus:not(:focus-visible),.cky-consent-bar .cky-banner-btn-close:focus:not(:focus-visible){outline: 0;}button.cky-show-desc-btn:not(:hover):not(:active){color: #1863dc; background: transparent;}button.cky-accordion-btn:not(:hover):not(:active),button.cky-banner-btn-close:not(:hover):not(:active),button.cky-btn-revisit:not(:hover):not(:active),button.cky-btn-close:not(:hover):not(:active){background: transparent;}.cky-consent-bar button:hover,.cky-modal.cky-modal-open button:hover,.cky-consent-bar button:focus,.cky-modal.cky-modal-open button:focus{text-decoration: none;}.cky-notice-btn-wrapper{display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 16px;}.cky-notice-btn-wrapper .cky-btn{text-shadow: none; box-shadow: none;}.cky-btn{flex: auto; max-width: 100%; font-size: 14px; font-family: inherit; line-height: 24px; padding: 8px; font-weight: 500; border-radius: 2px; cursor: pointer; text-align: center; text-transform: none; min-height: 0; overflow-wrap: break-word;}.cky-btn:hover{opacity: 0.8;}.cky-btn-customize{color: #1863dc; background: transparent; border: 2px solid #1863dc;}.cky-btn-reject{color: #1863dc; background: transparent; border: 2px solid #1863dc;}.cky-btn-accept{background: #1863dc; color: #ffffff; border: 2px solid #1863dc;}.cky-btn:last-child{margin-right: 0;}@media (max-width: 576px){.cky-box-bottom-left{bottom: 0; left: 0;}.cky-box-bottom-right{bottom: 0; right: 0;}.cky-box-top-left{top: 0; left: 0;}.cky-box-top-right{top: 0; right: 0;}}@media (max-width: 440px){.cky-box-bottom-left, .cky-box-bottom-right, .cky-box-top-left, .cky-box-top-right{width: 100%; max-width: 100%;}.cky-consent-container .cky-consent-bar{padding: 20px 0;}.cky-custom-brand-logo-wrapper, .cky-notice .cky-title, .cky-notice-des, .cky-notice-btn-wrapper{padding: 0 24px;}.cky-notice-des{max-height: 40vh; overflow-y: scroll;}.cky-notice-btn-wrapper{gap: 10px; flex-direction: column;}.cky-btn{width: 100%;}.cky-notice-btn-wrapper .cky-btn-customize{order: 2;}.cky-notice-btn-wrapper .cky-btn-reject{order: 3;}.cky-notice-btn-wrapper .cky-btn-accept{order: 1;}}@media (max-width: 352px){.cky-notice .cky-title{font-size: 16px;}.cky-notice-des *{font-size: 12px;}.cky-notice-des, .cky-btn{font-size: 12px;}}.cky-modal.cky-modal-open{display: flex; visibility: visible; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); top: 50%; left: 50%; transition: all 1s ease; max-height: 100%;}.cky-modal{box-shadow: 0 32px 68px rgba(0, 0, 0, 0.3); margin: 0 auto; position: fixed; max-width: 100%; background: #ffffff; top: 50%; box-sizing: border-box; border-radius: 6px; z-index: 999999999; color: #212121; -webkit-transform: translate(-50%, 100%); -moz-transform: translate(-50%, 100%); -ms-transform: translate(-50%, 100%); -o-transform: translate(-50%, 100%); transform: translate(-50%, 100%); visibility: hidden; transition: all 0s ease;}.cky-preference-center{max-height: 79vh; overflow: hidden; width: 845px; overflow: hidden; flex: 1 1 0; display: flex; flex-direction: column; border-radius: 6px;}.cky-preference-header{display: flex; align-items: center; justify-content: space-between; padding: 22px 24px; border-bottom: 1px solid;}.cky-preference-header .cky-preference-title{font-size: 18px; font-weight: 700; line-height: 24px; word-break: break-word;}.cky-preference-header .cky-btn-close{margin: 0; cursor: pointer; vertical-align: middle; padding: 0; background: none; border: none; width: auto; height: auto; min-height: 0; line-height: 0; text-shadow: none; box-shadow: none;}.cky-preference-header .cky-btn-close img{margin: 0; height: 10px; width: 10px;}.cky-preference-body-wrapper{padding: 0 24px; flex: 1; overflow: auto; box-sizing: border-box;}.cky-preference-content-wrapper,.cky-gpc-wrapper .cky-gpc-desc{font-size: 14px; line-height: 24px; font-weight: 400; padding: 12px 0;}.cky-preference-content-wrapper img{min-height: 25px; min-width: 25px;}.cky-preference-content-wrapper .cky-show-desc-btn{font-size: 14px; font-family: inherit; color: #1863dc; text-decoration: none; line-height: 24px; padding: 0; margin: 0; white-space: nowrap; cursor: pointer; background: transparent; border-color: transparent; text-transform: none; min-height: 0; text-shadow: none; box-shadow: none;}.cky-accordion-wrapper{margin-bottom: 10px;}.cky-accordion{border-bottom: 1px solid;}.cky-accordion:last-child{border-bottom: none;}.cky-accordion .cky-accordion-item{display: flex; margin-top: 10px;}.cky-accordion .cky-accordion-body{display: none;}.cky-accordion.cky-accordion-active .cky-accordion-body{display: block; padding: 0 22px; margin-bottom: 16px;}.cky-accordion-header-wrapper{cursor: pointer; width: 100%;}.cky-accordion-item .cky-accordion-header{display: flex; justify-content: space-between; align-items: center;}.cky-accordion-header .cky-accordion-btn{font-size: 16px; font-family: inherit; color: #212121; line-height: 24px; background: none; border: none; font-weight: 700; padding: 0; margin: 0; cursor: pointer; text-transform: none; min-height: 0; text-shadow: none; box-shadow: none;}.cky-accordion-header .cky-always-active{color: #008000; font-weight: 600; line-height: 24px; font-size: 14px;}.cky-accordion-header-des{font-size: 14px; line-height: 24px; margin: 10px 0 16px 0;}.cky-accordion-chevron{margin-right: 22px; position: relative; cursor: pointer;}.cky-accordion-chevron-hide{display: none;}.cky-accordion .cky-accordion-chevron i::before{content: ""; position: absolute; border-right: 1.4px solid; border-bottom: 1.4px solid; border-color: inherit; height: 6px; width: 6px; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); transition: all 0.2s ease-in-out; top: 8px;}.cky-accordion.cky-accordion-active .cky-accordion-chevron i::before{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);}.cky-audit-table{background: #f4f4f4; border-radius: 6px;}.cky-audit-table .cky-empty-cookies-text{color: inherit; font-size: 12px; line-height: 24px; margin: 0; padding: 10px; word-break: break-word;}.cky-audit-table .cky-cookie-des-table{font-size: 12px; line-height: 24px; font-weight: normal; padding: 15px 10px; border-bottom: 1px solid; border-bottom-color: inherit; margin: 0;}.cky-audit-table .cky-cookie-des-table:last-child{border-bottom: none;}.cky-audit-table .cky-cookie-des-table li{list-style-type: none; display: flex; padding: 3px 0;}.cky-audit-table .cky-cookie-des-table li:first-child{padding-top: 0;}.cky-cookie-des-table li div:first-child{width: 100px; font-weight: 600; word-break: break-word; word-wrap: break-word;}.cky-cookie-des-table li div:last-child{flex: 1; word-break: break-word; word-wrap: break-word; margin-left: 8px;}.cky-footer-shadow{display: block; width: 100%; height: 40px; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%); position: absolute; bottom: calc(100% - 1px);}.cky-footer-wrapper{position: relative;}.cky-prefrence-btn-wrapper{display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; padding: 22px 24px; border-top: 1px solid;}.cky-prefrence-btn-wrapper .cky-btn{flex: auto; max-width: 100%; text-shadow: none; box-shadow: none;}.cky-btn-preferences{color: #1863dc; background: transparent; border: 2px solid #1863dc;}.cky-preference-header,.cky-preference-body-wrapper,.cky-accordion-wrapper,.cky-accordion,.cky-accordion-wrapper,.cky-footer-wrapper,.cky-prefrence-btn-wrapper{border-color: inherit;}.cky-preference-body-wrapper .cky-dma-content-wrapper{font-size: 14px; line-height: 24px; font-weight: 400; padding: 4px 0 12px;}.cky-preference-body-wrapper .cky-dma-content-wrapper p{color: inherit; word-break: break-word;}.cky-preference-body-wrapper .cky-dma-content-wrapper p:first-child{margin-top: 0;}.cky-preference-body-wrapper .cky-dma-content-wrapper p:last-child{margin-bottom: 0;}.cky-preference-body-wrapper .cky-horizontal-separator{border-bottom: 1px solid; border-color: inherit;}@media (max-width: 845px){.cky-modal{max-width: calc(100% - 16px);}}@media (max-width: 576px){.cky-modal{max-width: 100%;}.cky-preference-center{max-height: 100vh;}.cky-prefrence-btn-wrapper{flex-direction: column; gap: 10px;}.cky-accordion.cky-accordion-active .cky-accordion-body{padding-right: 0;}.cky-prefrence-btn-wrapper .cky-btn{width: 100%;}.cky-prefrence-btn-wrapper .cky-btn-reject{order: 3;}.cky-prefrence-btn-wrapper .cky-btn-accept{order: 1; margin-top: 0;}.cky-prefrence-btn-wrapper .cky-btn-preferences{order: 2;}}@media (max-width: 425px){.cky-accordion-chevron{margin-right: 15px;}.cky-accordion.cky-accordion-active .cky-accordion-body{padding: 0 15px;}}@media (max-width: 352px){.cky-preference-header .cky-preference-title{font-size: 16px;}.cky-preference-header{padding: 16px 24px;}.cky-preference-content-wrapper *, .cky-accordion-header-des *, .cky-dma-content-wrapper *{font-size: 12px;}.cky-preference-content-wrapper, .cky-preference-body-wrapper .cky-dma-content-wrapper, .cky-preference-content-wrapper .cky-show-more, .cky-accordion-header .cky-always-active, .cky-accordion-header-des, .cky-preference-content-wrapper .cky-show-desc-btn, .cky-notice-des a.cky-policy, .cky-dma-content-wrapper a.cky-policy{font-size: 12px;}.cky-accordion-header .cky-accordion-btn{font-size: 14px;}}.cky-switch{display: flex;}.cky-switch input[type="checkbox"]{position: relative; width: 44px; height: 24px; margin: 0; background: #d0d5d2; -webkit-appearance: none; border-radius: 50px; cursor: pointer; outline: 0; border: none; top: 0;}.cky-switch input[type="checkbox"]:checked{background: #1863dc;}.cky-switch input[type="checkbox"]:before{position: absolute; content: ""; height: 20px; width: 20px; left: 2px; bottom: 2px; border-radius: 50%; background-color: white; -webkit-transition: 0.4s; transition: 0.4s; margin: 0;}.cky-switch input[type="checkbox"]:after{display: none;}.cky-switch input[type="checkbox"]:checked:before{-webkit-transform: translateX(20px); -ms-transform: translateX(20px); transform: translateX(20px);}@media (max-width: 425px){.cky-switch input[type="checkbox"]{width: 38px; height: 21px;}.cky-switch input[type="checkbox"]:before{height: 17px; width: 17px;}.cky-switch input[type="checkbox"]:checked:before{-webkit-transform: translateX(17px); -ms-transform: translateX(17px); transform: translateX(17px);}}.cky-consent-bar .cky-banner-btn-close{position: absolute; right: 9px; top: 5px; background: none; border: none; cursor: pointer; padding: 0; margin: 0; min-height: 0; line-height: 0; height: auto; width: auto; text-shadow: none; box-shadow: none;}.cky-consent-bar .cky-banner-btn-close img{height: 9px; width: 9px; margin: 0;}.cky-notice-group{font-size: 14px; line-height: 24px; font-weight: 400; color: #212121;}.cky-notice-btn-wrapper .cky-btn-do-not-sell{font-size: 14px; line-height: 24px; padding: 6px 0; margin: 0; font-weight: 500; background: none; border-radius: 2px; border: none; cursor: pointer; text-align: left; color: #1863dc; background: transparent; border-color: transparent; box-shadow: none; text-shadow: none; word-break: break-word;}.cky-consent-bar .cky-banner-btn-close:focus-visible,.cky-notice-btn-wrapper .cky-btn-do-not-sell:focus-visible,.cky-opt-out-btn-wrapper .cky-btn:focus-visible,.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:focus-visible{outline: 2px solid #1863dc; outline-offset: 2px;}@media (max-width: 440px){.cky-consent-container{width: 100%;}}@media (max-width: 352px){.cky-notice-des a.cky-policy, .cky-notice-btn-wrapper .cky-btn-do-not-sell{font-size: 12px;}}.cky-opt-out-wrapper{padding: 12px 0;}.cky-opt-out-wrapper .cky-opt-out-checkbox-wrapper{display: flex; align-items: center;}.cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{font-size: 16px; font-weight: 700; line-height: 24px; margin: 0 0 0 12px; cursor: pointer; word-break: break-word;}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox{background-color: #ffffff; border: 1px solid #000000; width: 20px; height: 18.5px; margin: 0; -webkit-appearance: none; position: relative; display: flex; align-items: center; justify-content: center; border-radius: 2px; cursor: pointer;}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:checked{background-color: #1863dc; border: none;}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:checked::after{left: 6px; bottom: 4px; width: 7px; height: 13px; border: solid #ffffff; border-width: 0 3px 3px 0; border-radius: 2px; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); content: ""; position: absolute; box-sizing: border-box;}.cky-opt-out-checkbox-wrapper.cky-disabled .cky-opt-out-checkbox-label,.cky-opt-out-checkbox-wrapper.cky-disabled input[type="checkbox"].cky-opt-out-checkbox{cursor: no-drop;}.cky-gpc-wrapper{margin: 0 0 0 32px;}.cky-footer-wrapper .cky-opt-out-btn-wrapper{display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; padding: 22px 24px;}.cky-opt-out-btn-wrapper .cky-btn{flex: auto; max-width: 100%; text-shadow: none; box-shadow: none;}.cky-opt-out-btn-wrapper .cky-btn-cancel{border: 1px solid #dedfe0; background: transparent; color: #858585;}.cky-opt-out-btn-wrapper .cky-btn-confirm{background: #1863dc; color: #ffffff; border: 1px solid #1863dc;}@media (max-width: 440px){.cky-footer-wrapper .cky-opt-out-btn-wrapper{gap: 10px;}}@media (max-width: 352px){.cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{font-size: 14px;}.cky-gpc-wrapper .cky-gpc-desc, .cky-gpc-wrapper .cky-gpc-desc *{font-size: 12px;}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox{width: 16px; height: 16px;}.cky-opt-out-checkbox-wrapper input[type="checkbox"].cky-opt-out-checkbox:checked::after{left: 5px; bottom: 4px; width: 3px; height: 9px;}.cky-gpc-wrapper{margin: 0 0 0 28px;}}.video-placeholder-youtube{background-size: 100% 100%; background-position: center; background-repeat: no-repeat; background-color: #b2b0b059; position: relative; display: flex; align-items: center; justify-content: center; max-width: 100%;}.video-placeholder-text-youtube{text-align: center; align-items: center; padding: 10px 16px; background-color: #000000cc; color: #ffffff; border: 1px solid; border-radius: 2px; cursor: pointer;}.video-placeholder-normal{background-image: url("https://cdn-cookieyes.com/assets/images/cky-placeholder.svg"); background-size: 80px; background-position: center; background-repeat: no-repeat; background-color: #b2b0b059; position: relative; display: flex; align-items: flex-end; justify-content: center; max-width: 100%;}.video-placeholder-text-normal{align-items: center; padding: 10px 16px; text-align: center; border: 1px solid; border-radius: 2px; cursor: pointer;}.cky-rtl{direction: rtl; text-align: right;}.cky-rtl .cky-banner-btn-close{left: 9px; right: auto;}.cky-rtl .cky-notice-btn-wrapper .cky-btn:last-child{margin-right: 8px;}.cky-rtl .cky-notice-btn-wrapper .cky-btn:first-child{margin-right: 0;}.cky-rtl .cky-notice-btn-wrapper{margin-left: 0; margin-right: 15px;}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn{margin-right: 8px;}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn:first-child{margin-right: 0;}.cky-rtl .cky-accordion .cky-accordion-chevron i::before{border: none; border-left: 1.4px solid; border-top: 1.4px solid; left: 12px;}.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-chevron i::before{-webkit-transform: rotate(-135deg); -moz-transform: rotate(-135deg); -ms-transform: rotate(-135deg); -o-transform: rotate(-135deg); transform: rotate(-135deg);}@media (max-width: 768px){.cky-rtl .cky-notice-btn-wrapper{margin-right: 0;}}@media (max-width: 576px){.cky-rtl .cky-notice-btn-wrapper .cky-btn:last-child{margin-right: 0;}.cky-rtl .cky-prefrence-btn-wrapper .cky-btn{margin-right: 0;}.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-body{padding: 0 22px 0 0;}}@media (max-width: 425px){.cky-rtl .cky-accordion.cky-accordion-active .cky-accordion-body{padding: 0 15px 0 0;}}.cky-rtl .cky-opt-out-btn-wrapper .cky-btn{margin-right: 12px;}.cky-rtl .cky-opt-out-btn-wrapper .cky-btn:first-child{margin-right: 0;}.cky-rtl .cky-opt-out-checkbox-wrapper .cky-opt-out-checkbox-label{margin: 0 12px 0 0;}@supports not (gap: 10px){.cky-btn{margin: 0 8px 0 0;}@media (max-width: 440px){.cky-notice-btn-wrapper{margin-top: 0;}.cky-btn{margin: 10px 0 0 0;}.cky-notice-btn-wrapper .cky-btn-accept{margin-top: 16px;}}@media (max-width: 576px){.cky-prefrence-btn-wrapper .cky-btn{margin: 10px 0 0 0;}}@media (max-width: 425px){.cky-notice-btn-wrapper{margin-top: 0;}}} { font-family: "Nunito", sans-serif; }</style></head><body class="__className_d0c506"><div class="cky-overlay cky-hide"></div>  <div class="cky-consent-container cky-box-bottom-left" tabindex="0"> <div class="cky-consent-bar" data-cky-tag="notice" style="border-color: #f4f4f4; background-color: #FFFFFF;">   <div class="cky-notice"> <p class="cky-title" role="heading" aria-level="1" data-cky-tag="title" style="color: #212121;"> Accept cookies from Blooket? </p> <div class="cky-notice-group"> <div class="cky-notice-des" data-cky-tag="description" style="color: #212121;"> <p>Cookies are small files placed on your device that collect information when you use Blooket. Essential cookies are used to make our site work and are required. Other types of cookies are used to improve your experience, to analyze how Blooket is used, and to market our service. By clicking “Accept All”, you agree to allow these other cookies.</p> </div>  <div class="cky-notice-btn-wrapper" data-cky-tag="notice-buttons"> <button class="cky-btn cky-btn-customize" aria-label="Customize" data-cky-tag="settings-button" style="color: #9a49aa; border-color: #9a49aa; background-color: 9a49aa;">Customize</button> <button class="cky-btn cky-btn-reject" aria-label="Reject All" data-cky-tag="reject-button" style="color: #FFFFFF; border-color: #9a49aa; background-color: #9a49aa;">Reject All</button> <button class="cky-btn cky-btn-accept" aria-label="Accept All" data-cky-tag="accept-button" style="color: #FFFFFF; border-color: #9a49aa; background-color: #9a49aa;">Accept All</button>  </div> </div> </div> </div> </div> <div class="cky-modal" tabindex="0"> <div class="cky-preference-center" data-cky-tag="detail" style="color: #212121; border-color: #F4F4F4; background-color: #FFFFFF;"> <div class="cky-preference-header"> <span class="cky-preference-title" role="heading" aria-level="1" data-cky-tag="detail-title" style="color: #212121;">Customize Consent Preferences</span> <button class="cky-btn-close" aria-label="Close" data-cky-tag="detail-close"> <img src="https://cdn-cookieyes.com/assets/images/close.svg" alt="Close"> </button> </div> <div class="cky-preference-body-wrapper"> <div class="cky-preference-content-wrapper" data-cky-tag="detail-description" style="color: #212121;"> <p>When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.</p> </div>  <div class="cky-horizontal-separator"></div> <div class="cky-accordion-wrapper" data-cky-tag="detail-categories"> <div class="cky-accordion" id="ckyDetailCategorynecessary"><div class="cky-accordion-item"><div class="cky-accordion-chevron cky-accordion-chevron-hide"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-label="Essential" data-cky-tag="detail-category-title" style="color: #212121;">Essential</button><span class="cky-always-active">Always Active</span></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Essential cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p></div></div></div><div class="cky-accordion-body"></div></div><div class="cky-accordion" id="ckyDetailCategoryanalytics"><div class="cky-accordion-item"><div class="cky-accordion-chevron cky-accordion-chevron-hide"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-label="Analytics" data-cky-tag="detail-category-title" style="color: #212121;">Analytics</button><div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchanalytics" aria-label="Enable Analytics" autocomplete="off" style="background-color: rgb(208, 213, 210);"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p></div></div></div><div class="cky-accordion-body"></div></div><div class="cky-accordion" id="ckyDetailCategoryadvertisement"><div class="cky-accordion-item"><div class="cky-accordion-chevron cky-accordion-chevron-hide"><i class="cky-chevron-right"></i></div><div class="cky-accordion-header-wrapper"><div class="cky-accordion-header"><button class="cky-accordion-btn" aria-expanded="false" aria-label="Third-Party" data-cky-tag="detail-category-title" style="color: #212121;">Third-Party</button><div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchadvertisement" aria-label="Enable Third-Party" autocomplete="off" style="background-color: rgb(208, 213, 210);"></div></div><div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color: #212121;"><p>Third-party cookies are used to provide visitors with customized experiences on other websites based on the pages you've visited previously (ex. counting a view on a YouTube video).</p></div></div></div><div class="cky-accordion-body"></div></div> </div> </div>  <div class="cky-footer-wrapper"> <span class="cky-footer-shadow" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);"></span> <div class="cky-prefrence-btn-wrapper" data-cky-tag="detail-buttons"> <button class="cky-btn cky-btn-reject" aria-label="Reject All" data-cky-tag="detail-reject-button" style="color: #ffffff; border-color: #9a49aa; background-color: #9a49aa;"> Reject All </button> <button class="cky-btn cky-btn-preferences" aria-label="Save My Preferences" data-cky-tag="detail-save-button" style="color: #ffffff; border-color: #9a49aa; background-color: #9a49aa;"> Save My Preferences </button> <button class="cky-btn cky-btn-accept" aria-label="Accept All" data-cky-tag="detail-accept-button" style="color: #ffffff; border-color: #9a49aa; background-color: #9a49aa;"> Accept All </button> </div>  </div> </div>  </div><div id="_rht_toaster" style="position:fixed;z-index:9999;top:0;left:0;right:0;bottom:0;pointer-events:none"></div><main><!--$--><div class="layout_pageContainer__tzVN_" data-sentry-component="Layout" data-sentry-source-file="layout.tsx"><div class="_background_l90pt_1" style="background-color:#0bc2cf"><div class="_checkers_l90pt_12"></div></div><div class="FloatingBlooks_container__30tmg" data-sentry-component="FloatingBlooks" data-sentry-source-file="FloatingBlooks.tsx"><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 100vh; left: 48.2825vw; animation-duration: 19765ms; animation-delay: -5000ms; opacity: 0.421837;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.528295);"><img src="https://ac.blooket.com/marketassets/blooks/puppy.svg" alt="Puppy Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 105vh; left: 92.7424vw; animation-duration: 19632ms; animation-delay: -4800ms; opacity: 0.369618;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.552132);"><img src="https://ac.blooket.com/marketassets/blooks/dragon.svg" alt="Dragon Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 110vh; left: 5.54883vw; animation-duration: 18273ms; animation-delay: -4600ms; opacity: 0.397799;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.52671);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 115vh; left: 43.3233vw; animation-duration: 15702ms; animation-delay: -4400ms; opacity: 0.419776;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.602376);"><img src="https://ac.blooket.com/marketassets/blooks/horse.svg" alt="Horse Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 120vh; left: 86.4559vw; animation-duration: 19438ms; animation-delay: -4200ms; opacity: 0.351139;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.92204);"><img src="https://ac.blooket.com/marketassets/blooks/rabbit.svg" alt="Rabbit Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 125vh; left: 8.20624vw; animation-duration: 15128ms; animation-delay: -4000ms; opacity: 0.397273;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.76046);"><img src="https://ac.blooket.com/marketassets/blooks/lilbot.svg" alt="Lil Bot Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 130vh; left: 36.8611vw; animation-duration: 19281ms; animation-delay: -3800ms; opacity: 0.441746;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.522089);"><img src="https://ac.blooket.com/marketassets/blooks/chicken.svg" alt="Chicken Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 135vh; left: 84.7365vw; animation-duration: 16635ms; animation-delay: -3600ms; opacity: 0.560642;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.743009);"><img src="https://ac.blooket.com/marketassets/blooks/chick.svg" alt="Chick Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 140vh; left: 8.18009vw; animation-duration: 16142ms; animation-delay: -3400ms; opacity: 0.309203;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.991459);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 145vh; left: 40.0716vw; animation-duration: 16789ms; animation-delay: -3200ms; opacity: 0.325176;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.938474);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 150vh; left: 85.9721vw; animation-duration: 15711ms; animation-delay: -3000ms; opacity: 0.548963;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.519833);"><img src="https://ac.blooket.com/marketassets/blooks/puppy.svg" alt="Puppy Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 155vh; left: 13.6997vw; animation-duration: 19907ms; animation-delay: -2800ms; opacity: 0.359954;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.529838);"><img src="https://ac.blooket.com/marketassets/blooks/dragon.svg" alt="Dragon Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 160vh; left: 62.3789vw; animation-duration: 15565ms; animation-delay: -2600ms; opacity: 0.205106;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.931655);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 165vh; left: 83.3756vw; animation-duration: 15670ms; animation-delay: -2400ms; opacity: 0.230103;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.688049);"><img src="https://ac.blooket.com/marketassets/blooks/horse.svg" alt="Horse Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 170vh; left: 32.3294vw; animation-duration: 18045ms; animation-delay: -2200ms; opacity: 0.214329;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.846185);"><img src="https://ac.blooket.com/marketassets/blooks/chicken.svg" alt="Chicken Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 175vh; left: 45.5359vw; animation-duration: 15131ms; animation-delay: -2000ms; opacity: 0.373137;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.878013);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 180vh; left: 75.8498vw; animation-duration: 16323ms; animation-delay: -1800ms; opacity: 0.533939;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.702103);"><img src="https://ac.blooket.com/marketassets/blooks/lilbot.svg" alt="Lil Bot Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 185vh; left: 26.511vw; animation-duration: 18508ms; animation-delay: -1600ms; opacity: 0.4682;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.615375);"><img src="https://ac.blooket.com/marketassets/blooks/horse.svg" alt="Horse Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 190vh; left: 57.2692vw; animation-duration: 16853ms; animation-delay: -1400ms; opacity: 0.528984;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.754927);"><img src="https://ac.blooket.com/marketassets/blooks/chicken.svg" alt="Chicken Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 195vh; left: 68.9311vw; animation-duration: 17921ms; animation-delay: -1200ms; opacity: 0.225009;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.821394);"><img src="https://ac.blooket.com/marketassets/blooks/chick.svg" alt="Chick Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 200vh; left: 19.3931vw; animation-duration: 16226ms; animation-delay: -1000ms; opacity: 0.261272;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.658388);"><img src="https://ac.blooket.com/marketassets/blooks/lilbot.svg" alt="Lil Bot Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 205vh; left: 56.8958vw; animation-duration: 15794ms; animation-delay: -800ms; opacity: 0.40137;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.574267);"><img src="https://ac.blooket.com/marketassets/blooks/horse.svg" alt="Horse Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 210vh; left: 73.7319vw; animation-duration: 16809ms; animation-delay: -600ms; opacity: 0.401854;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.540045);"><img src="https://ac.blooket.com/marketassets/blooks/horse.svg" alt="Horse Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 215vh; left: 13.7684vw; animation-duration: 17263ms; animation-delay: -400ms; opacity: 0.460721;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.672964);"><img src="https://ac.blooket.com/marketassets/blooks/dragon.svg" alt="Dragon Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 220vh; left: 43.4591vw; animation-duration: 18144ms; animation-delay: -200ms; opacity: 0.594734;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.633729);"><img src="https://ac.blooket.com/marketassets/blooks/chick.svg" alt="Chick Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 225vh; left: 62.8943vw; animation-duration: 17084ms; animation-delay: 0ms; opacity: 0.534027;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.799001);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 230vh; left: 31.1213vw; animation-duration: 16780ms; animation-delay: 200ms; opacity: 0.597502;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.87991);"><img src="https://ac.blooket.com/marketassets/blooks/dragon.svg" alt="Dragon Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 235vh; left: 63.7719vw; animation-duration: 18536ms; animation-delay: 400ms; opacity: 0.359385;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.755854);"><img src="https://ac.blooket.com/marketassets/blooks/cow.svg" alt="Cow Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 240vh; left: 78.0296vw; animation-duration: 16423ms; animation-delay: 600ms; opacity: 0.50466;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.845346);"><img src="https://ac.blooket.com/marketassets/blooks/dragon.svg" alt="Dragon Blook" draggable="false" class="_blook_inzvw_1"></div></div><div class="FloatingBlooks_blookContainer__wNUvu" style="bottom: 245vh; left: 31.7624vw; animation-duration: 19449ms; animation-delay: 800ms; opacity: 0.444937;"><div class="_blookContainer_inzvw_1 FloatingBlooks_blook__vOvK6" data-tooltip-id="blook-tooltip" style="transform: scale(0.500456);"><img src="https://ac.blooket.com/marketassets/blooks/lilbot.svg" alt="Lil Bot Blook" draggable="false" class="_blook_inzvw_1"></div></div></div><div class="_header_cduti_1"><div class="_leftContainer_cduti_17"><a class="__className_4dc6ac page_headerLogo__UTJ26" href="https://blooket.com">Blooket</a></div><div class="_centerContainer_cduti_26">Join a Game</div><div class="_rightContainer_cduti_18"><a class="page_headerLink__LsgSE" href="https://id.blooket.com/login">Log In</a></div></div><form class="Form_form__UbiiL" autocomplete="off" data-sentry-component="GameIdForm" data-sentry-source-file="GameIdForm.tsx" action="" enctype="multipart/form-data" method="POST"><input type="hidden" name="$ACTION_REF_1"><input type="hidden" name="$ACTION_1:0" value="{&quot;id&quot;:&quot;f6fe184a2ddb16eb2027c85eb32bf9520fcde0a7&quot;,&quot;bound&quot;:&quot;$@1&quot;}"><input type="hidden" name="$ACTION_1:1" value="[{&quot;status&quot;:&quot;UNSET&quot;,&quot;message&quot;:&quot;&quot;,&quot;fieldErrors&quot;:{}}]"><input type="hidden" name="$ACTION_KEY" value="k3311170942"><div class="Form_formMainContent__Kx_b_"><h1 class="Form_titleText__cis5O __className_4dc6ac">Blooket</h1><div class="Form_inputRow__w_TK3"><div class="Form_idInputContainer__ftfcq"><input class="Form_idInput__MPydi" placeholder="Game ID" aria-label="Enter Game ID" type="tel" maxlength="7" autofocus="" name="join-code" value=""></div><input type="hidden" id="attempts" name="attempts" value="0"><button type="submit" class="FormSubmitButton_submitButton__MK2LJ" aria-label="Submit" data-sentry-component="FormSubmitButton" data-sentry-source-file="FormSubmitButton.tsx"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14 fa-2x FormSubmitButton_submitIcon__R57mo" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></button></div></div><div class="FormBottomContent_bottomContent__pQW_J" data-sentry-component="FormBottomContent" data-sentry-source-file="FormBottomContent.tsx"><a class="Form_loadGameLink__9obh7" href="/solo">Load Saved Game</a></div></form></div><!--/$--></main><script src="https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/chunks/webpack-cd12ef174f8c5b30.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/media/21ed5661b47f7f6d-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/media/c54f5554a21e3ae1-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/3c554b9e885e7251.css\",\"style\"]\n4:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/6023cff24f659282.css\",\"style\"]\n5:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/15acb7de41ca1dbf.css\",\"style\"]\n6:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/946956625f6086f5.css\",\"style\"]\n7:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/291f6b6bff7ee9a3.css\",\"style\"]\n8:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/8bfd3754eaea6920.css\",\"style\"]\n9:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/1fe09aeaac22aa6d.css\",\"style\"]\na:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5627f42ebecff371.css\",\"style\"]\nb:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/46fddd4c305fef11.css\",\"style\"]\nc:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5799e42163636667.css\",\"style\"]\nd:HL[\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/ea4d1bc5b247d0c8.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"e:I[4360,[],\"\"]\n11:I[4018,[\"400\",\"static/chunks/846b7684-1b50d311353636a8.js\",\"565\",\"static/chunks/565-c7176447b90d4c4e.js\",\"412\",\"static/chunks/app/(routes)/play/layout-36b9be991a894c80.js\"],\"default\",1]\n12:I[9257,[],\"\"]\n13:I[4857,[],\"\"]\n16:I[7759,[\"439\",\"static/chunks/e2799680-36ac290d320f68a6.js\",\"864\",\"static/chunks/3ae5402b-2aa0a4ad025d172d.js\",\"326\",\"static/chunks/326-b7331cfcdf6e141a.js\",\"479\",\"static/chunks/479-c819e7c3a852be4c.js\",\"470\",\"static/chunks/app/global-error-fb219e1cddc71786.js\"],\"default\"]\n17:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$Le\",null,{\"buildId\":\"gq0r2KHBoU4bOngh6TAw9\",\"assetPrefix\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130\",\"urlParts\":[\"\",\"play\"],\"initialTree\":[\"\",{\"children\":[\"(routes)\",{\"children\":[\"play\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"(routes)\",{\"children\":[\"play\",{\"children\":[\"__PAGE__\",{},[[\"$Lf\",\"$L10\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/8bfd3754eaea6920.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/1fe09aeaac22aa6d.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"2\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5627f42ebecff371.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"3\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/46fddd4c305fef11.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"4\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5799e42163636667.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"5\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/ea4d1bc5b247d0c8.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]]],null],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/946956625f6086f5.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/291f6b6bff7ee9a3.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"$L11\",null,{\"children\":[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(routes)\",\"children\",\"play\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}],\"params\":{}}]],null],null]},[null,[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(routes)\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]],[[\"$\",\"div\",null,{\"className\":\"loading_container__nZ4r5\",\"data-sentry-component\":\"Loading\",\"data-sentry-source-file\":\"loading.tsx\",\"children\":[\"$\",\"div\",null,{\"className\":\"_container_1i4l7_1\",\"children\":[\"$\",\"div\",null,{\"className\":\"_loader_1i4l7_7\",\"children\":[[\"$\",\"div\",null,{\"className\":\"_shadow_1i4l7_66\"}],[\"$\",\"img\",null,{\"src\":\"https://ac.blooket.com/marketassets/blooks/lightblue.svg\",\"alt\":\"Light Blue Loader\",\"className\":\"_blook_1i4l7_14\",\"draggable\":false}]]}]}]}],[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/8bfd3754eaea6920.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/1fe09aeaac22aa6d.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"2\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/946956625f6086f5.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"3\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5627f42ebecff371.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"4\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/46fddd4c305fef11.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"5\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/5799e42163636667.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"6\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/47f9fc0cfa2a6254.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[]]]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/3c554b9e885e7251.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/6023cff24f659282.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"2\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/15acb7de41ca1dbf.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],\"$L14\"],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L15\"],\"globalErrorComponent\":\"$16\",\"missingSlots\":\"$W17\"}]\n"])</script><script>self.__next_f.push([1,"19:I[3910,[\"439\",\"static/chunks/e2799680-36ac290d320f68a6.js\",\"326\",\"static/chunks/326-b7331cfcdf6e141a.js\",\"213\",\"static/chunks/213-e5269e40870a4513.js\",\"659\",\"static/chunks/659-7bbe4cd72afb8a57.js\",\"328\",\"static/chunks/328-fd0d3b3595c63069.js\",\"976\",\"static/chunks/app/(routes)/play/page-d6343401c2e33644.js\"],\"default\"]\n1a:I[7512,[\"659\",\"static/chunks/659-7bbe4cd72afb8a57.js\",\"185\",\"static/chunks/app/layout-c2fbc90ff820d1e2.js\"],\"\"]\n1b:I[4019,[\"659\",\"static/chunks/659-7bbe4cd72afb8a57.js\",\"185\",\"static/chunks/app/layout-c2fbc90ff820d1e2.js\"],\"Toaster\"]\n1c:I[9835,[\"659\",\"static/chunks/659-7bbe4cd72afb8a57.js\",\"185\",\"static/chunks/app/layout-c2fbc90ff820d1e2.js\"],\"default\"]\n1d:I[9766,[\"439\",\"static/chunks/e2799680-36ac290d320f68a6.js\",\"864\",\"static/chunks/3ae5402b-2aa0a4ad025d172d.js\",\"326\",\"static/chunks/326-b7331cfcdf6e141a.js\",\"479\",\"static/chunks/479-c819e7c3a852be4c.js\",\"601\",\"static/chunks/app/error-0468bef7227f25c1.js\"],\"default\"]\n10:[\"$L18\",[\"$\",\"$L19\",null,{}]]\n1e:{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}\n1f:{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"}\n20:{\"display\":\"inline-block\"}\n21:{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0}\n14:[\"$\",\"html\",null,{\"lang\":\"en\",\"data-sentry-component\":\"RootLayout\",\"data-sentry-source-file\":\"layout.tsx\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"$L1a\",null,{\"src\":\"https://cdn-cookieyes.com/client_data/79e41bd3b1a75f452ac71716/script.js\",\"strategy\":\"beforeInteractive\"}]}],[\"$\",\"body\",null,{\"className\":\"__className_d0c506\",\"children\":[[\"$\",\"$L1b\",null,{\"position\":\"bottom-center\",\"containerStyle\":{\"top\":0,\"left\":0,\"bottom\":0,\"right\":0},\"data-sentry-element\":\"Toaster\",\"data-sentry-source-file\":\"layout.tsx\"}],[\"$\",\"$L1c\",null,{\"session\":null,\"data-sentry-eleme"])</script><script>self.__next_f.push([1,"nt\":\"Providers\",\"data-sentry-source-file\":\"layout.tsx\",\"children\":[\"$\",\"main\",null,{\"className\":\"$undefined\",\"children\":[\"$\",\"$L12\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$1d\",\"errorStyles\":[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/8bfd3754eaea6920.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"https://ac.blooket.com/play-frontend/fee15cce5fbd511005ed8baa351196a5fb650130/_next/static/css/1fe09aeaac22aa6d.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],\"errorScripts\":[],\"template\":[\"$\",\"$L13\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$1e\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$1f\",\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":\"$20\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$21\",\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]}]]}]]}]\n15:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Play Blooket | Blooket\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Join a game of Blooket to answer questions and compete in a fierce clash to determine who is the best and what Blook will come out victorious.\"}],[\"$\",\"link\",\"4\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"48x48\"}],[\"$\",\"meta\",\"5\",{\"name\":\"next-size-adjust\"}]]\nf:null\n"])</script><script>self.__next_f.push([1,"22:I[7213,[\"439\",\"static/chunks/e2799680-36ac290d320f68a6.js\",\"326\",\"static/chunks/326-b7331cfcdf6e141a.js\",\"213\",\"static/chunks/213-e5269e40870a4513.js\",\"659\",\"static/chunks/659-7bbe4cd72afb8a57.js\",\"328\",\"static/chunks/328-fd0d3b3595c63069.js\",\"976\",\"static/chunks/app/(routes)/play/page-d6343401c2e33644.js\"],\"\"]\n18:[\"$\",\"div\",null,{\"className\":\"_header_cduti_1\",\"style\":\"$undefined\",\"children\":[[\"$\",\"div\",null,{\"className\":\"_leftContainer_cduti_17\",\"children\":[\"$\",\"$L22\",null,{\"href\":\"https://blooket.com\",\"className\":\"__className_4dc6ac page_headerLogo__UTJ26\",\"children\":\"Blooket\"}]}],[\"$\",\"div\",null,{\"className\":\"_centerContainer_cduti_26\",\"children\":\"Join a Game\"}],[\"$\",\"div\",null,{\"className\":\"_rightContainer_cduti_18\",\"children\":[\"$\",\"$L22\",null,{\"href\":\"https://id.blooket.com/login\",\"className\":\"page_headerLink__LsgSE\",\"children\":\"Log In\"}]}]]}]\n"])</script><script>$RS=function(a,b){a=document.getElementById(a);b=document.getElementById(b);for(a.parentNode.removeChild(a);a.firstChild;)b.parentNode.insertBefore(a.firstChild,b);b.parentNode.removeChild(b)};$RS("S:1","P:1")</script><script>$RC=function(b,c,e){c=document.getElementById(c);c.parentNode.removeChild(c);var a=document.getElementById(b);if(a){b=a.previousSibling;if(e)b.data="$!",a.setAttribute("data-dgst",e);else{e=b.parentNode;a=b.nextSibling;var f=0;do{if(a&&8===a.nodeType){var d=a.data;if("/$"===d)if(0===f)break;else f--;else"$"!==d&&"$?"!==d&&"$!"!==d||f++}d=a.nextSibling;e.removeChild(a);a=d}while(a);for(;c.firstChild;)e.insertBefore(c.firstChild,a);b.data="$"}b._reactRetry&&b._reactRetry()}};$RC("B:0","S:0")</script><next-route-announcer style="position: absolute;"></next-route-announcer></body></html>
