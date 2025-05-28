@@ -1,0 +1,161 @@
+<html lang="en" dir="ltr"><head>
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" integrity="sha384-fUI/0bA1xDBf6EUz63EooFKnh6GRcNbA59KcJ/C91G5WByKS4ZwDLY8qENzezkJ/" crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/amplitude-8.21.9-min.gz.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5HCKFC"></script><script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-5HCKFC');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/ico+xml" href="https://assets-cdn.kahoot.it/controller/v2/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="google" content="notranslate">
+    <meta name="description" content="Join a game of kahoot – answer questions in an interactive quiz, compete with others, and experience awesome learning.">
+    <meta name="keywords" content="education, platform, smart phone, tablet, mobile, social, inclusive, HTML5, classroom, engagement, play, game, fun, quiz, multi-player, pedagogy, learning model, learn, gamification.">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Join a game of kahoot | Kahoot!",
+        "url": "https://kahoot.it/"
+      }
+    </script>
+
+    <link rel="preconnect" href="https://cdn.amplitude.com">
+
+    <link rel="stylesheet" href="https://files-cdn.kahoot.it/shared-assets/fonts/fonts.css">
+
+    <title>Enter Game PIN - Kahoot!</title>
+    <script type="module" crossorigin="" src="https://assets-cdn.kahoot.it/controller/v2/assets/index-ro-VXjQK.js"></script>
+    <link rel="modulepreload" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/vendor-CnwnkULs.js">
+    <link rel="stylesheet" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/vendor-DUaLdIlm.css">
+    <link rel="stylesheet" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/index-BjDeIjP0.css">
+  <link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/puzzlebox-controller-chest-5sDaWM6s.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/HTMLText-Be_2qOt_.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/TilingSpriteRenderer-BSXVpMpl.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/random-t1nnzuhG.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/particle-emitter.es-B1dlo6FO.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/filter-glow-CDrZRBvl.js"><style data-styled="active" data-styled-version="6.1.13"></style><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-coding-i30pIhOs.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/index-ro-VXjQK.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/css-outline-utility-CBOk0fji.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/rectangle-CsbTKoHH.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/action-CQs10R_p.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/CustomWiggle-CDO3H46W.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-coding-D5HEcayJ.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/index-BZ6SlrRG.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-fractions-9Li6XMMr.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/drag-controller-DnT1HL18.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/sound-controller-D-3pBxIz.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/use-activity-pixi-assets-suspensor-B4MsPXDw.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/AnimatedSprite-BWFpgmxd.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-fractions-BxDJrOmg.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/geometry-Bx_a0_4o.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/ParticleContainer-D3YsV63M.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/SkeletonJson-CPdfRXma.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/SimpleMesh-CpzYM2Me.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/Spine-D48vZwJa.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/slot-collection-map-D1ECEhzA.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/filter-color-overlay-Dce3b833.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/pixijs-spine-utils-D0k-WGCl.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-multiplications-DMUOaGJu.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/tutorial-state-controller-DrpmF-Zb.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/NineSlicePlane-BSBxRiFH.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-multiplications-Csqu5qul.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-noom-puzzle-BvE5F0Pn.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/SimpleRope-CM3JJCvl.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/TilingSprite-B_vEksPk.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-noom-puzzle-DPQySWBX.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-operations-nlZEnaR0.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/pixi_viewport-C9GrtnVW.js"><link rel="modulepreload" as="script" crossorigin="" href="https://assets-cdn.kahoot.it/controller/v2/assets/activity-operations-X3KrgU_b.js"><script src="https://cdn-ukwest.onetrust.com/scripttemplates/202411.1.0/otBannerSdk.js" async="" type="text/javascript"></script></head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5HCKFC"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"><div class="controller__AppWrapper-sc-1m4rw0k-0 ihbEUu"><div data-functional-selector="theme-wrapper-background" class="theme__Background-sc-5jtkdy-0 kYDLIE"><div data-functional-selector="theme-wrapper-undefined" class="theme__ScrollWrapper-sc-5jtkdy-1 hBmlTp"><p tabindex="-1" class="visually-hidden__SROnly-sc-18gl3eq-0 fLRPag">New page</p><p tabindex="-1" class="visually-hidden__SROnly-sc-18gl3eq-0 fLRPag">Enter Game PIN - Kahoot!</p><div class="background__Background-sc-15eg2v3-0 bEwvnA page-wrapper__Background-sc-nudbt3-0 hAcLPL"><div class="page-wrapper__PageWrapper-sc-nudbt3-1 bnUtwQ"><div class="top-right-button-space__TopButtonSpace-sc-149ru7q-0 game-id__TopButtonSpace-sc-1enferg-1 ijKvoO hGHENl"><div class="language-picker-base__Wrapper-sc-cvn81y-0 dnRkVR game-id__LanguagePicker-sc-1enferg-3 lnRBMc" data-functional-selector="kahoot-settings__language-picker"><label id="labelId-:r0:" class="visually-hidden__SROnly-sc-18gl3eq-0 fLRPag">Select language</label><button type="button" role="combobox" aria-controls="radix-:r1:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" aria-labelledby="labelId-:r0:" class="language-picker-base__Trigger-sc-cvn81y-1 eSTGeW"><img src="https://assets-cdn.kahoot.it/controller/v2/assets/language-picker-black-ByQqAUxR.svg" alt=""><span aria-hidden="true" class="language-picker-base__Label-sc-cvn81y-6 cZWQrn">EN</span><span style="pointer-events: none;"><div class="language-picker-base__ValueWrapper-sc-cvn81y-2 jEpXMv"><span class="visually-hidden__SROnly-sc-18gl3eq-0 fLRPag">English (US)</span></div></span></button></div></div><div class="vertical-alignment__VerticalAlignment-sc-ridjbp-0 erPmZY"><main class="vertical-alignment__VerticalAlignmentCenter-sc-ridjbp-1 hIjIoQ"><div class="game-id__FormWrapper-sc-1enferg-0 ljuRUM"><div class="game-logo__LogoArea-sc-1mjmnog-0 NymYN"><div data-functional-selector="game-logo" title="Kahoot!" class="game-logo__GameLogoImg-sc-18by1tw-1 bXPDPS"></div></div><form action="#" novalidate="" class="enter-pin-form__Form-sc-z047z0-1 cywaQR"><input name="gameId" placeholder="Game PIN" inputmode="numeric" aria-invalid="false" id="game-input" data-functional-selector="game-pin-input" class="game-input__GameInput-sc-elvgbq-0 hVJYfB enter-pin-form__GameInput-sc-z047z0-0 fKZzbl" autocomplete="off" dir="auto" value=""><button class="button__Button-sc-vzgdbz-0 cOYBIH enter-pin-form__SubmitButton-sc-z047z0-2 eHMrdk" type="submit" data-functional-selector="join-game-pin">Enter</button></form></div></main><footer class="vertical-alignment__VerticalAlignmentBottom-sc-ridjbp-2 jhBPDe"><div class="game-id__FooterContent-sc-1enferg-2 bmgtSO"><span></span><div data-functional-selector="lobby-info" class="lobby-info__LobbyWrapper-sc-1jr7bna-0 gVFtHy"><p class="lobby-info__LobbyInfo-sc-1jr7bna-1 cRoqmA">Create your own kahoot for FREE at <a href="https://kahoot.com/?utm_name=controller_app&amp;utm_source=controller&amp;utm_campaign=controller_app&amp;utm_medium=link" class="lobby-info__AppLink-sc-1jr7bna-2 fJDVOI">kahoot.com</a></p></div><p data-functional-selector="legal-info" class="legal-info__StyledLegalInfo-sc-hxw0j7-0 bDjwGq"><a href="https://kahoot.com/terms-and-conditions/?utm_name=controller_app&amp;utm_source=controller&amp;utm_campaign=controller_app&amp;utm_medium=link" class="legal-info__AppLink-sc-hxw0j7-1 eUIfwk">Terms</a>&nbsp;|&nbsp;<a href="https://kahoot.com/privacy-policy/?utm_name=controller_app&amp;utm_source=controller&amp;utm_campaign=controller_app&amp;utm_medium=link" class="legal-info__AppLink-sc-hxw0j7-1 eUIfwk">Privacy</a>&nbsp;|&nbsp;<a href="https://trust.kahoot.com/cookie-notice/?utm_name=controller_app&amp;utm_source=controller&amp;utm_campaign=controller_app&amp;utm_medium=link" class="legal-info__AppLink-sc-hxw0j7-1 eUIfwk">Cookie notice</a></p></div></footer></div></div></div><div type="info" role="alert" class="notification-bar__NotificationBar-sc-1e4wbj0-0 hViLcw" style="--duration: 5s;"><div class="notification-bar__IconContainer-sc-1e4wbj0-2 fkNNCT"><span data-functional-selector="icon" class="icon__Icon-sc-5okv5j-0 gLZdRM" style="display: inline-block; vertical-align: middle; width: 100%; height: 100%;"><svg viewBox="0 0 32 32" focusable="false" stroke="none" stroke-width="0" aria-labelledby="label-eaf87dfb-0585-48d9-b73c-7b1918a65f10" aria-hidden="true" class="icon__Svg-sc-5okv5j-1 evsUjB"><title id="label-eaf87dfb-0585-48d9-b73c-7b1918a65f10">Icon</title><path d="M16,26 C10.486,26 6,21.515 6,16 C6,10.487 10.486,6 16,6 C21.514,6 26,10.486 26,16 C26,21.515 21.514,26 16,26 Z M16,8 C11.589,8 8,11.589 8,16 C8,20.411 11.589,24 16,24 C20.411,24 24,20.411 24,16 C24,11.589 20.411,8 16,8 Z M16,13.25 C15.3096441,13.25 14.75,12.6903559 14.75,12 C14.75,11.3096441 15.3096441,10.75 16,10.75 C16.6903559,10.75 17.25,11.3096441 17.25,12 C17.25,12.6903559 16.6903559,13.25 16,13.25 Z M15,15 L17,15 L17,21 L15,21 L15,15 Z" style="fill: rgb(255, 255, 255);"></path></svg></span></div></div></div></div></div><div></div></div>
+    <script>
+      window.global = window;
+    </script>
+    <script>
+      (function (e, t) {
+        var n = e.amplitude || { _q: [], _iq: {} };
+        var r = t.createElement('script');
+        r.type = 'text/javascript';
+        r.integrity = 'sha384-fUI/0bA1xDBf6EUz63EooFKnh6GRcNbA59KcJ/C91G5WByKS4ZwDLY8qENzezkJ/';
+        r.crossOrigin = 'anonymous';
+        r.async = true;
+        r.src = 'https://cdn.amplitude.com/libs/amplitude-8.21.9-min.gz.js';
+        r.onload = function () {
+          if (!e.amplitude.runQueuedFunctions) {
+            console.log('[Amplitude] Error: could not load SDK');
+          }
+        };
+        var i = t.getElementsByTagName('script')[0];
+        i.parentNode.insertBefore(r, i);
+        function s(e, t) {
+          e.prototype[t] = function () {
+            this._q.push([t].concat(Array.prototype.slice.call(arguments, 0)));
+            return this;
+          };
+        }
+        var o = function () {
+          this._q = [];
+          return this;
+        };
+        var a = ['add', 'append', 'clearAll', 'prepend', 'set', 'setOnce', 'unset'];
+        for (var u = 0; u < a.length; u++) {
+          s(o, a[u]);
+        }
+        n.Identify = o;
+        var c = function () {
+          this._q = [];
+          return this;
+        };
+        var l = ['setProductId', 'setQuantity', 'setPrice', 'setRevenueType', 'setEventProperties'];
+        for (var p = 0; p < l.length; p++) {
+          s(c, l[p]);
+        }
+        n.Revenue = c;
+        var d = [
+          'init',
+          'logEvent',
+          'logRevenue',
+          'setUserId',
+          'setUserProperties',
+          'setOptOut',
+          'setVersionName',
+          'setDomain',
+          'setDeviceId',
+          'setGlobalUserProperties',
+          'identify',
+          'clearUserProperties',
+          'setGroup',
+          'logRevenueV2',
+          'regenerateDeviceId',
+          'groupIdentify',
+          'onInit',
+          'logEventWithTimestamp',
+          'logEventWithGroups',
+          'setSessionId',
+          'resetSessionId',
+        ];
+        function v(e) {
+          function t(t) {
+            e[t] = function () {
+              e._q.push([t].concat(Array.prototype.slice.call(arguments, 0)));
+            };
+          }
+          for (var n = 0; n < d.length; n++) {
+            t(d[n]);
+          }
+        }
+        v(n);
+        n.getInstance = function (e) {
+          e = (!e || e.length === 0 ? '$default_instance' : e).toLowerCase();
+          if (!n._iq.hasOwnProperty(e)) {
+            n._iq[e] = { _q: [] };
+            v(n._iq[e]);
+          }
+          return n._iq[e];
+        };
+        e.amplitude = n;
+      })(window, document);
+      // When running inside the app, this function will be injected and called by the app.
+      // To avoid race conditions, we pre-define it here
+      function sendGameStats() {}
+    </script>
+  
+
+<div style="display: none; visibility: hidden;">
+<script src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="a2ce1858-883a-4d3d-829a-79f20d1c5d41"></script>
+<script type="text/javascript">function OptanonWrapper(){window.dispatchEvent(new Event("oneTrustCategoriesChanged"))};</script>
+</div><style>
+  #onetrust-consent-sdk {
+    position: absolute;
+    z-index: -9999999;
+  }
+</style>
+
+<script type="text/javascript" id="" charset="">function closeOptanonAlert(a){setTimeout(function(){typeof Optanon!=="undefined"?Optanon.hasOwnProperty("Close")&&Optanon.hasOwnProperty("IsAlertBoxClosed")&&(Optanon.IsAlertBoxClosed()||Optanon.Close()):a>0&&closeOptanonAlert(a-1)},2E3)}closeOptanonAlert(5);</script><script type="text/javascript" id="" charset="">function removeTargettingCookies(){if(typeof Optanon!=="undefined"){var c=Optanon.GetDomainData().Groups[3];c.Cookies.forEach(function(a){document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d"+a.Host;document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d."+a.Host;document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;domain\x3d.kahoot.it";document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;domain\x3d.kahootus.com";
+document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;"});c.Hosts.forEach(function(a){a.Cookies.forEach(function(b){document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d"+b.Host;document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d."+b.Host;document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;"})})}}setTimeout(function(){removeTargettingCookies()},2E3);</script><script type="text/javascript" id="" charset="">var regex=/x{3,}/g;function getCookie(a){if(a.match(regex)){a=a.replace(regex,"");var d=document.cookie.split(a).pop().split("\x3d")[0];return a+=d}return a}
+function removePerformanceCookies(){if(typeof Optanon!=="undefined"){var a=Optanon.GetDomainData().Groups[1];a.Cookies.forEach(function(c){var b=getCookie(c.Name);document.cookie=b+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d"+c.Host;document.cookie=b+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d."+c.Host;document.cookie=b+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;domain\x3d.kahoot.it";document.cookie=b+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;domain\x3d.kahootus.com";
+document.cookie=b+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;"});a.Hosts.forEach(function(c){c.Cookies.forEach(function(b){document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d"+b.Host;document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d."+b.Host;document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;"})});a=getCookie("amplitude_id");var d=getCookie("_gat_UA");document.cookie=
+a+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d.kahoot.it";document.cookie=d+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d.kahoot.it";document.cookie=a+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d.kahootus.com";document.cookie=d+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d.kahootus.com"}}setTimeout(function(){removePerformanceCookies()},2E3);</script><script type="text/javascript" id="" charset="">function removeFunctionalCookies(){if(typeof Optanon!=="undefined"){var c=Optanon.GetDomainData().Groups[2];c.Cookies.forEach(function(a){document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d"+a.Host;document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d."+a.Host;document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;domain\x3d.kahoot.it";document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;domain\x3d.kahootus.com";
+document.cookie=a.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;"});c.Hosts.forEach(function(a){a.Cookies.forEach(function(b){document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d"+b.Host;document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d."+b.Host;document.cookie=b.Name+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/;"})})}}setTimeout(function(){removeFunctionalCookies()},2E3);</script></body></html>
