@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="https://rawcdn.githack.com/js13kGames/soul-jumper/588ab4d78531c9b4182ef9ddb06a7b90dbb5e9cb/index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="application/javascript">
+    version = Math.floor(Math.random() * 1000);
+    var files = ["audio","camera","particle","keys","sound","entity","hero","enums","tile","utility","level","cart","game"];
+    for (f of files) {
+      document.write("<script type='application/javascript' src='assets/js/" + f + ".js?" + version + "'\><\/script>");
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/game.css?v=6" />
+</head>
+<body onload="startGame()">
+</body>
+</html>
