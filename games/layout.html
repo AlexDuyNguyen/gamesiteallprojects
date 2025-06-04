@@ -516,8 +516,16 @@
       </label>
       <span class="toggle-label">Confirm Tab Close</span>
     </div>
+
+    <div class="settings-option">
+      <label class="toggle-switch">
+        <input type="checkbox" id="downloadToggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-label">Download Game When Clicked</span>
+    </div>
   </div>
-  
+
   <div class="container credits-section">
     <h2>CREDITS</h2>
     <ul class="credits-list">
@@ -1795,32 +1803,57 @@
     function openGame(toolId) {
       const toolData = tools.find(t => t.id === toolId);
       if (!toolData) return;
-
-      loadingOverlay.style.display = 'flex';
-      const newWindow = window.open('about:blank', '_blank');
-      if (!newWindow) {
-        loadingOverlay.style.display = 'none';
-        alert('Popup blocked! Please allow popups for this site.');
-        return;
-      }
-      fetch(toolData.url)
-        .then(res => res.text())
-        .then(html => {
-          setTimeout(() => {
-            newWindow.document.open();
-            newWindow.document.write(html);
-            newWindow.document.close();
+    
+      const downloadMode = localStorage.getItem(DOWNLOAD_MODE_KEY) === 'true';
+    
+      if (downloadMode) {
+        // Download mode
+        loadingOverlay.style.display = 'flex';
+        fetch(toolData.url)
+          .then(res => res.blob())
+          .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${toolData.label.replace(/\s+/g, '_')}.html`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
             loadingOverlay.style.display = 'none';
-            
-            // Add to recently played
             addToRecentlyPlayed(toolData);
-          }, 100);
-        })
-        .catch(err => {
+          })
+          .catch(err => {
+            loadingOverlay.style.display = 'none';
+            alert('Failed to download the game. Please try again later.');
+            console.error(err);
+          });
+      } else {
+        // Original open in new tab mode
+        loadingOverlay.style.display = 'flex';
+        const newWindow = window.open('about:blank', '_blank');
+        if (!newWindow) {
           loadingOverlay.style.display = 'none';
-          alert('Failed to load the game. Please try again later.');
-          console.error(err);
-        });
+          alert('Popup blocked! Please allow popups for this site.');
+          return;
+        }
+        fetch(toolData.url)
+          .then(res => res.text())
+          .then(html => {
+            setTimeout(() => {
+              newWindow.document.open();
+              newWindow.document.write(html);
+              newWindow.document.close();
+              loadingOverlay.style.display = 'none';
+              addToRecentlyPlayed(toolData);
+            }, 100);
+          })
+          .catch(err => {
+            loadingOverlay.style.display = 'none';
+            alert('Failed to load the game. Please try again later.');
+            console.error(err);
+          });
+      }
     }
 
     function addToRecentlyPlayed(game) {
@@ -2115,6 +2148,7 @@
       updateFavoritesDisplay();
       updateStarIcons();
       initializeConfirmClose();
+      initializeDownloadMode();
     };
   </script>
 </body>
