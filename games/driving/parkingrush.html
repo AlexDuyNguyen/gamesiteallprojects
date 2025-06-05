@@ -1,55 +1,519 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<base href="https://cdn.jsdelivr.net/gh/bubbls/youtube-playables@main/parking-rush/">
-    <meta charset="UTF-8">
-	<title>Parking Rush</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	
-	<!-- Made with Construct, the game and app creator :: https://www.construct.net -->
-	<meta name="generator" content="Scirra Construct">
+<html><head>
+    <base href="https://rawcdn.githack.com/fork-so-the-site-i-take-wont-be-deleted/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/parking-fury-3d-main/parking-fury-3d-main/">
+	<script type="text/javascript">
+		/**
+		 * Game config
+		 */
 
-	<link rel="manifest" href="appmanifest.json">
-	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
-	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
-	<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
-	<link rel="icon" type="image/png" href="icons/icon-512.png">
-
-	<link rel="stylesheet" href="style.css" nonce="8JPNBIY47xE7Al_WZItuRA">
-
-	<script src="https://cdn.jsdelivr.net/gh/bubbls/youtube-playables@main/ytgame.js" nonce="8JPNBIY47xE7Al_WZItuRA"></script>
-
-	<script nonce="8JPNBIY47xE7Al_WZItuRA">
-		window.ytgame.game.firstFrameReady();
-
-		window.famobi_gameID = "parking-rush";
-		window.famobi_gameJS = [
-			"common.js",
-			"tresor.js",
-			"scripts/modernjscheck.js",
-			"scripts/supportcheck.js",
-			"scripts/main.js",
-		function() {
-		    // start the game
-		}
-		];
-
-		(function (document, url, fgJS, firstJS) {
-			fgJS = document.createElement('script');
-			firstJS = document.getElementsByTagName('script')[0];
-			fgJS.src = url;
-			firstJS.parentNode.insertBefore(fgJS, firstJS);
-		})(document, 'html5games/gameapi/v1.js?e=');
+		window.config = {
+			debug: false,
+			maxRatio: 16 / 9,
+			minRatio: 9 / 16,
+			numScreenshots: 4,
+			unityWebglBuildUrl: "Build/ParkingFury3D.json?v=1",
+			unityWebglLoaderUrl: "Build/UnityLoader.js?v=1"
+		};
 	</script>
-</head> 
- 
-<body>
-	<noscript>
-		<div id="notSupportedWrap">
-			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
-			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
-		</div>
-	</noscript>
 
-</body> 
-</html>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<title>Parking Fury 3D</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript" src="patch/poki-sdk.js?v=1"></script><script src="patch/poki-sdk-core-v2.263.0.js" type="text/javascript" crossorigin="anonymous"></script>
+<script src="patch/poki-sdk-core-v2.263.0.js" type="text/javascript" crossorigin="anonymous"></script><script type="text/javascript" async="" src="patch/json/null.json?patch/google/ima3.js?imasdk.googleapis.com/js/sdkloader/ima3.js"></script><script type="text/javascript" async="" src="patch/json/null.json?https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script type="text/javascript" async="" src="patch/json/null.json?https://a.poki.com/prebid/prebid6.12.0.js"></script><script type="text/javascript" async="" src="patch/json/null.json?https://c.amazon-adsystem.com/aax2/apstag.js"></script><script type="text/javascript" async="" src="patch/json/null.json?patch/google/ima3.js?imasdk.googleapis.com/js/sdkloader/ima3.js"></script><script type="text/javascript" async="" src="patch/json/null.json?https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script type="text/javascript" async="" src="patch/json/null.json?https://a.poki.com/prebid/prebid6.12.0.js"></script><script type="text/javascript" async="" src="patch/json/null.json?https://c.amazon-adsystem.com/aax2/apstag.js"></script><style>
+.pokiSdkContainer {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pokiSdkContainer.pokiSdkFixed {
+	position: fixed;
+}
+
+.pokiSdkContainer.pokiSdkVisible {
+	display: block;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer.pokiSdkHidden {
+	display: none;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer {
+	pointer-events: none;
+}
+
+.pokiSdkSpinnerContainer {
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('https://a.poki.com/images/thumb_anim_2x.gif') 50% 50% no-repeat;
+	user-select: none;
+}
+
+.pokiSdkInsideContainer {
+	background: #000;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.pokiSdkContainer.pokiSdkVisible .pokiSdkInsideContainer {
+	opacity: 1;
+}
+
+.pokiSDKAdContainer, .pokiSdkVideoContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.pokiSdkStartAdButton {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+
+	padding-top: 10%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #FFF;
+
+	font: 700 15pt 'Arial', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	transition: 0.1s ease-in-out;
+	line-height: 1em;
+}
+
+.pokiSdkPauseButton {
+	cursor:pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+.pokiSdkPauseButton:before {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	user-select: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: background-color 0.5s ease;
+	animation: 1s linear infinite pulse;
+}
+
+.pokiSdkPauseButton:after {
+	content: '';
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 26px 0 26px 40px;
+	pointer-events: none;
+	animation: 1s linear infinite pulse;
+	left: 6px;
+}
+.pokiSdkPauseButtonBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    background: rgba(0, 43, 80, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.pokiSdkPauseButtonBG:hover{
+	background: rgba(0, 43, 80, 0.7);
+}
+
+@keyframes pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+	70% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+}
+
+.pokiSdkProgressContainer {
+	background: #B8C7DD;
+	width: 100%;
+	height: 5px;
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+}
+
+.pokiSdkProgressBar {
+	position:relative;
+	bottom:0px;
+	background: #FFDC00;
+	height: 100%;
+	width: 0%;
+	transition: width 0.5s;
+	transition-timing-function: linear;
+}
+
+.pokiSdkProgressBar.pokiSdkVisible, .pokiSdkPauseButton.pokiSdkVisible, .pokiSdkStartAdButton.pokiSdkVisible {
+	display: block;
+	pointer-events: auto;
+}
+
+.pokiSdkProgressBar.pokiSdkHidden, .pokiSdkPauseButton.pokiSdkHidden, .pokiSdkStartAdButton.pokiSdkHidden {
+	display: none;
+	pointer-events: none;
+}
+</style><style>
+.pokiSdkContainer {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pokiSdkContainer.pokiSdkFixed {
+	position: fixed;
+}
+
+.pokiSdkContainer.pokiSdkVisible {
+	display: block;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer.pokiSdkHidden {
+	display: none;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer {
+	pointer-events: none;
+}
+
+.pokiSdkSpinnerContainer {
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('https://a.poki.com/images/thumb_anim_2x.gif') 50% 50% no-repeat;
+	user-select: none;
+}
+
+.pokiSdkInsideContainer {
+	background: #000;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.pokiSdkContainer.pokiSdkVisible .pokiSdkInsideContainer {
+	opacity: 1;
+}
+
+.pokiSDKAdContainer, .pokiSdkVideoContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.pokiSdkStartAdButton {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+
+	padding-top: 10%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #FFF;
+
+	font: 700 15pt 'Arial', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	transition: 0.1s ease-in-out;
+	line-height: 1em;
+}
+
+.pokiSdkPauseButton {
+	cursor:pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+.pokiSdkPauseButton:before {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	user-select: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: background-color 0.5s ease;
+	animation: 1s linear infinite pulse;
+}
+
+.pokiSdkPauseButton:after {
+	content: '';
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 26px 0 26px 40px;
+	pointer-events: none;
+	animation: 1s linear infinite pulse;
+	left: 6px;
+}
+.pokiSdkPauseButtonBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    background: rgba(0, 43, 80, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.pokiSdkPauseButtonBG:hover{
+	background: rgba(0, 43, 80, 0.7);
+}
+
+@keyframes pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+	70% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+}
+
+.pokiSdkProgressContainer {
+	background: #B8C7DD;
+	width: 100%;
+	height: 5px;
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+}
+
+.pokiSdkProgressBar {
+	position:relative;
+	bottom:0px;
+	background: #FFDC00;
+	height: 100%;
+	width: 0%;
+	transition: width 0.5s;
+	transition-timing-function: linear;
+}
+
+.pokiSdkProgressBar.pokiSdkVisible, .pokiSdkPauseButton.pokiSdkVisible, .pokiSdkStartAdButton.pokiSdkVisible {
+	display: block;
+	pointer-events: auto;
+}
+
+.pokiSdkProgressBar.pokiSdkHidden, .pokiSdkPauseButton.pokiSdkHidden, .pokiSdkStartAdButton.pokiSdkHidden {
+	display: none;
+	pointer-events: none;
+}
+</style></head>
+
+<body style="overflow:hidden;">
+	<div id="loader" style="display: none;">
+		<div id="slideshow" class="active">
+			<div id="slideshow-top" class="active">
+				<img alt="Parking Fury 3D" title="Parking Fury 3D" src="thumbnail.jpg" id="thumbnail">
+
+				<div id="slideshow-top-container">
+					<div id="game-title">
+						<h1>Parking Fury 3D</h1>
+					</div>
+					<div id="progress-container" class="done">
+						<div id="progress-bar">
+							<div id="progress-fill" style="width: 100%;"></div>
+						</div>
+						<div id="progress-amount">100%</div>
+					</div>
+				</div>
+			</div>
+			<div id="slideshow-images"><div class="image left" fullimageloaded="true" data-idx="0"><img src="screenshots/1.jpg"></div><div class="image inactive fromRight" fullimageloaded="true" data-idx="0"><img src="screenshots/1.jpg"></div><div class="image middle" data-idx="1" fullimageloaded="true"><img src="https://rawcdn.githack.com/fork-so-the-site-i-take-wont-be-deleted/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/parking-fury-3d-main/parking-fury-3d-main/screenshots/2.jpg"></div><div class="image right" data-idx="2" fullimageloaded="true"><img src="https://rawcdn.githack.com/fork-so-the-site-i-take-wont-be-deleted/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/parking-fury-3d-main/parking-fury-3d-main/screenshots/3.jpg"></div><div class="image inactive fromRight" data-idx="3"><img src="screenshots/4-small.jpg"></div><div class="image inactive fromRight" data-idx="1"><img src="screenshots/2-small.jpg"></div><div class="image inactive fromRight" data-idx="2"><img src="screenshots/3-small.jpg"></div><div class="image inactive fromRight" data-idx="3"><img src="screenshots/4-small.jpg"></div></div>
+			<div id="slideshow-nav"><div class="bullet" data-idx="0"></div><div class="bullet active" data-idx="1"></div><div class="bullet" data-idx="2"></div><div class="bullet" data-idx="3"></div><div class="bullet" data-idx="0"></div><div class="bullet" data-idx="1"></div><div class="bullet" data-idx="2"></div><div class="bullet" data-idx="3"></div></div>
+		</div>
+	</div>
+
+	<div id="game-container" style="height: 1187px; width: 1510px; margin-left: -755px; margin-top: -593.5px; display: block;">
+		<div id="game" style="padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(20, 20, 20);"><canvas id="#canvas" width="1510" height="1187" style="cursor: default;"></canvas></div>
+	</div>
+
+	<script type="text/javascript" src="scripts/poki-unity-loader.js?v=1"></script>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		/**
+		 * Game config
+		 */
+
+		window.config = {
+			debug: false,
+			maxRatio: 16 / 9,
+			minRatio: 9 / 16,
+			numScreenshots: 4,
+			unityWebglBuildUrl: "Build/ParkingFury3D.json?v=1",
+			unityWebglLoaderUrl: "Build/UnityLoader.js?v=1"
+		};
+	</script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<title>Parking Fury 3D Unblocked - ClassRoom6x</title>
+	<meta name="website" content="classroom6x.gitlab.io">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript" src="patch/poki-sdk.js?v=1"></script>
+
+
+
+	<div id="loader">
+		<div id="slideshow">
+			<div id="slideshow-top">
+				<img alt="Parking Fury 3D" title="Parking Fury 3D" src="thumbnail.jpg" id="thumbnail">
+
+				<div id="slideshow-top-container">
+					<div id="game-title">
+						<h1>Parking Fury 3D</h1>
+					</div>
+					<div id="progress-container">
+						<div id="progress-bar">
+							<div id="progress-fill" style="width:0%"></div>
+						</div>
+						<div id="progress-amount">0%</div>
+					</div>
+				</div>
+			</div>
+			<div id="slideshow-images"></div>
+			<div id="slideshow-nav"></div>
+		</div>
+	</div>
+
+	<div id="game-container">
+		<div id="game"></div>
+	</div>
+
+	<script type="text/javascript" src="scripts/poki-unity-loader.js?v=1"></script>
+
+
+<style>
+		#slideshow-images {
+			height: 57.24515585509688vh;
+		}
+		#slideshow-images .image {
+			transition-duration: 0.5s;
+			width: 60vw;
+			height: 57.24515585509688vh;
+		}
+		#slideshow-images .middle {
+			transform: translateX(20vw);
+		}
+		#slideshow-images .left {
+			transform: translateX(-34vw) scale(0.8);
+		}
+		#slideshow-images .right {
+			transform: translateX(74vw) scale(0.8);
+		}
+		#slideshow-images .inactive.fromLeft {
+			transform: translateX(-60vw) scale(0.4);
+		}
+		#slideshow-images .inactive.fromRight {
+			transform: translateX(130vw) scale(0.4);
+		}
+	</style><style>
+		#slideshow-images {
+			height: 57.24515585509688vh;
+		}
+		#slideshow-images .image {
+			transition-duration: 0.5s;
+			width: 60vw;
+			height: 57.24515585509688vh;
+		}
+		#slideshow-images .middle {
+			transform: translateX(20vw);
+		}
+		#slideshow-images .left {
+			transform: translateX(-34vw) scale(0.8);
+		}
+		#slideshow-images .right {
+			transform: translateX(74vw) scale(0.8);
+		}
+		#slideshow-images .inactive.fromLeft {
+			transform: translateX(-60vw) scale(0.4);
+		}
+		#slideshow-images .inactive.fromRight {
+			transform: translateX(130vw) scale(0.4);
+		}
+	</style><script src="Build/UnityLoader.js?v=1"></script><script src="Build/UnityLoader.js?v=1"></script><div class="pokiSdkContainer pokiSdkHidden pokiSdkFixed"><div class="pokiSdkInsideContainer"><div class="pokiSdkProgressContainer pokiSdkHidden"><div class="pokiSdkProgressBar" style="width: 0%;"></div></div><video id="pokiSDKVideoContainer" class="pokiSdkVideoContainer" playsinline="playsinline" muted="muted"></video><div id="pokiSDKAdContainer" class="pokiSDKAdContainer"></div></div><div class="pokiSdkSpinnerContainer"></div><div class="pokiSdkPauseButton pokiSdkHidden"><div class="pokiSdkPauseButtonBG"></div></div><div class="pokiSdkStartAdButton pokiSdkHidden">Tap anywhere to play ad</div></div><div class="pokiSdkContainer pokiSdkHidden pokiSdkFixed"><div class="pokiSdkInsideContainer"><div class="pokiSdkProgressContainer pokiSdkHidden"><div class="pokiSdkProgressBar" style="width: 0%;"></div></div><video id="pokiSDKVideoContainer" class="pokiSdkVideoContainer" playsinline="playsinline" muted="muted"></video><div id="pokiSDKAdContainer" class="pokiSDKAdContainer"></div></div><div class="pokiSdkSpinnerContainer"></div><div class="pokiSdkPauseButton pokiSdkHidden"><div class="pokiSdkPauseButtonBG"></div></div><div class="pokiSdkStartAdButton pokiSdkHidden">Tap anywhere to play ad</div></div><script src="blob:null/deb55b49-a97a-47f5-9d40-30a130aa95f8"></script><script src="blob:null/a20622c3-9b72-4fa1-beeb-66eaedf881a6"></script><script src="blob:null/2309a7dc-6ae0-40dd-8972-bf5e3ab71a01"></script><script src="blob:null/641946ee-60a6-414c-a035-81661155499d"></script></body></html>
