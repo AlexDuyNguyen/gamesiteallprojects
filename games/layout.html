@@ -465,6 +465,44 @@
       background: #1e1e1e;
       color: #e0e0e0;
     }
+
+    /* Contact Page Styles */
+    .contact-info {
+      margin-top: 20px;
+      padding: 20px;
+      background: #e8eaf6;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .contact-info h3 {
+      margin-top: 0;
+      color: #3949ab;
+    }
+    
+    .contact-info a {
+      color: #3949ab;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Dark mode styles for contact page */
+    body.dark-mode .contact-info {
+      background: #333;
+    }
+    
+    body.dark-mode .contact-info a {
+      color: #bb86fc;
+    }
+    
+    body.dark-mode .contact-info h3 {
+      color: #bb86fc;
+    }
   </style>
 </head>
 <body>
@@ -481,6 +519,7 @@
     <div class="button-container">
       <button class="random-button" id="randomGameButton">Random Game</button>
       <button class="random-button" id="randomFavoriteButton">Random Favorite</button>
+      <button class="settings-button" id="contactButton">Contact</button> 
     </div>
 
     <div class="favorites-section">
@@ -517,7 +556,15 @@
       <span class="toggle-label">Confirm Tab Close</span>
     </div>
   </div>
-  
+
+  <div class="container" id="contactSection" style="display: none;">
+    <button class="settings-button" id="backButton" style="margin-bottom: 20px;">← Back to Games</button>
+    <h2>CONTACT US</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:nguyenduyalex@gmail.com">nguyenduyalex@gmail.com</a></p>
+    </div>
+  </div>
+
   <div class="container credits-section">
     <h2>CREDITS</h2>
     <ul class="credits-list">
@@ -596,6 +643,8 @@
       { label: "Signal Boosters", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/signal-boosters.html", credits: "SpaceMyFriend"},
       { label: "Zombie Road", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/zombieroad.html", credits: "Square Dino"},
       { label: "Raze", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/raze.html", credits: "Addison Rodomista (AddisonR) and Justin Goncalves (Juice-Tin)"},
+      { label: "Raze 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/raze2.html", credits: "Addison Rodomista (AddisonR) and Justin Goncalves (Juice-Tin)"},
+      { label: "Raze 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/raze3.html", credits: "Addison Rodomista (AddisonR) and Justin Goncalves (Juice-Tin)"},
       { label: "They Are Coming", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/theyarecoming.html", credits: "OnHit Developments"},
       { label: "Bank Robbery 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/bankrobbery2.html", credits: "justaliendev"},
       { label: "Johnny Trigger", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/johnnytrigger.html", credits: "Estoty, SayGames Ltd"},
@@ -605,7 +654,7 @@
       { label: "Lonewolf", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/lonewolf.html", credits: "SHD"},
       { label: "War The Knight", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/wartheknight.html", credits: "BANZAI"},
       { label: "Masked Forces Unlimited", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/maskedforcesunlimited.html", credits: "JulGames"},
-      { label: "You vs. 100 skibidi", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/youvs100skullemojis.html", credits: "GoGoMan"},
+      { label: "You vs. 100 skibidi", url: "https://rawcdn.githack.com/AlexDuyNguyen/gamesiteallprojects/87c0ee9f9bd22f8c4e2c10aa15c28e3d96f035f8/games/shooter/youvs100skullemojis.html", credits: "GoGoMan"},
       { label: "My Friend Pedro", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/myfriendpedro.html", credits: "DeadToast Entertainment"},
       { label: "My Friend Pedro Arena", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/myfriendpedroarena.html", credits: "DeadToast Entertainment"},
       { label: "Earth Taken", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/earthtaken.html", credits: "SeethingSwarm"},
@@ -644,6 +693,8 @@
       { label: "Decision 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/decision2.html", credits: "Fly Anvil s.r.o"},
       { label: "Decision 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/decision3.html", credits: "Fly Anvil s.r.o"},
       { label: "Decision Medieval", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/decisionmedieval.html", credits: "Fly Anvil s.r.o"},
+      { label: "Counter Snipe", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/shooter/countersnipe.html", credits: "Ninja Kiwi"},
+      { label: "Protektor", url: "https://github.com/AlexDuyNguyen/gamesiteallprojects/blob/main/games/shooter/protektor.html", credits: "rujogames"},
 
       // Puzzle
       { label: "Woah, That's, SSSPICY!", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/puzzle/woah-thats-ssspicy.html", credits: "torcado"},
@@ -856,6 +907,7 @@
       { label: "Push Your Luck", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/strategy/pushyourluck.html", credits: "Bruno Faidutti"},
       { label: "Super Mario 2: Wart's Turn-Based Revenge", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/strategy/supermario2wartsturnbasedrevenge.html", credits: "Distracted Coder"},
       { label: "Google Feud", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/strategy/googlefeud.html", credits: "Justin Hook"},
+      { label: "BLASTRONAUT", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/strategy/blastronaut.html", credits: "Perfoon"},
 
       // Driving
       { label: "Polytrack", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/driving/polytrack.html", credits: "Kodub"},
@@ -924,9 +976,11 @@
       { label: "Smash Karts", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/driving/smashkarts.html", credits: "Tall Team"},
 
       // Platformers
+      { label: "BFDI: Branches", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/bfdibranches.html", credits: "Team Branches"},
       { label: "Little Runmo", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/little-runmo.html", credits: "JuhoSprite and Gooseworx"},
       { label: "Jump King", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/jump-king.html", credits: "Nexile and CodeBullet"},
       { label: "Speed²", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/speedsquared.html", credits: "Kichex"},
+      { label: "Karlson", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/karlson.html", credits: "Dani"},
       { label: "Big Tower Tiny Square", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/big-tower-tiny-square.html", credits: "Evil Objective"},
       { label: "Big Ice Tower Tiny Square", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/big-ice-tower-tiny-square.html", credits: "Evil Objective"},
       { label: "Big Neon Tower Tiny Square", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/big-neon-tower-tiny-square.html", credits: "Evil Objective"},
@@ -943,7 +997,7 @@
       { label: "Level Devil", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/level-devil.html", credits: "Unept"},
       { label: "60 Second Burger Run", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/60-second-burger-run.html", credits: "Gameshot"},
       { label: "60 Second Santa Run", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/60-second-santa-run.html", credits: "Gameshot"},
-      { label: "Geometry Dash Lite", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/geometry-dash-lite.html", credits: ""},
+      { label: "Geometry Dash Lite", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/geometrydashlite.html", credits: ""},
       { label: "Geometry Lite", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/geometry-lite.html", credits: "1games.io"},
       { label: "Geometry Vibes", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/geometryvibes.html", credits: "gameVgames"},
       { label: "3dash", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/3dash.html", credits: "DelugeDrop"},
@@ -978,6 +1032,11 @@
       { label: "Minecraft Parkour", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/minecraft-parkour.html", credits: ""},
       { label: "A Koopa’s Revenge", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/akoopasrevenge.html", credits: "Lambtaco"},
       { label: "A Koopa’s Revenge 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/akoopasrevenge2.html", credits: "Lambtaco"},
+      { label: "Dadish", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish.html", credits: "Thomas K. Young"},
+      { label: "Dadish 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish2.html", credits: "Thomas K. Young"},
+      { label: "Dadish 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish3.html", credits: "Thomas K. Young"},
+      { label: "Dadish 3D", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish3d.html", credits: "Thomas K. Young"},
+      { label: "Daily Dadish", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dailydadish.html", credits: "Thomas K. Young"},
       { label: "Red Ball", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/redball.html", credits: "Evgeniy 'Eugene' Fedoseev"},
       { label: "Red Ball 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/redball2.html", credits: "Evgeniy 'Eugene' Fedoseev"},
       { label: "Red Ball 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/redball3.html", credits: "Evgeniy 'Eugene' Fedoseev"},
@@ -1037,12 +1096,8 @@
       { label: "Final Ninja", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/finalninja.html", credits: "nitrome"},
       { label: "Soul Jumper", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/souljumper.html", credits: "Ryan Tyler"},
       { label: "Red Tie Runner", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/redtierunner.html", credits: "NLB.DEV"},
-      { label: "Dadish", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish.html", credits: "Thomas K. Young"},
-      { label: "Dadish 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish2.html", credits: "Thomas K. Young"},
-      { label: "Dadish 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish3.html", credits: "Thomas K. Young"},
-      { label: "Dadish 3D", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dadish3d.html", credits: "Thomas K. Young"},
-      { label: "Daily Dadish", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/dailydadish.html", credits: "Thomas K. Young"},
-      { label: "Karlson", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/karlson.html", credits: "Dani"},
+      { label: "Cave Story", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/cavestory.html", credits: "Daisuke Amaya"},
+      { label: "Mindscape", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/platformers/mindscape.html", credits: "MINDistortion.tv"},
 
       // Fighting
       { label: "Crazy Cattle 3D", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/fighting/crazycattle3d.html", credits: "Anna"},
@@ -1228,7 +1283,7 @@
       { label: "Fair Squares", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/fair-squares.html", credits: "kindanice"},
       { label: "Snow Road", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/snowroad.html", credits: ""},
       { label: "Snakelike", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/snakelike.html", credits: "MakoTeam"},
-      { label: "Dunk Shot", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/dunkshot.html", credits: "Ketchapp"},
+      { label: "Dunk Shot", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/dunk-shot.html", credits: "Ketchapp"},
       { label: "Spiral Roll", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/spiralroll.html", credits: "Voodoo"},
       { label: "Down The Mountain", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/endless/downthemountain.html", credits: ""},
       
@@ -1387,6 +1442,7 @@
       { label: "Castle Wars Modern", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/multiplayer/castlewarsmodern.html", credits: "RHM Interactive"},
       { label: "Wrassling", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/multiplayer/wrassling.html", credits: "Colin Lane Games AB"},
       { label: "Stick Archers Battle", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/multiplayer/stickarchersbattle.html", credits: "RHM Interactive"},
+      { label: "Nitrome Must Die", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/multiplayer/nitromemustdie.html", credits: "nitrome"},
 
       // Horror
       { label: "Do Not Take This Cat Home", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/do-not-take-this-cat-home.html", credits: "Pixeliminal"},    
@@ -1400,14 +1456,14 @@
       { label: "A Day In The Office", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/a-day-in-the-office.html", credits: "WinRawr"},
       { label: "10-103", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/10-103.html", credits: "Nerdspartan"},
       { label: "10-103: Null Kelvin", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/10-103-null-kelvin.html", credits: "Nerdspartan"},
-      { label: "Five Nights At Freddy's", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fnaf.html", credits: "Scott Cawthon"},
-      { label: "Five Nights At Freddy's 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fnaf2.html", credits: "Scott Cawthon"},
-      { label: "Five Nights At Freddy's 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fnaf3.html", credits: "Scott Cawthon"},
-      { label: "Five Nights At Freddy's 4", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fnaf4.html", credits: "Scott Cawthon"},
+      { label: "Five Nights At Freddy's", url: "https://rawcdn.githack.com/AlexDuyNguyen/gamesiteallprojects/7bdf65245624d70ffe4f3f71b6101ea5cf1dd3ec/games/horror/fnaf.html", credits: "Scott Cawthon"},
+      { label: "Five Nights At Freddy's 2", url: "https://rawcdn.githack.com/AlexDuyNguyen/gamesiteallprojects/7bdf65245624d70ffe4f3f71b6101ea5cf1dd3ec/games/horror/fnaf2.html", credits: "Scott Cawthon"},
+      { label: "Five Nights At Freddy's 3", url: "https://rawcdn.githack.com/AlexDuyNguyen/gamesiteallprojects/7bdf65245624d70ffe4f3f71b6101ea5cf1dd3ec/games/horror/fnaf3.html", credits: "Scott Cawthon"},
+      { label: "Five Nights At Freddy's 4", url: "https://rawcdn.githack.com/AlexDuyNguyen/gamesiteallprojects/7bdf65245624d70ffe4f3f71b6101ea5cf1dd3ec/games/horror/fnaf4.html", credits: "Scott Cawthon"},
       { label: "Five Nights At Freddy's: Pizza Simulator", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatfreddyspizzasimulator.html", credits: "Scott Cawthon"},
       { label: "Five Nights At Freddy's: Sister Location", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatfreddyssisterlocation.html", credits: "Scott Cawthon"},
       { label: "Five Nights At Freddy's: Ultimate Custom Night", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatfreddyspizzasimulator.html", credits: "Scott Cawthon"},
-      { label: "Five Nights at Freddy's: World", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatfreddysworld.html", credits: "Scott Cawthon"},
+      { label: "Five Nights at Freddy's: World", url: "https://rawcdn.githack.com/AlexDuyNguyen/gamesiteallprojects/7bdf65245624d70ffe4f3f71b6101ea5cf1dd3ec/games/horror/fivenightsatfreddysworld.html", credits: "Scott Cawthon"},
       { label: "Five Nights At Winston's", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatwinstons.html", credits: "Calder Young"},
       { label: "Five Nights At Shrek's Hotel", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatshrekshotel.html", credits: "Rend_Pii"},
       { label: "Five Nights At Baldi's Redone", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/horror/fivenightsatbaldisredone.html", credits: "JohnsterSpaceGames"},
@@ -1445,6 +1501,11 @@
       { label: "Bloons TD3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonstd3.html", credits: "Ninja Kiwi"},
       { label: "Bloons TD4", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonstd4.html", credits: "Ninja Kiwi"},
       { label: "Bloons TD5", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonstd5.html", credits: "Ninja Kiwi"},
+      { label: "Bloons Player Pack 1", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonspp1.html", credits: "Ninja Kiwi"},
+      { label: "Bloons Player Pack 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonspp2.html", credits: "Ninja Kiwi"},
+      { label: "Bloons Player Pack 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonspp3.html", credits: "Ninja Kiwi"},
+      { label: "Bloons Player Pack 4", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonspp4.html", credits: "Ninja Kiwi"},
+      { label: "Bloons Player Pack 5", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bloonspp5.html", credits: "Ninja Kiwi"},
       { label: "Bubble Tanks Tower Defense", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/bubble-tanks-tower-defence.html", credits: "Hero Interactive"},
       { label: "Desktop Tower Defense", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/desktop-tower-defense.html", credits: "Paul Preece"},
       { label: "Pokemon Tower Defense", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/defense/pokemon-tower-defense.html", credits: "Sam and Dan Games"},
@@ -1546,7 +1607,7 @@
       { label: "This Is Your Life Now", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/progression/thisisyourlifenow.html", credits: "More Mountains"},
 
       // Sports
-      { label: "Retro Bowl", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/sports/retro-bowl.html", credits: "New Star Games"},
+      { label: "Retro Bowl", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/sports/retrobowl.html", credits: "New Star Games"},
       { label: "Retro Bowl College", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/sports/retrobowlcollege.html", credits: "New Star Games"},
       { label: "A Small World Cup", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/sports/a-small-world-cup.html", credits: "rujogames"},
       { label: "4th and Goal", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/sports/4th-and-goal.html", credits: "glowmonkey"},
@@ -1658,8 +1719,10 @@
       { label: "Switchblade", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rage/switchblade.html", credits: "rubic"},
 
       // RPG
+      { label: "Deltarune", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/deltarune.html", credits: "Toby Fox"},
       { label: "Undertale (Scratch Demake)", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/untertale.html", credits: ""},
       { label: "Super Pickleball Adventure", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/super-pickleball-adventure.html", credits: "andrfw"},
+      { label: "Kill The Ice Age Baby Adventure", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/killtheiceagebabyadventure.html", credits: "kypello"},
       { label: "The Classroom", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/theclassroom.html", credits: "luksy"},
       { label: "The Classroom 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/theclassroom2.html", credits: "luksy"},
       { label: "The Classroom 3", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/theclassroom3.html", credits: "luksy"},
@@ -1673,7 +1736,8 @@
       { label: "The Last Stand 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/thelaststand2.html", credits: "Con-Artists"},
       { label: "The Last Stand: Union City", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/thelaststandunioncity.html", credits: "Con-Artists"},
       { label: "Blightborne", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/blightborne.html", credits: "Leon Nuredini"},
-      { label: "Kill The Ice Age Baby Adventure", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/killtheiceagebabyadventure.html", credits: "kypello"},
+      { label: "Ray Part 1", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/raypart1.html", credits: "Philljc"},
+      { label: "Ray Part 2", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/raypart2.html", credits: "Philljc"},
       { label: "Epic Battle Fantasy 5", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/epicbattlefantasy5.html", credits: "matt-likes-swords"},
       { label: "Chibi Knight", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/chibiknight.html", credits: "PestoForce"},
       { label: "Super Chibi Knight", url: "https://raw.githack.com/AlexDuyNguyen/gamesiteallprojects/main/games/rpg/superchibiknight.html", credits: "PestoForce"},
@@ -2135,6 +2199,19 @@
       updateStarIcons();
       initializeConfirmClose();
     };
+
+    document.getElementById('contactButton').addEventListener('click', function() {
+      document.querySelectorAll('.container').forEach(container => {
+        container.style.display = 'none';
+      });
+      
+      document.getElementById('contactSection').style.display = 'block';
+    });
+    
+    document.getElementById('backButton').addEventListener('click', function() {
+      document.getElementById('contactSection').style.display = 'none';
+      document.querySelector('.container').style.display = 'block';
+    });
   </script>
 </body>
 </html>
