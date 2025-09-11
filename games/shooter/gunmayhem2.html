@@ -1,21 +1,58 @@
-<Module>
-<ModulePrefs title="Google.com" />
-<Content type="html"><![CDATA[
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/style.css" type="text/css" />
-    
+<html lang="en"><head><base target="_blank">
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIGHTLY</title>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+    <div id="container"><ruffle-player style="width: 100vw; height: 100vh;"></ruffle-player></div>
+        <style>
+            *{
+                margin: 0px;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+        </style>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.load("https://burritoedition.github.io/emu/swf/GunMayhem2.swf");
+            player.style.width = "100vw"; 
+            player.style.height = "100vh";
+        });
+        window.RufflePlayer.config = {
+    // Options affecting the whole page
+    "publicPath": undefined,
+    "polyfills": true,
 
-<object width="100%" height="100%">
-    <param name="movie" value="https://cdn.jsdelivr.net/gh/supaub/interstellar-3@8a13c735e7df6d86602b354e45c090405f21f45a/play/flash/swf/gmayhem2.swf">
-    <embed src="https://cdn.jsdelivr.net/gh/supaub/interstellar-3@8a13c735e7df6d86602b354e45c090405f21f45a/play/flash/swf/gmayhem2.swf" width="100%" height="100%">
-</body>
-</html>
-]]></Content>
-</Module>
+    // Options affecting files only
+    "autoplay": "on",
+    "unmuteOverlay": "visible",
+    "backgroundColor": null,
+    "wmode": "window",
+    "letterbox": "fullscreen",
+    "warnOnUnsupportedContent": false,
+    "contextMenu": true,
+    "showSwfDownload": false,
+    "upgradeToHttps": window.location.protocol === "https:",
+    "maxExecutionDuration": {"secs": 15, "nanos": 0},
+    "logLevel": "error",
+    "base": null,
+    "menu": true,
+    "salign": "",
+    "scale": "showAll",
+    "forceScale": false,
+    "quality": "high",
+    "splashScreen": true,
+};
+    </script>
+    <script src="https://burritoedition.github.io/emu/NIGHTLY/ruffle.js"></script>
+
+
+</body></html>
